@@ -70,6 +70,12 @@ prebuilt_etc {
 // Configuration scripts
 
 sh_binary {
+    name: "init.baseband.sh",
+    src: "bin/init.baseband.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.qcom.sh",
     src: "bin/init.qcom.sh",
     vendor: true,

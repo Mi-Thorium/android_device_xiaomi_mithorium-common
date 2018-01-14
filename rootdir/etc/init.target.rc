@@ -236,3 +236,11 @@ on init
 on property:init.svc.qcamerasvr=running
     exec /bin/sleep 1s
     enable vendor.camera-provider-2-4
+
+# Baseband
+service baseband-sh /vendor/bin/init.baseband.sh
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
