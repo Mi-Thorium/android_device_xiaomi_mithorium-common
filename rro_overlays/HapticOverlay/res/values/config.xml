@@ -20,4 +20,10 @@
          manually by the user. Off by default, since the expected haptic feedback may not be
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
+
+    <!-- Whether or not the device is capable of multiple levels of vibration intensity.
+         Note that this is different from whether it can control the vibration amplitude as some
+         devices will be able to vary their amplitude but do not possess enough dynamic range to
+         have distinct intensity levels -->
+    <bool name="config_vibration_supports_multiple_intensities">true</bool>
 </resources>
