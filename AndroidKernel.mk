@@ -23,6 +23,9 @@ TARGET_KERNEL_MAKE_ENV += HOSTLD=$(TEMP_TOP)/prebuilts/gcc/linux-x86/host/x86_64
 TARGET_KERNEL_MAKE_ENV += HOSTCFLAGS="-I/usr/include -I/usr/include/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu -fuse-ld=lld"
 TARGET_KERNEL_MAKE_ENV += HOSTLDFLAGS="-L/usr/lib -L/usr/lib/x86_64-linux-gnu -fuse-ld=lld"
 
+# Add back threads, ninja cuts this to $(nproc)/2
+TARGET_KERNEL_MAKE_ENV += -j$$(nproc)
+
 #Enable llvm support for kernel
 KERNEL_LLVM_SUPPORT := true
 
