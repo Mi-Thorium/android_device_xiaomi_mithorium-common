@@ -557,7 +557,7 @@ vendor/lib64/libqmi_encdec.so
 # Radio - from tissot
 vendor/bin/netmgrd|e9c82b0644cb08b160a2ce484fdb58830306237d
 vendor/etc/data/dsi_config.xml|2ca4b377905d97c38fdc58765ac9d1da99ef7385
-vendor/etc/data/netmgr_config.xml|cbc0330402aea93e8dd800a8ac3550ac3b1757e0
+vendor/etc/data/netmgr_config.xml|e7861023b955a7443dfde6f12a9e9ce673a1e05c
 vendor/lib64/libconfigdb.so|1fa77478a72cf4152c1027fd40ee9a58a0ba89aa
 vendor/lib64/liblqe.so|63ed946d00ed73664410041e3e8fa8c2f5cbeeb6
 vendor/lib64/libnetmgr.so|6265bfdff5b5251a6c4823b835fc1c572de00728
