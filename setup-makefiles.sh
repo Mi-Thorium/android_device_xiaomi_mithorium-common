@@ -46,3 +46,21 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Finish
     write_footers
 fi
+
+if [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
+    # Workaround: Define $DEVICE
+    export DEVICE="${DEVICE_SPECIFIED_COMMON}"
+    export DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
+
+    # Reinitialize the helper for device specified common
+    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+
+    # Warning headers and guards
+    write_headers "$DEVICE_SPECIFIED_COMMON_DEVICE"
+
+    # The standard device blobs
+    write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
+
+    # Finish
+    write_footers
+fi
