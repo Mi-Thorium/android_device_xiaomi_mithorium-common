@@ -48,6 +48,24 @@ cc_library_shared {
     ],
 }
 
+// libgui
+cc_library_shared {
+    name: "libshims_gui",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshims_gui.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libgui_vendor",
+    ],
+}
+
 // libshim_camera
 cc_library_shared {
     name: "libshims_ui",
