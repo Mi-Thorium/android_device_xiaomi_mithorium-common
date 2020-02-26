@@ -154,3 +154,6 @@ persist.radio.sarvalue=-1
 # end of device/qcom/T89571AA3/system.prop
 
 ro.vendor.qti.va_aosp.support=1
+
+# fastbootd
+ro.fastbootd.available=true
