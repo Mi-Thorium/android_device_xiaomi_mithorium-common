@@ -596,7 +596,7 @@ vendor/bin/tftp_server
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/init-qcril-data.rc
-vendor/etc/init/netmgrd.rc
+vendor/etc/init/netmgrd.rc|fd3457c69a9fab11b87d0d1b494188fe089684cd|213d147cfcfe175aa4cdf1a345f3b148ea72982d
 vendor/etc/init/port-bridge.rc
 vendor/lib/libmdmdetect.so
 vendor/lib64/libmdmdetect.so
