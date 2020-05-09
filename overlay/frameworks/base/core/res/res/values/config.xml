@@ -479,4 +479,7 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+
+    <!-- Whether the device show_vendor_mismatch_message -->
+    <bool name="config_show_vendor_mismatch_message">false</bool>
 </resources>
