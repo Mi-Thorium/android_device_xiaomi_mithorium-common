@@ -47,3 +47,12 @@ cc_library_shared {
         "libutils",
     ],
 }
+
+// libshim_camera
+cc_library_shared {
+    name: "libshims_ui",
+    srcs: ["libshims_ui.cpp"],
+    shared_libs: ["libui"],
+    vendor: true,
+    compile_multilib: "32",
+}
