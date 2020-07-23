@@ -310,7 +310,8 @@ case "$target" in
         else
              hw_platform=`cat /sys/devices/system/soc/soc0/hw_platform`
         fi
-	if [ "$low_ram" != "true" ]; then
+#	if [ "$low_ram" != "true" ]; then
+	if false; then
              case "$soc_id" in
                   "294" | "295" | "303" | "307" | "308" | "309" | "313" | "320" | "353" | "354" | "363" | "364")
                        case "$hw_platform" in
