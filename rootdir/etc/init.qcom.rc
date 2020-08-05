@@ -424,9 +424,6 @@ on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
     restart vendor.audio-hal
 
-on property:persist.env.fastdorm.enabled=true
-    setprop persist.radio.data_no_toggle 1
-
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
     mount cgroup none /dev/blkio blkio
