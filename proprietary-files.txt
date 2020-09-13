@@ -514,10 +514,11 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # QC RIL
+system/lib64/vndk-29/android.hardware.radio.config@1.1.so:vendor/lib64/android.hardware.radio.config@1.1_shim.so
 vendor/bin/hw/qcrild|c0db5589a45874c31c0bb7e8a7151511505c1e04
 vendor/etc/init/qcrild.rc|f9c32f5e7a8e7f4a0df1dcce174de169b8d7c060
 vendor/lib64/libqcrilFramework.so|3d8f25d13533f6fa45a36b23feb250291b663370
-vendor/lib64/libril-qc-hal-qmi.so|50f7b4ff4f8cf0aa514f2cdc0b0dcdeaf36e5419
+vendor/lib64/libril-qc-hal-qmi.so|f5c39ba1774182691b14fa0f6f036f7b1712688a
 vendor/lib64/qcrild_librilutils.so|c23470619690a34f7442fb6b26345de5dc4de880
 
 # QMI
