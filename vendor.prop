@@ -5,7 +5,6 @@ vendor.qcom.bluetooth.soc=pronto
 persist.vendor.camera.HAL3.enabled=1
 
 # Display
-debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 debug.egl.hw=0
