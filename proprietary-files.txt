@@ -256,9 +256,9 @@ vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
 # FM
--product/lib64/vendor.qti.hardware.fm@1.0.so
-system/lib64/fm_helium.so
-system/lib64/libfm-hci.so
+-product/lib64/vendor.qti.hardware.fm@1.0.so:system_ext/lib64/vendor.qti.hardware.fm@1.0.so
+system/lib64/fm_helium.so:system_ext/lib64/fm_helium.so
+system/lib64/libfm-hci.so:system_ext/lib64/libfm-hci.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 
 # Gatekeeper
