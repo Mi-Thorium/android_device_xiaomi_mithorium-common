@@ -202,7 +202,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # DRM
 MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.4-service.clearkey
 
 # Fastbootd
 MITHORIUM_PRODUCT_PACKAGES += \
