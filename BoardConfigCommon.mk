@@ -31,7 +31,11 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
-BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
+    ifeq ($(TARGET_KERNEL_VERSION),4.9)
+        BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
+    else ifeq ($(TARGET_KERNEL_VERSION),4.19)
+        BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78af000
+    endif
 endif
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
