@@ -158,10 +158,19 @@ PRODUCT_PACKAGES += \
     XiaomiParts
 
 # Display
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.allocator-service \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display
+else
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    android.hardware.graphics.mapper@2.0-impl-2.1
+endif
+
+PRODUCT_PACKAGES += \
     gralloc.$(TARGET_BOARD_PLATFORM)
 
 PRODUCT_PACKAGES += \
