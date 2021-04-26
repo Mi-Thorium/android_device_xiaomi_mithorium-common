@@ -1,1 +1,7 @@
 allow init proc_boot_reason:file r_file_perms;
+
+# Firmware
+allow init firmware_file:filesystem getattr;
+
+# LED
+allow init sysfs_leds:lnk_file r_file_perms;
