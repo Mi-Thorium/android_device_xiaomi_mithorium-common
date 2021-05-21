@@ -13,16 +13,6 @@
 # Executables
 /system/bin/chargeonlymode			u:object_r:charger_exec:s0
 
-# Fpc Fingerprint
-/data/fpc(/.*)?					u:object_r:fpc_data_file:s0
-/dev/socket/fpce(/.*)?				u:object_r:fpce_socket:s0
-/sys/devices(/platform)?/soc/soc:fpc1020(/.*)?		u:object_r:fpc_sysfs:s0
-
-# Goodix Fingerprint
-/dev/goodix_fp					u:object_r:gx_fpd_device:s0
-/data/gf_data(/.*)?                             u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?			u:object_r:gx_fpd_data_file:s0
-
 # Firmware
 /firmware                                                     u:object_r:firmware_file:s0
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
@@ -47,7 +37,6 @@
 /(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
 
 # Shell Script
-/(vendor|system/vendor)/bin/init\.goodix\.sh	u:object_r:init_fingerprint_exec:s0
 
 # Sys files
 /sys/devices(/platform)?/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?		u:object_r:sysfs_leds:s0
