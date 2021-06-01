@@ -8,3 +8,4 @@ allow mm-qcamerad sysfs_graphics:file r_file_perms;
 allow mm-qcamerad sysfs_jpeg:file r_file_perms;
 allow mm-qcamerad { camera_data_file vendor_camera_data_file }:file create_file_perms;
 allow mm-qcamerad camera_data_file:dir w_dir_perms;
+allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
