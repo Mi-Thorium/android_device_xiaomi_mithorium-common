@@ -563,6 +563,12 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
 
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
 #Mixed HWC versions among targets
 on property:init.svc.surfaceflinger=restarting
     stop  vendor.hwcomposer-2-1

@@ -196,6 +196,7 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     start vendor.hvdcp_opti
     start thermal-engine
+    start vendor.power_off_alarm
 
 on boot
     # add a cpuset for the camera daemon
