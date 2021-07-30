@@ -25,7 +25,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "daisy mido sakura tissot vince ysl"
+write_headers "land riva rolex santoni tiare ulysse"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

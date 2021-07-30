@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/xiaomi/msm8953-common
+COMMON_PATH := device/xiaomi/msm8937-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -24,12 +24,14 @@ BUILD_BROKEN_DUP_RULES := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78b000
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
+TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # ANT
@@ -59,7 +61,7 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8953
+TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
 # Bluetooth
@@ -76,6 +78,8 @@ TARGET_USES_ION := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+TARGET_SCREEN_DENSITY := 267
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -95,8 +99,8 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):init_xiaomi_msm8953
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_msm8953
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):init_xiaomi_msm8937
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_msm8937
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -113,7 +117,7 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := msm8953
+TARGET_BOARD_PLATFORM := msm8937
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
@@ -121,11 +125,7 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
-ifeq ($(AB_OTA_UPDATER), true)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB.qcom
-else
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
-endif
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -152,4 +152,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
-include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk
+include vendor/xiaomi/msm8937-common/BoardConfigVendor.mk
