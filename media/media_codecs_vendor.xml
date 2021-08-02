@@ -109,6 +109,7 @@ Only the three quirks included above are recognized at this point:
 
 <MediaCodecs>
     <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_vendor_audio.xml" />
     <Include href="media_codecs_google_telephony.xml" />
     <Settings>
         <Setting name="max-video-encoder-input-buffers" value="9" />
@@ -257,7 +258,14 @@ Only the three quirks included above are recognized at this point:
             <Limit name="performance-point-720x480" value="30" />
             <Limit name="performance-point-720x576" value="25" />
         </MediaCodec>
-
+        <!--
+        <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" variant="slow-cpu" update="true">
+            <Limit name="size" min="2x2" max="1920x1920" />
+            <Limit name="block-count" range="1-14400" />
+            <Limit name="blocks-per-second" range="1-300000" />
+            <Limit name="bitrate" range="1-40000000" />
+        </MediaCodec>
+        -->
         <MediaCodec name="c2.android.hevc.encoder" type="video/hevc" variant="slow-cpu" update="true" >
             <Limit name="size" min="2x2" max="512x512" />
             <Limit name="alignment" value="2x2" />
@@ -290,8 +298,6 @@ Only the three quirks included above are recognized at this point:
             <Limit name="bitrate" range="1-40000000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-
-        <MediaCodec name="OMX.google.opus.decoder" type="audio/opus" update="true" rank="100"/>
     </Decoders>
     <Include href="media_codecs_google_video_le.xml" />
 </MediaCodecs>
