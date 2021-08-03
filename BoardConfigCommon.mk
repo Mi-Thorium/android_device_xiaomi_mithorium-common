@@ -93,6 +93,12 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
+endif
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
+endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # HW crypto

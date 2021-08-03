@@ -172,9 +172,11 @@ PRODUCT_PACKAGES += \
     libfmjni
 
 # Gatekeeper HAL
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
+endif
 
 # Health
 PRODUCT_PACKAGES += \
@@ -218,9 +220,11 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml
 
 # Keymaster HAL
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
+endif
 
 # Lights
 PRODUCT_PACKAGES += \
