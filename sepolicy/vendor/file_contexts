@@ -39,6 +39,7 @@
 
 # Shell Script
 /(vendor|system/vendor)/bin/init\.baseband\.sh				u:object_r:init_baseband_exec:s0
+/(vendor|system/vendor)/bin/init\.xiaomi\..*\.sh			u:object_r:init_xiaomi_exec:s0
 
 # Sys files
 /sys/devices(/platform)?/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?		u:object_r:sysfs_leds:s0

@@ -7,3 +7,6 @@ ctl.vendor.imsrcsd         u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
 
 # Dirac
 persist.audio.dirac.       u:object_r:dirac_prop:s0
+
+# Xiaomi
+ro.vendor.xiaomi.	u:object_r:vendor_xiaomi_prop:s0
