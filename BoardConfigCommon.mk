@@ -102,6 +102,9 @@ endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
 endif
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_VIBRATOR),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/vibrator.xml
+endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # HW crypto
