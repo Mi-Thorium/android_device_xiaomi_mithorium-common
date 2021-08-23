@@ -146,11 +146,22 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
-ifneq ($(TARGET_DEVICE),tiare)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+ifeq ($(TARGET_DEVICE),tiare)
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_vendor-as-vendor.qcom
+else
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_cust-as-vendor.qcom
 endif
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Rootdir
+SOONG_CONFIG_NAMESPACES += XIAOMI_MSM8937_ROOTDIR
+SOONG_CONFIG_XIAOMI_MSM8937_ROOTDIR := VENDOR_PARTITION
+ifeq ($(TARGET_DEVICE),tiare)
+SOONG_CONFIG_XIAOMI_MSM8937_ROOTDIR_VENDOR_PARTITION := vendor
+else
+SOONG_CONFIG_XIAOMI_MSM8937_ROOTDIR_VENDOR_PARTITION := cust
+endif
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
