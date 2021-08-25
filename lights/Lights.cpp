@@ -39,21 +39,17 @@ static const std::string led_paths[] {
 static const std::string kLCDFile = "/sys/class/leds/lcd-backlight/brightness";
 static const std::string kLCDFile2 = "/sys/class/backlight/panel0-backlight/brightness";
 
-static const std::string kButtonFile = "/sys/class/leds/button-backlight/brightness";
-
 #define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
 
 // List of supported lights
 const static std::vector<HwLight> kAvailableLights = {
     AutoHwLight(LightType::BACKLIGHT),
     AutoHwLight(LightType::BATTERY),
-    AutoHwLight(LightType::BUTTONS),
     AutoHwLight(LightType::NOTIFICATIONS)
 };
 
 Lights::Lights() {
     mBacklightNode = !access(kLCDFile.c_str(), F_OK) ? kLCDFile : kLCDFile2;
-    mButtonExists = !access(kButtonFile.c_str(), F_OK);
     mWhiteLed = !access((led_paths[WHITE] + "brightness").c_str(), W_OK);
     mBreath = !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK);
 }
@@ -67,10 +63,6 @@ ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
         case (int)LightType::BATTERY:
             mBattery = state;
             handleSpeakerBatteryLocked();
-            break;
-        case (int)LightType::BUTTONS:
-            if (mButtonExists)
-                WriteToFile(kButtonFile, state.color & 0xFF);
             break;
         case (int)LightType::NOTIFICATIONS:
             mNotification = state;
