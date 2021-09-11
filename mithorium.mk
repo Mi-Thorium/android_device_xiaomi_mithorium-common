@@ -403,10 +403,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     init.qti.dcvs.sh
 endif
 
-# RenderScript
-MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # RIL
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
