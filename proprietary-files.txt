@@ -763,5 +763,5 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
-# Wi-Fi
-vendor/bin/wcnss_service
+# Wi-Fi - from tissot
+vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
