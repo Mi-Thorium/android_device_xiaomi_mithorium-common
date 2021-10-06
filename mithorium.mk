@@ -325,6 +325,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Network
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
 # Perf
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
