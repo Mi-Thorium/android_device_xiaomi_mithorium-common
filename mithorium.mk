@@ -283,7 +283,8 @@ MITHORIUM_PRODUCT_PACKAGES += \
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0-service \
+    android.hardware.keymaster@3.0.vendor
 endif
 
 # Lights
@@ -409,6 +410,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # RIL
 MITHORIUM_PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.0.vendor \
     librmnetctl \
     libxml2
 
