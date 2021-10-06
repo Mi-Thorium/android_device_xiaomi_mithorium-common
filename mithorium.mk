@@ -354,6 +354,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Network
+MITHORIUM_PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
 # Perf
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
