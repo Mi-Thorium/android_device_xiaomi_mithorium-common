@@ -134,6 +134,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
 
+# Camera
+TARGET_SUPPORT_HAL1 := false
+
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
