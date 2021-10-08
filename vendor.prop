@@ -1,6 +1,9 @@
 # Bpf
 ro.kernel.ebpf.supported=1
 
+# Camera
+persist.vendor.camera.HAL3.enabled=1
+
 # Charger
 ro.charger.disable_init_blank=true
 
