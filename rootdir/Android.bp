@@ -48,6 +48,13 @@ prebuilt_etc {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "ueventd.qcom.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.qcom.rc",
+    vendor: true,
+}
+
 // Configuration scripts
 
 sh_binary {
