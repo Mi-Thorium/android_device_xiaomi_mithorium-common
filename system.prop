@@ -160,3 +160,6 @@ ro.vendor.qti.va_aosp.support=1
 
 # fastbootd
 ro.fastbootd.available=true
+
+# System
+persist.sys.binary_xml=false
