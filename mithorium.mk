@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
     android.hardware.camera.provider@2.5 \
     android.hardware.camera.provider@2.6 \
+    libshim_imsvideocodec \
     vendor.qti.hardware.camera.device@1.0
 
 # HW crypto
