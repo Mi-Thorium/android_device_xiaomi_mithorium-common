@@ -7,6 +7,9 @@ type camera_socket, file_type, data_file_type;
 # FDT
 type fdt_model, fs_type, sysfs_type;
 
+# Firmware
+type wcnss_persist_file, file_type, vendor_persist_type;
+
 # Rild
 type rild_file, file_type, vendor_file_type;
 
