@@ -18,6 +18,7 @@
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
 /persist(/.*)?                                                u:object_r:mnt_vendor_file:s0
 /mnt/vendor/persist(/.*)?                                     u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin                    u:object_r:wcnss_persist_file:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
