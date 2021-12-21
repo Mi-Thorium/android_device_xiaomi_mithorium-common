@@ -991,6 +991,9 @@ namespace implementation {
 		{308, sensor_cfg_8917},
 		{309, sensor_cfg_8917},
 		{386, sensor_cfg_8917}, // QM215
+		{294, sensor_cfg_8917}, // MSM8937
+		{295, sensor_cfg_8917}, // APQ8937
+		{313, sensor_cfg_8917}, // MSM8940
 		{353, sensor_cfg_439},
 		{354, sensor_cfg_439},
 		{363, sensor_cfg_439},
