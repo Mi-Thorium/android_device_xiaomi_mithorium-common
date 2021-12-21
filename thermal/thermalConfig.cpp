@@ -85,6 +85,37 @@ namespace implementation {
 		},
 	};
 
+	std::vector<struct target_therm_cfg> sensor_cfg_8937 =
+	{
+		{
+			TemperatureType::CPU,
+			cpu_sensors_8917,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpu-usr" },
+			"GPU",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "xo-therm-adc" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+	};
+
 	std::vector<std::string> cpu_sensors_439 =
 	{
 		"apc1-cpu0-usr",
@@ -991,9 +1022,9 @@ namespace implementation {
 		{308, sensor_cfg_8917},
 		{309, sensor_cfg_8917},
 		{386, sensor_cfg_8917}, // QM215
-		{294, sensor_cfg_8917}, // MSM8937
-		{295, sensor_cfg_8917}, // APQ8937
-		{313, sensor_cfg_8917}, // MSM8940
+		{294, sensor_cfg_8937}, // MSM8937
+		{295, sensor_cfg_8937}, // APQ8937
+		{313, sensor_cfg_8937}, // MSM8940
 		{353, sensor_cfg_439},
 		{354, sensor_cfg_439},
 		{363, sensor_cfg_439},
