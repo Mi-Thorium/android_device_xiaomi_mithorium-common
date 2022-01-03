@@ -116,7 +116,7 @@ namespace implementation {
 		},
 	};
 
-	std::vector<std::string> cpu_sensors_439 =
+	std::vector<std::string> cpu_sensors_429 =
 	{
 		"apc1-cpu0-usr",
 		"apc1-cpu1-usr",
@@ -128,11 +128,11 @@ namespace implementation {
 		"cpuss0-usr",
 	};
 
-	std::vector<struct target_therm_cfg> sensor_cfg_439 =
+	std::vector<struct target_therm_cfg> sensor_cfg_429 =
 	{
 		{
 			TemperatureType::CPU,
-			cpu_sensors_439,
+			cpu_sensors_429,
 			"",
 			95000,
 			115000,
@@ -1025,12 +1025,12 @@ namespace implementation {
 		{294, sensor_cfg_8937}, // MSM8937
 		{295, sensor_cfg_8937}, // APQ8937
 		{313, sensor_cfg_8937}, // MSM8940
-		{353, sensor_cfg_439},
-		{354, sensor_cfg_439},
-		{363, sensor_cfg_439},
-		{364, sensor_cfg_439},
-		{416, sensor_cfg_439},
-		{437, sensor_cfg_439},
+		{353, sensor_cfg_429},
+		{354, sensor_cfg_429},
+		{363, sensor_cfg_429},
+		{364, sensor_cfg_429},
+		{416, sensor_cfg_429},
+		{437, sensor_cfg_429},
 		{321, sensor_cfg_sdm845},
 		{341, sensor_cfg_sdm845},
 		{417, sensor_cfg_bengal}, // bengal
