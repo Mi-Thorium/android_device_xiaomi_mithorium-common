@@ -186,6 +186,76 @@ namespace implementation {
 		},
 	};
 
+	std::vector<std::string> cpu_sensors_439 =
+	{
+		"apc1-cpu0-usr",
+		"apc1-cpu1-usr",
+		"apc1-cpu2-usr",
+		"apc1-cpu3-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+	};
+
+	std::vector<struct target_therm_cfg> sensor_cfg_439 =
+	{
+		{
+			TemperatureType::CPU,
+			cpu_sensors_439,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpu-usr" },
+			"GPU",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "quiet-therm-adc" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+		{
+			TemperatureType::BCL_VOLTAGE,
+			{ "pmi-vbat-lvl0" },
+			"vbat",
+			3200,
+			3000,
+			3200,
+			false,
+		},
+		{
+			TemperatureType::BCL_CURRENT,
+			{ "pmi-ibat-lvl0" },
+			"ibat",
+			4200,
+			4400,
+			4200,
+			true,
+		},
+		{
+			TemperatureType::BCL_PERCENTAGE,
+			{ "soc" },
+			"soc",
+			10,
+			2,
+			10,
+			false,
+		},
+	};
+
 	std::vector<std::string> cpu_sensors_monaco =
 	{
 		"cpuss-0-usr",
@@ -1025,7 +1095,7 @@ namespace implementation {
 		{294, sensor_cfg_8937}, // MSM8937
 		{295, sensor_cfg_8937}, // APQ8937
 		{313, sensor_cfg_8937}, // MSM8940
-		{353, sensor_cfg_429},
+		{353, sensor_cfg_439},
 		{354, sensor_cfg_429},
 		{363, sensor_cfg_429},
 		{364, sensor_cfg_429},
