@@ -420,9 +420,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 # Sensors
 vendor/etc/sensors/hals.conf
 
-# Sensors (Activity Recognition)
-vendor/lib64/hw/activity_recognition.msm8937.so
-
 # Subsystem Restart
 vendor/bin/ssr_diag
 vendor/bin/ssr_setup
