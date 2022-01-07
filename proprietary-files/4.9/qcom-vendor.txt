@@ -423,9 +423,6 @@ vendor/lib64/vendor.qti.hardware.radio.lpa@1.2.so
 # Sensors
 vendor/etc/sensors/hals.conf
 
-# Sensors (Activity Recognition)
-vendor/lib64/hw/activity_recognition.msm8937.so
-
 # Subsystem Restart
 vendor/bin/ssr_diag
 vendor/bin/ssr_setup
