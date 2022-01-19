@@ -186,6 +186,9 @@ MITHORIUM_PRODUCT_PACKAGES += \
     gralloc.$(TARGET_BOARD_PLATFORM)
 
 MITHORIUM_PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor
+
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     hwcomposer.$(TARGET_BOARD_PLATFORM)
 
@@ -226,6 +229,9 @@ endif
 
 # GPS / Location
 include $(LOCAL_PATH)/gps/gps_vendor_product.mk
+
+MITHORIUM_PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor
 
 # Health
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -355,6 +361,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # Power
 MITHORIUM_PRODUCT_PACKAGES += \
+    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
