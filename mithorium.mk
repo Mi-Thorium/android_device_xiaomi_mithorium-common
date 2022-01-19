@@ -156,6 +156,9 @@ PRODUCT_PACKAGES += \
     gralloc.msm8937
 
 PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor
+
+PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     hwcomposer.msm8937
 
@@ -196,6 +199,9 @@ endif
 
 # GPS / Location
 include $(LOCAL_PATH)/gps/gps_vendor_product.mk
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -308,6 +314,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
