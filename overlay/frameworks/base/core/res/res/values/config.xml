@@ -413,9 +413,6 @@
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
-     <!-- Boolean indicating if current platform supports HFP inband ringing -->
-     <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
-
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
     in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
