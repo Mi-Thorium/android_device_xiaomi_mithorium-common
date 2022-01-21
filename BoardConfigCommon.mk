@@ -110,6 +110,9 @@ LOC_HIDL_VERSION := 4.1
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
+# GRF/VF
+BOARD_SHIPPING_API_LEVEL := 30
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/framework_compatibility_matrix.xml \
