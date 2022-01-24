@@ -1,6 +1,3 @@
-# Bpf
-ro.kernel.ebpf.supported=1
-
 # Camera
 persist.vendor.camera.HAL3.enabled=1
 
