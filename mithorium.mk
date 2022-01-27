@@ -153,9 +153,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
 
-MITHORIUM_PRODUCT_PACKAGES += \
-    Snap
-
 PRODUCT_PACKAGES += \
     camera.$(TARGET_BOARD_PLATFORM) \
     libmm-qcamera
