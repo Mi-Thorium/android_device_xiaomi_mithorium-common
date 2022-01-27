@@ -132,9 +132,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor
 
-PRODUCT_PACKAGES += \
-    Snap
-
 # Consumer IR
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
 PRODUCT_PACKAGES += \
