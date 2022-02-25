@@ -7,6 +7,13 @@
 // Init scripts
 
 prebuilt_etc {
+    name: "init.baseband.proxy.rc",
+    src: "etc/init.baseband.proxy.rc",
+    sub_dir: "init",
+    system_ext_specific: true,
+}
+
+prebuilt_etc {
     name: "init.qcom.rc",
     src: "etc/init.qcom.rc",
     sub_dir: "init/hw",
@@ -44,6 +51,7 @@ sh_binary {
 
 sh_binary {
     name: "init.baseband.sh",
+    required: ["init.baseband.proxy.rc"],
     src: "bin/init.baseband.sh",
     vendor: true,
 }
