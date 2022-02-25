@@ -12,4 +12,4 @@ allow init_baseband vendor_toolbox_exec:file rx_file_perms;
 r_dir_file(init_baseband, firmware_file)
 
 # Allow setting gsm. property
-set_prop(init_baseband, radio_prop)
+set_prop(init_baseband, baseband_prop)
