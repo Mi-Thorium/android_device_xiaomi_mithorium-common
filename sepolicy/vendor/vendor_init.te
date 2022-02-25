@@ -24,3 +24,6 @@ allow vendor_init {
   proc_dirty
   proc_dirty_ratio
 }:file w_file_perms;
+
+# Prop
+get_prop(vendor_init, vendor_xiaomi_prop)
