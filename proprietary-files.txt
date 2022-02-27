@@ -62,9 +62,9 @@ vendor/lib64/libqtigef.so
 vendor/lib64/libtinycompress_vendor.so
 
 # Audio dirac - from ugg
-vendor/etc/diracmobile.config|b99e9492e77e52ca3a511feae0409d59f6aebb87
 lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
 lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so|e92652ab578e90bb9e9b09553c3554f27cb7c07f
+vendor/etc/diracmobile.config|b99e9492e77e52ca3a511feae0409d59f6aebb87
 
 # Audiosphere
 etc/permissions/audiosphere.xml
@@ -473,10 +473,10 @@ vendor/lib64/libqti-util.so
 
 # Perf configs - from olive
 vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/perf-profile0.conf
 vendor/etc/perf/perf-profile1.conf
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 
