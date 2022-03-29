@@ -47,6 +47,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)/kernel
 TARGET_KERNEL_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
+    vendor/debugfs.config \
     vendor/feature/android-12.config \
     vendor/feature/exfat.config \
     vendor/feature/kprobes.config \
