@@ -2,7 +2,6 @@
 # olive Package version: Xiaomi/olive/olive:10/QKQ1.191014.001/V12.5.1.0.QCNCNXM:user/release-keys
 # riva Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
 # ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
-# tissot Package version: Tissot PKQ1.180917.001 V10.0.24.0.PDHMIXM
 
 # ADSP
 vendor/bin/adsprpcd
@@ -758,5 +757,5 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
-# Wi-Fi - from tissot
-vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
+# Wi-Fi
+vendor/bin/wcnss_service
