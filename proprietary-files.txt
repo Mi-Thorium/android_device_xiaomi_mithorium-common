@@ -757,5 +757,5 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
-# Wi-Fi
+# Wi-Fi - from olive
 vendor/bin/wcnss_service
