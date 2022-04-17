@@ -10,9 +10,6 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/sbl1             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/tz             u:object_r:custom_ab_block_device:s0
 
-# Executables
-/system/bin/chargeonlymode			u:object_r:charger_exec:s0
-
 # Firmware
 /firmware                                                     u:object_r:firmware_file:s0
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
