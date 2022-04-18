@@ -59,7 +59,6 @@ vendor.camera.lowpower.record.enable=1
 media.camera.ts.monotonic=1
 persist.camera.isp.clock.optmz=0
 persist.camera.stats.test=5
-persist.vendor.qti.telephony.vt_cam_interface=1
 vendor.camera.hal1.packagelist=com.facebook.katana,com.facebook.orca,com.instagram.android,com.viber.voip,com.whatsapp
 vidc.enc.dcvs.extra-buff-count=2
 
