@@ -1,9 +1,6 @@
 # Bpf
 ro.kernel.ebpf.supported=1
 
-# Charger
-ro.charger.disable_init_blank=true
-
 # Display
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
