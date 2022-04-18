@@ -1,3 +1,6 @@
+# Charger
+ro.charger.disable_init_blank=true
+
 #
 # from device/qcom/T89571AA3/system.prop
 #
