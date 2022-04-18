@@ -4,9 +4,6 @@ ro.kernel.ebpf.supported=1
 # Camera
 persist.vendor.camera.HAL3.enabled=1
 
-# Charger
-ro.charger.disable_init_blank=true
-
 # Display
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
@@ -76,7 +73,6 @@ vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 ro.af.client_heap_size_kbyte=7168
 persist.vendor.audio.hw.binder.size_kbyte=1024
-persist.vendor.bt.enable.splita2dp=false
 vendor.audio.volume.headset.gain.depcal=true
 vendor.audio.spkr_prot.tx.sampling_rate=48000
 vendor.audio.feature.a2dp_offload.enable=false
