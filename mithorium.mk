@@ -267,7 +267,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
     android.hardware.camera.provider@2.5 \
     android.hardware.camera.provider@2.6 \
-    libshim_imsvideocodec \
+    libshim_imscamera \
     vendor.qti.hardware.camera.device@1.0
 
 # HW crypto
