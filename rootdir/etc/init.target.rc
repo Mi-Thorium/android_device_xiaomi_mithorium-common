@@ -74,7 +74,7 @@ mkdir /data/vendor/camera 0770 camera camera
 mkdir /data/misc/camera 0770 camera camera
 
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -228,3 +228,8 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+# Restart camera provider after vendor.qcamerasvr is running
+on property:init.svc.vendor.qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
