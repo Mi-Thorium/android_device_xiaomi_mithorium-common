@@ -228,3 +228,11 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+# Start camera provider after qcamerasvr is running
+on init
+    stop vendor.camera-provider-2-4
+
+on property:init.svc.qcamerasvr=running
+    exec /bin/sleep 1s
+    enable vendor.camera-provider-2-4
