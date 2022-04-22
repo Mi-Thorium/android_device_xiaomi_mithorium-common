@@ -71,7 +71,6 @@ on post-fs-data
 
 #Create folder for mm-qcamera-daemon
 mkdir /data/vendor/camera 0770 camera camera
-mkdir /data/vendor/qcam 0770 camera camera
 mkdir /data/misc/camera 0770 camera camera
 
 #start camera server as daemon
@@ -229,29 +228,3 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
-
-# Restart camera provider after vendor.qcamerasvr is running
-on property:init.svc.vendor.qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
-# Baseband
-service baseband-sh /vendor/bin/init.baseband.sh
-    class late_start
-    user system
-    group system
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
- # write caching
-    # Tell the kernel to use up to 99% of the RAM as cache for writes
-    # and instruct kernel to use up to 50% of RAM before slowing down
-    # the process that's writing.
-    write /proc/sys/vm/dirty_ratio 99
-    write /proc/sys/vm/dirty_background_ratio 50
-
-    # Tell that 10 minutes write delay is ok to even start writing
-    # stuff on the disk (ten minutes = 60000; 1 hour 360000).
-    write /proc/sys/vm/dirty_expire_centisecs 60000
-    write /proc/sys/vm/dirty_writeback_centisecs 60000
