@@ -29,6 +29,7 @@ write_headers "land riva rolex santoni tiare ulysse"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
+write_makefiles "${MY_DIR}/proprietary-files-qc.txt" true
 
 # Finish
 write_footers
