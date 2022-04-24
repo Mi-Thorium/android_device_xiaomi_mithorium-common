@@ -1,3 +1,9 @@
+# Bpf
+ro.kernel.ebpf.supported=1
+
+# Charger
+ro.charger.disable_init_blank=true
+
 # Display
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
@@ -9,6 +15,12 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
 debug.sf.recomputecrop=0
+
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_virtual_display_dimension=4096
+
+# Radio
+persist.vendor.radio.mt_sms_ack=30
 
 debug.stagefright.omx_default_rank=0
 vendor.vidc.disable.split.mode=1
@@ -25,7 +37,7 @@ persist.vendor.radio.procedure_bytes=SKIP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 ro.vendor.qti.config.swap=1
 af.fast_track_multiplier=1
-vendor.audio_hal.period_size=192
+vendor.audio_hal.period_size=240
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
@@ -119,7 +131,6 @@ persist.vendor.qcom.bluetooth.soc=pronto
 persist.vendor.qcom.bluetooth.enable.splita2dp=false
 ro.vendor.bluetooth.wipower=false
 persist.vendor.dpmhalservice.enable=1
-ro.telephony.iwlan_operation_mode=legacy
 persist.radio.multisim.config=dsds
 
 ### BEGIN Labeled as vendor in device/qcom/sepolicy-legacy-um
@@ -167,6 +178,7 @@ vendor.vidc.disable.split.mode=1
 #
 ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
+persist.vendor.data.iwlan.enable=true
 
 #bt mac address can repeat read/write
 persist.vendor.bluetooth.modem_nv_support=true
@@ -175,7 +187,7 @@ persist.vendor.bluetooth.modem_nv_support=true
 vendor.vidc.enc.narrow.searchrange=1
 
 #force HAL1 for below packages
-vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+vendor.camera.hal1.packagelist=com.facebook.katana,com.facebook.orca,com.instagram.android,com.viber.voip,com.whatsapp
 
 #properties for limiting preview size in camera
 persist.vendor.camera.display.umax=1920x1080
@@ -209,7 +221,7 @@ persist.vendor.camera.expose.logicId3=1
 #
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
 #
-ro.telephony.default_network=22,22
+ro.telephony.default_network=33,33
 
 #
 # System props for telephony
