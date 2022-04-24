@@ -23,16 +23,12 @@ DEVICE_PROVISIONED=1
 #
 ro.telephony.default_network=22,22
 
-#Added by weitang for OEM328-3988 on 2018/12/27
-ro.com.google.acsa=true
-
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 debug.egl.hw=0
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
-dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
@@ -102,9 +98,6 @@ persist.timed.enable=true
 #bt mac address can repeat read/write
 persist.vendor.bluetooth.modem_nv_support=true
 
-#system prop for Bluetooth
-ro.bluetooth.library_name=libbluetooth_qti.so
-
 #
 # system prop for opengles version
 #
@@ -126,10 +119,6 @@ config.svi.path=vendor/data/sviconfig.xml
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
 telephony.lteOnCdmaDevice=1
-
-#Simulate sdcard on /data/media
-#
-persist.fuse_sdcard=true
 
 #System property for FM transmitter
 ro.fm.transmitter=false
@@ -167,12 +156,6 @@ ro.hwui.text_large_cache_height=2048
 # set cutoff voltage to 3200mV
 ro.cutoff_voltage_mv=3200
 
-#lcd density added by fangzhihua on 2019-1-3 according to Nokia requirment
-ro.sf.lcd_density=300
-
-#set device emmc size
-ro.emmc_size=16GB
-
 #force HAL1 for below packages
 vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 
@@ -208,9 +191,6 @@ persist.radio.DROPSETENABLE=1
 persist.data.profile_update=true
 persist.vendor.data.profile_update=true
 
-#bug485918 add System Property for AoG
-ro.opa.device_model_id=hmd2019products-nokia-4.2-bhp5yj
-
 #added by huwenxia.wt for chk 10532 20181107
 persist.radio.force_on_dc=true
 
@@ -240,9 +220,6 @@ persist.function_for_sar_log_trigger=0
 persist.radio.sarvalue=-1
 # -bug 418690 libingkun.wt,not using sar_sensor drop sar 20191009
 
-# PAN-17064 Telefonica and Vodafone Spain after OOBE for Data Dialog
-ro.com.android.prov_mobiledata = false
-
 # +Bug494803,gongmingjie.wt,add,20191024,bt checklist
 # make bt mac address can repeat read/write
 persist.vendor.bluetooth.modem_nv_support=true
@@ -251,14 +228,9 @@ persist.vendor.bluetooth.modem_nv_support=true
 #Checklist 37911, add by tanjunwen on 2019-10-29
 persist.vendor.radio.ignore_dom_time=5
 
-setupwizard.feature.baseline_setupwizard_enabled=true
-
 #chenhui.wt add for PAN-22636 20191031
 #jingyao.wt del for PAN-24809 20200410
 #persist.vendor.radio.facnotsup_as_nonw=1
-
-#APEX Mainline updatable
-ro.apex.updatable=true
 
 #PAN-26598.add by cdzk.2020.12.21.Front and rear video without flash
 persist.vendor.camera.hal1.enable=1
