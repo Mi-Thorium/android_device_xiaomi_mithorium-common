@@ -65,24 +65,16 @@ af.fast_track_multiplier=1
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE
 vendor.mm.enable.qcom_parser=4194303
 
-# system prop to disable split mode
-vendor.vidc.disable.split.mode=1
-
 # system property to accelerate Progressive Download using STA
 persist.mm.sta.enable=0
 
 #
 # system props for the data modules
 #
-ro.vendor.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
-persist.vendor.data.mode=concurrent
 
 #system props for time-services
 persist.timed.enable=true
-
-#bt mac address can repeat read/write
-persist.vendor.bluetooth.modem_nv_support=true
 
 #
 # system prop for opengles version
@@ -120,9 +112,6 @@ persist.debug.coresight.config=stm-events
 #selects Console configuration to enable
 persist.console.silent.config=1
 
-#property to enable narrow search range for video encoding
-vendor.vidc.enc.narrow.searchrange=1
-
 #property to enable fingerprint
 persist.qfp=false
 
@@ -141,20 +130,6 @@ ro.hwui.text_large_cache_height=2048
 
 # set cutoff voltage to 3200mV
 ro.cutoff_voltage_mv=3200
-
-#force HAL1 for below packages
-vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
-
-#properties for limiting preview size in camera
-persist.vendor.camera.display.umax=1920x1080
-persist.vendor.camera.display.lmax=1280x720
-
-#expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.hmdglobal.app.camera
-
-#Whitelisting the below packages
-persist.vendor.camera.privapp.list=org.codeaurora.snapcam
-persist.camera.privapp.list=org.codeaurora.snapcam
 
 #set cutoff voltage to 3400mV
 ro.cutoff_voltage_mv=3400
@@ -175,9 +150,6 @@ persist.radio.force_on_dc=true
 persist.omacp.enable=true
 persist.mmssupportcp.enable=true
 
-#sensors-hal debug
-persist.vendor.debug.sensors.hal=i
-
 #Modified rcs to 1 by weitang for PAN-18193 on 2019/02/20
 #close imsrcsd
 persist.rcs.supported=1
@@ -195,20 +167,10 @@ persist.function_for_sar_log_trigger=0
 persist.radio.sarvalue=-1
 # -bug 418690 libingkun.wt,not using sar_sensor drop sar 20191009
 
-# +Bug494803,gongmingjie.wt,add,20191024,bt checklist
-# make bt mac address can repeat read/write
-persist.vendor.bluetooth.modem_nv_support=true
-# -Bug494803,gongmingjie.wt,add,20191024,bt checklist
-
 #chenhui.wt add for PAN-22636 20191031
 #jingyao.wt del for PAN-24809 20200410
 #persist.vendor.radio.facnotsup_as_nonw=1
 
-#PAN-26598.add by cdzk.2020.12.21.Front and rear video without flash
-persist.vendor.camera.hal1.enable=1
-
-#PAN-23114.cdzk.2020.12.21.add expose camera logicId3 switch for vts test.
-persist.vendor.camera.expose.logicId3=1
 # end of device/qcom/T89571AA3/system.prop
 
 ro.vendor.qti.va_aosp.support=1

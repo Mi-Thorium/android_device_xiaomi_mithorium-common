@@ -144,3 +144,50 @@ persist.vendor.ims.dropset_feature=1
 persist.vendor.radio.ignore_dom_time=5
 
 ### END Labeled as vendor in device/qcom/sepolicy-legacy-um
+
+### BEGIN Unlabeled vendor props
+
+# system prop to disable split mode
+vendor.vidc.disable.split.mode=1
+
+#
+# system props for the data modules
+#
+ro.vendor.use_data_netmgrd=true
+persist.vendor.data.mode=concurrent
+
+#bt mac address can repeat read/write
+persist.vendor.bluetooth.modem_nv_support=true
+
+#property to enable narrow search range for video encoding
+vendor.vidc.enc.narrow.searchrange=1
+
+#force HAL1 for below packages
+vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+
+#properties for limiting preview size in camera
+persist.vendor.camera.display.umax=1920x1080
+persist.vendor.camera.display.lmax=1280x720
+
+#expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.hmdglobal.app.camera
+
+#Whitelisting the below packages
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+persist.camera.privapp.list=org.codeaurora.snapcam
+
+#sensors-hal debug
+persist.vendor.debug.sensors.hal=i
+
+# +Bug494803,gongmingjie.wt,add,20191024,bt checklist
+# make bt mac address can repeat read/write
+persist.vendor.bluetooth.modem_nv_support=true
+# -Bug494803,gongmingjie.wt,add,20191024,bt checklist
+
+#PAN-26598.add by cdzk.2020.12.21.Front and rear video without flash
+persist.vendor.camera.hal1.enable=1
+
+#PAN-23114.cdzk.2020.12.21.add expose camera logicId3 switch for vts test.
+persist.vendor.camera.expose.logicId3=1
+
+### END Unlabeled vendor props
