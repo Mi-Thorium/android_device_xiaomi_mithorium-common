@@ -2,6 +2,8 @@ import /vendor/etc/init/hw/init.xiaomi.device.rc
 import /vendor/etc/init/hw/init.xiaomi.series.rc
 
 on init
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
     # Setup all the sub-system as related
     write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
     write /sys/bus/msm_subsys/devices/subsys1/restart_level RELATED
