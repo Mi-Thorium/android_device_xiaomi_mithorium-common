@@ -44,6 +44,9 @@ vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libthermalclient.so
 
+# Audio (64-bit)
+-vendor/lib64/libaudioparsers.so
+
 # Audiosphere
 vendor/lib/soundfx/libasphere.so
 
