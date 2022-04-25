@@ -440,10 +440,6 @@ vendor/lib64/libsensor1.so
 # Sensors (Activity Recognition)
 vendor/lib64/hw/activity_recognition.msm8937.so
 
-# Sensors (SSC)
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensors.ssc.so
-
 # Subsystem Restart
 vendor/bin/ssr_diag
 vendor/bin/ssr_setup
