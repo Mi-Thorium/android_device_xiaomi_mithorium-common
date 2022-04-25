@@ -24,7 +24,6 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Bluetooth Audio
@@ -106,9 +105,6 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
-# DRM (Display)
-vendor/lib64/vendor.display.config@1.0.so
-
 # Firmware (Camera)
 vendor/firmware/cpp_firmware_v1_10_0.fw
 vendor/firmware/cpp_firmware_v1_12_0.fw
@@ -150,7 +146,6 @@ vendor/lib64/liblowi_client.so
 vendor/lib64/libminksocket.so
 
 # GNSS (HIDL)
-vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 vendor/lib64/libloc_socket.so
 vendor/lib64/vendor.qti.gnss@1.0.so
@@ -163,7 +158,6 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 
 # GNSS (IMPL)
-vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libdataitems.so
@@ -258,7 +252,6 @@ vendor/etc/seccomp_policy/imsrtp.policy
 vendor/lib64/lib-imsvtcore.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/libavservices_minijail.so
 vendor/lib64/librcc.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
