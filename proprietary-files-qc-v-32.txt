@@ -103,6 +103,9 @@ vendor/lib/libvpplibrary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdmmservice.so
 
+# Perf
+vendor/lib/libqti-perfd-client.so
+
 # QMI
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
