@@ -24,3 +24,7 @@ vendor/lib64/hw/gatekeeper.msm8937.so
 
 # Keystore - from olive
 vendor/lib64/hw/keystore.msm8937.so
+
+# Sensors (SSC)
+vendor/lib64/libsensor_reg.so
+vendor/lib64/sensors.ssc.so
