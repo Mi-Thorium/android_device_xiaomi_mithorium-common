@@ -158,7 +158,9 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData.system \
     libgenlock \
-    libtinyxml
+    libtinyxml \
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@2.0.vendor
 
 # DPM
 PRODUCT_PACKAGES += \
