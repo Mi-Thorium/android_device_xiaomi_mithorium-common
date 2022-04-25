@@ -1,5 +1,11 @@
 # All unpinned blobs below are extracted from Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
 
+# ADSP
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib/vendor.qti.hardware.dsp@1.0.so
+
 # ADSP Modules
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
@@ -95,3 +101,11 @@ vendor/lib/libswvdec.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdmmservice.so
+
+# QMI
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_encdec.so
+
+# Sensors
+vendor/lib/libsensor1.so
