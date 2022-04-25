@@ -137,6 +137,13 @@ vendor/firmware/a530_pm4.fw
 # GNSS
 vendor/bin/loc_launcher
 
+# GNSS (configs)
+vendor/etc/apdr.conf
+vendor/etc/izat.conf
+vendor/etc/lowi.conf
+vendor/etc/sap.conf
+vendor/etc/xtwifi.conf
+
 # GNSS (mlid)
 vendor/bin/mlid
 vendor/lib64/liblowi_client.so
