@@ -203,3 +203,17 @@ persist.vendor.camera.hal1.enable=1
 persist.vendor.camera.expose.logicId3=1
 
 ### END Unlabeled vendor props
+
+### BEGIN system_vendor_config_prop
+
+#
+# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+#
+ro.telephony.default_network=22,22
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+### END system_vendor_config_prop
