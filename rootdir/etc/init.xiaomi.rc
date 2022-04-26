@@ -1,6 +1,10 @@
 import /vendor/etc/init/hw/init.xiaomi.device.rc
 import /vendor/etc/init/hw/init.xiaomi.series.rc
 
+on boot
+    enable vendor.qcrild
+    enable vendor.qcrild2
+
 on init
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
