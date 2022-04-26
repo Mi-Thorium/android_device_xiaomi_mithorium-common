@@ -1,0 +1,20 @@
+type init_acdbdata, domain;
+type init_acdbdata_exec, exec_type, vendor_file_type, file_type;
+
+# Allow for transition from init domain to init_acdbdata
+init_daemon_domain(init_acdbdata)
+
+# Shell script needs to execute /vendor/bin/sh
+allow init_acdbdata vendor_shell_exec:file rx_file_perms;
+allow init_acdbdata vendor_toolbox_exec:file rx_file_perms;
+
+# Allow to read FDT
+allow init_acdbdata fdt_compatible:file r_file_perms;
+allow init_acdbdata fdt_sound:file r_file_perms;
+
+# Allow to read vendor files
+allow init_acdbdata vendor_configs_file:dir r_dir_perms;
+allow init_acdbdata vendor_configs_file:file r_file_perms;
+
+# Allow to set prop
+set_prop(init_acdbdata, vendor_audio_prop)

@@ -25,6 +25,17 @@ on property:init.svc.vendor.qcamerasvr=running
     exec /bin/sleep 1s
     restart vendor.camera-provider-2-4
 
+# Acdbdata
+service acdbdata-sh /vendor/bin/init.acdbdata.sh
+    class hal
+    user system
+    group system
+    oneshot
+
+on property:persist.vendor.audio.calfile0=*
+    exec /bin/sleep 1s
+    restart vendor.audio-hal
+
 # Baseband
 service baseband-sh /vendor/bin/init.baseband.sh
     class late_start

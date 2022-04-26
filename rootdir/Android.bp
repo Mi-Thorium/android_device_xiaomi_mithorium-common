@@ -77,6 +77,12 @@ prebuilt_etc {
 // Configuration scripts
 
 sh_binary {
+    name: "init.acdbdata.sh",
+    src: "bin/init.acdbdata.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.baseband.sh",
     src: "bin/init.baseband.sh",
     vendor: true,
