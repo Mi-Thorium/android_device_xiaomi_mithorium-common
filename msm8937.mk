@@ -307,6 +307,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
+    init.acdbdata.sh \
     init.class_main.sh \
     init.qcom.sh \
     init.qcom.early_boot.sh \
