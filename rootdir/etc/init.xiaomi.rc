@@ -34,6 +34,8 @@ service baseband-sh /vendor/bin/init.baseband.sh
     disabled
 
 on property:sys.boot_completed=1
+    restart time_daemon
+
  # write caching
     # Tell the kernel to use up to 99% of the RAM as cache for writes
     # and instruct kernel to use up to 50% of RAM before slowing down
