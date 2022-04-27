@@ -267,6 +267,7 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 vendor/bin/msm_irqbalance
 
 # Media
+vendor/etc/seccomp_policy/mediacodec.policy
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libMpeg4SwEncoder.so
