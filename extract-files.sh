@@ -58,6 +58,15 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
+        | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+            sed -i 's|version="2.0"|version="1.0"|g' "${2}"
+            ;;
+    esac
+}
+
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
