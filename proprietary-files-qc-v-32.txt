@@ -33,6 +33,7 @@ vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
+vendor/lib/libhdmipassthru.so
 vendor/lib/libmulawdec.so
 vendor/lib/libqtigef.so
 vendor/lib/libsmwrapper.so
