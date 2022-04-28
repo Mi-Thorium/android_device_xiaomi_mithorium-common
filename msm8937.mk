@@ -61,6 +61,7 @@ endif
 # ANT
 PRODUCT_PACKAGES += \
     AntHalService \
+    com.dsi.ant@1.0.vendor \
     com.dsi.ant.antradio_library
 
 # Device-specific Settings
@@ -92,6 +93,18 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libvolumelistener \
     libtinycompress
+
+PRODUCT_PACKAGES += \
+    liba2dpoffload \
+    libautohal \
+    libbatterylistener \
+    libcirrusspkrprot \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
+    libsndmonitor \
+    libspkrprot
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -150,8 +163,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libdisplayconfig \
+    libgralloc.qti \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
     libgenlock \
     libtinyxml \
     vendor.display.config@1.11.vendor \
@@ -277,6 +291,7 @@ PRODUCT_PACKAGES += \
 
 # Perf
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.2 \
     vendor.qti.hardware.perf@2.2.vendor
 
 # Power
