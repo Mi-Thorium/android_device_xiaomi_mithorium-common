@@ -32,7 +32,6 @@
 
 # Shell Script
 /(vendor|system/vendor)/bin/init\.acdbdata\.sh				u:object_r:init_acdbdata_exec:s0
-/(vendor|system/vendor)/bin/init\.baseband\.sh				u:object_r:init_baseband_exec:s0
 /(vendor|system/vendor)/bin/init\.xiaomi\..*\.sh			u:object_r:init_xiaomi_exec:s0
 
 # Sensors
