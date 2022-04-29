@@ -5,7 +5,7 @@
 //
 
 cc_library_static {
-    name: "libinit_xiaomi_msm8937",
+    name: "libinit_xiaomi_mithorium",
     srcs: [
         "libinit_dalvik_heap.cpp",
         "libinit_utils.cpp",
@@ -17,9 +17,9 @@ cc_library_static {
 }
 
 cc_library_static {
-    name: "init_xiaomi_msm8937",
-    srcs: ["init_xiaomi_msm8937.cpp"],
-    whole_static_libs: ["libinit_xiaomi_msm8937"],
+    name: "init_xiaomi_mithorium",
+    srcs: ["init_xiaomi_mithorium.cpp"],
+    whole_static_libs: ["libinit_xiaomi_mithorium"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }
