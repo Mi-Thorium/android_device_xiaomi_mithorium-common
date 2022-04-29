@@ -28,7 +28,6 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 write_headers "Mi8937 Mi439 Tiare uter vince"
 
 # The standard common blobs
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
 write_makefiles "${MY_DIR}/proprietary-files-qc-sys.txt" true
 write_makefiles "${MY_DIR}/proprietary-files-qc-v.txt" true
 write_makefiles "${MY_DIR}/proprietary-files-qc-v-32.txt" true

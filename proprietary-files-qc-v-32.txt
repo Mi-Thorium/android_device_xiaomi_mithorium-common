@@ -1,4 +1,5 @@
 # All unpinned blobs below are extracted from Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# riva Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
 
 # ADSP
 vendor/lib/libadsprpc.so
@@ -46,6 +47,10 @@ vendor/lib/libthermalclient.so
 
 # Audiosphere
 vendor/lib/soundfx/libasphere.so
+
+# Camera libts - from riva
+-vendor/lib/libts_detected_face_hal.so
+-vendor/lib/libts_face_beautify_hal.so
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so

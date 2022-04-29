@@ -4,39 +4,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-// fstab
-// TODO on S:
-// https://android-review.googlesource.com/c/platform/build/soong/+/1532503
-
-soong_config_module_type {
-    name: "xiaomi_mithorium_rootdir_prebuilt_etc",
-    module_type: "prebuilt_etc",
-    config_namespace: "XIAOMI_MITHORIUM_ROOTDIR",
-    variables: ["VENDOR_PARTITION"],
-    properties: ["src"],
-}
-
-soong_config_string_variable {
-    name: "VENDOR_PARTITION",
-    values: ["cust", "vendor"],
-}
-
-xiaomi_mithorium_rootdir_prebuilt_etc {
-    name: "fstab.qcom",
-    src: "etc/fstab_cust-as-vendor.qcom",
-    soong_config_variables: {
-        VENDOR_PARTITION: {
-            cust: {
-                src: "etc/fstab_cust-as-vendor.qcom",
-            },
-            vendor: {
-                src: "etc/fstab_vendor-as-vendor.qcom",
-            },
-        },
-    },
-    vendor: true,
-}
-
 // Init scripts
 
 prebuilt_etc {
