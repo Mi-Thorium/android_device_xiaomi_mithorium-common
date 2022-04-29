@@ -118,17 +118,6 @@ vendor/firmware/cpp_firmware_v1_5_2.fw
 vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
 
-# Firmware (GPU)
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a506_zap.b00
-vendor/firmware/a506_zap.b01
-vendor/firmware/a506_zap.b02
-vendor/firmware/a506_zap.elf
-vendor/firmware/a506_zap.mdt
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-
 # GNSS
 vendor/bin/loc_launcher
 
