@@ -9,9 +9,9 @@
 // https://android-review.googlesource.com/c/platform/build/soong/+/1532503
 
 soong_config_module_type {
-    name: "xiaomi_msm8937_rootdir_prebuilt_etc",
+    name: "xiaomi_mithorium_rootdir_prebuilt_etc",
     module_type: "prebuilt_etc",
-    config_namespace: "XIAOMI_MSM8937_ROOTDIR",
+    config_namespace: "XIAOMI_MITHORIUM_ROOTDIR",
     variables: ["VENDOR_PARTITION"],
     properties: ["src"],
 }
@@ -21,7 +21,7 @@ soong_config_string_variable {
     values: ["cust", "vendor"],
 }
 
-xiaomi_msm8937_rootdir_prebuilt_etc {
+xiaomi_mithorium_rootdir_prebuilt_etc {
     name: "fstab.qcom",
     src: "etc/fstab_cust-as-vendor.qcom",
     soong_config_variables: {
