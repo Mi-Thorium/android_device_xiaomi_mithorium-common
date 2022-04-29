@@ -1,8 +1,8 @@
 cc_binary {
-    name: "android.hardware.lights-service.xiaomi_msm8937",
+    name: "android.hardware.lights-service.xiaomi_mithorium",
     relative_install_path: "hw",
-    init_rc: ["lights-xiaomi_msm8937.rc"],
-    vintf_fragments: ["lights-xiaomi_msm8937.xml"],
+    init_rc: ["lights-xiaomi_mithorium.rc"],
+    vintf_fragments: ["lights-xiaomi_mithorium.xml"],
     vendor: true,
     shared_libs: [
         "libbase",
