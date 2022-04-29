@@ -21,7 +21,7 @@
 /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin                    u:object_r:wcnss_persist_file:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.xiaomi_msm8937      u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.xiaomi_mithorium      u:object_r:hal_light_default_exec:s0
 
 # Input devices
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:vendor_idc_file:s0

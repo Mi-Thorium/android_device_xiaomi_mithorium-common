@@ -246,7 +246,7 @@ endif
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.xiaomi_msm8937
+    android.hardware.lights-service.xiaomi_mithorium
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -419,4 +419,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)
