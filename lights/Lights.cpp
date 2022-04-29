@@ -20,6 +20,7 @@
 #include <android-base/logging.h>
 #include <fcntl.h>
 
+using ::android::base::ReadFileToString;
 using ::android::base::WriteStringToFile;
 
 namespace aidl {
@@ -38,6 +39,10 @@ static const std::string led_paths[] {
 
 static const std::string kLCDFile = "/sys/class/leds/lcd-backlight/brightness";
 static const std::string kLCDFile2 = "/sys/class/backlight/panel0-backlight/brightness";
+static const std::string kLCDMaxFile = "/sys/class/leds/lcd-backlight/max_brightness";
+static const std::string kLCDMaxFile2 = "/sys/class/backlight/panel0-backlight/max_brightness";
+
+static int LCD_MaxBrightness = 0;
 
 #define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
 
@@ -49,16 +54,25 @@ const static std::vector<HwLight> kAvailableLights = {
 };
 
 Lights::Lights() {
+    std::string tempstr;
+
     mBacklightNode = !access(kLCDFile.c_str(), F_OK) ? kLCDFile : kLCDFile2;
     mWhiteLed = !access((led_paths[WHITE] + "brightness").c_str(), W_OK);
     mBreath = (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "blink").c_str(), W_OK) || !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK));
+
+    ReadFileToString(!access(kLCDFile.c_str(), F_OK) ? kLCDMaxFile : kLCDMaxFile2, &tempstr, true);
+    if (!tempstr.empty()) {
+        LCD_MaxBrightness = std::stoi(tempstr);
+    }
+    if (LCD_MaxBrightness < 255)
+        LCD_MaxBrightness = 255;
 }
 
 // AIDL methods
 ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
     switch (id) {
         case (int)LightType::BACKLIGHT:
-            WriteToFile(mBacklightNode, RgbaToBrightness(state.color));
+            WriteToFile(mBacklightNode, RgbaToBrightness(state.color) * LCD_MaxBrightness / 0xFF);
             break;
         case (int)LightType::BATTERY:
             mBattery = state;
