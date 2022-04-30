@@ -377,11 +377,8 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # Vibrator
-ifneq ($(TARGET_USES_DEVICE_SPECIFIC_VIBRATOR),true)
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
-endif
+    vendor.qti.hardware.vibrator.service
 
 # Whitelisted app
 PRODUCT_COPY_FILES += \
