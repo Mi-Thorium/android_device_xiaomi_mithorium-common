@@ -39,7 +39,7 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     write /proc/sys/vm/swappiness 100
 
-    mount_all /vendor/etc/fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
@@ -81,9 +81,6 @@ on early-boot
 
 #Create folder for mm-qcamera-daemon
     mkdir /data/vendor/camera 0770 camera camera
-
-on late-fs
-    mount_all /vendor/etc/fstab.qcom --late
 
 #start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
