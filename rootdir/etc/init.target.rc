@@ -199,7 +199,6 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
-    disabled
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
