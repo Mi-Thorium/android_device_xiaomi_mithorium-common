@@ -285,13 +285,6 @@ vendor/lib64/libqti-util.so
 
 # Perf configs
 vendor/etc/lm/AdaptLaunchFeature.xml
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
 
 # Peripheral manager
 vendor/bin/pm-proxy
