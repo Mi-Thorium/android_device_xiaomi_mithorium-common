@@ -64,6 +64,9 @@ function blob_fixup() {
         | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
             sed -i 's|version="2.0"|version="1.0"|g' "${2}"
             ;;
+        vendor/lib64/libQmiservices.so | vendor/lib64/libril-qc-hal-qmi.so )
+            sed -i 's|libqmiservices.so|libQmiservices.so|g' "${2}"
+            ;;
     esac
 }
 
