@@ -396,7 +396,6 @@ vendor/lib64/liblqe.so
 vendor/lib64/libqcrilFramework.so
 vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqdp.so
-vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-logger.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsystem_health_mon.so
@@ -431,6 +430,12 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+
+# RIL (QCRILD) - from LA.UM.9.6.3.r1-04400-89xx.0
+vendor/lib64/libqmiservices.so:vendor/lib64/libQmiservices.so
+vendor/lib64/libril-qc-hal-qmi.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
 
 # Sensors
 vendor/bin/sensors.qti
