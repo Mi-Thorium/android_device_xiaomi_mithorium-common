@@ -422,9 +422,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
 # Sensors
-vendor/bin/sensors.qti
 vendor/etc/sensors/hals.conf
-vendor/lib64/libsensor1.so
 
 # Sensors (Activity Recognition)
 vendor/lib64/hw/activity_recognition.msm8937.so
