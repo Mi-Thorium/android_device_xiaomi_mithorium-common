@@ -105,6 +105,3 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_encdec.so
-
-# Sensors
-vendor/lib/libsensor1.so
