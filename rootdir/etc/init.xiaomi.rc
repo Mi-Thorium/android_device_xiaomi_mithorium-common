@@ -47,6 +47,7 @@ service baseband-sh /vendor/bin/init.baseband.sh
 on property:sys.boot_completed=1
     restart time_daemon
 
+on property:ro.vendor.xiaomi.enable_write_caching=1
  # write caching
     # Tell the kernel to use up to 99% of the RAM as cache for writes
     # and instruct kernel to use up to 50% of RAM before slowing down
