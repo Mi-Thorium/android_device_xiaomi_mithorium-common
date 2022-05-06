@@ -75,4 +75,7 @@ void set_dalvik_heap() {
     property_override(HEAPTARGETUTILIZATION_PROP, dhi->heaptargetutilization);
     property_override(HEAPMINFREE_PROP, dhi->heapminfree);
     property_override(HEAPMAXFREE_PROP, dhi->heapmaxfree);
+
+    if (sys.totalram > GB(1))
+        property_override("ro.vendor.xiaomi.enable_write_caching", "1");
 }
