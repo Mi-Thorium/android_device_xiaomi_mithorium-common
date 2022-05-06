@@ -6,6 +6,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Wanna decommonize trees for better stability or performance?
+# Just moving stuff among trees won't make any difference, lol
 ifneq ($(filter Mi8937 Mi439 Tiare uter vince,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
