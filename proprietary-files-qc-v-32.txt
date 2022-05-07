@@ -16,6 +16,7 @@ vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Audio
+#vendor/lib/libssrec.so
 vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libacdb-fts.so
@@ -38,7 +39,6 @@ vendor/lib/libhdmipassthru.so
 vendor/lib/libmulawdec.so
 vendor/lib/libqtigef.so
 vendor/lib/libsmwrapper.so
-vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libthermalclient.so
 
