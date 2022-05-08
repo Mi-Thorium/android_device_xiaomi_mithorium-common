@@ -412,6 +412,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+ifeq ($(ROM),cipher)
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/commonsys/display \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display
+endif
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
