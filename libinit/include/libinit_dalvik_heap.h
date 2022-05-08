@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef LIBINIT_DALVIK_HEAP_H
-#define LIBINIT_DALVIK_HEAP_H
+#pragma once
 
 #include <string>
 
@@ -19,5 +18,3 @@ typedef struct dalvik_heap_info {
 } dalvik_heap_info_t;
 
 void set_dalvik_heap(void);
-
-#endif // LIBINIT_DALVIK_HEAP_H
