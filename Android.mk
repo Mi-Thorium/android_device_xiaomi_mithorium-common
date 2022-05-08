@@ -120,4 +120,16 @@ $(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS)
 
+ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
+ST_LIBS := sound_trigger.primary.msm8953.so
+ST_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib/hw/,$(notdir $(ST_LIBS)))
+$(ST_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "sound_trigger lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /vendor/lib/hw/sound_trigger.primary.msm8937.so $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(ST_SYMLINKS)
+endif
+
 endif
