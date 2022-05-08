@@ -21,48 +21,64 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-# Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        --only-common )
+                ONLY_COMMON=true
+                ;;
+        --only-target )
+                ONLY_TARGET=true
+                ;;
+    esac
+    shift
+done
 
-# Warning headers and guards
-write_headers "Mi8937 Mi439 Tiare uter vince"
-
-# The standard common blobs
-write_makefiles "${MY_DIR}/proprietary-files-qc-sys.txt" true
-write_makefiles "${MY_DIR}/proprietary-files-qc-v.txt" true
-write_makefiles "${MY_DIR}/proprietary-files-qc-v-32.txt" true
-
-# Finish
-write_footers
-
-if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
+if [ -z "$ONLY_TARGET" ]; then
+    # Initialize the helper for common
+    setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
     # Warning headers and guards
-    write_headers
+    write_headers "Mi8937 Mi439 Tiare uter vince"
 
-    # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
+    # The standard common blobs
+    write_makefiles "${MY_DIR}/proprietary-files-qc-sys.txt" true
+    write_makefiles "${MY_DIR}/proprietary-files-qc-v.txt" true
+    write_makefiles "${MY_DIR}/proprietary-files-qc-v-32.txt" true
 
     # Finish
     write_footers
 fi
 
-if [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
-    # Workaround: Define $DEVICE
-    export DEVICE="${DEVICE_SPECIFIED_COMMON}"
-    export DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
+if [ -z "$ONLY_COMMON" ]; then
+    if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
+        # Reinitialize the helper for device
+        setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
-    # Reinitialize the helper for device specified common
-    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+        # Warning headers and guards
+        write_headers
 
-    # Warning headers and guards
-    write_headers "$DEVICE_SPECIFIED_COMMON_DEVICE"
+        # The standard device blobs
+        write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
 
-    # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
+        # Finish
+        write_footers
+    fi
 
-    # Finish
-    write_footers
+    if [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
+        # Workaround: Define $DEVICE
+        export DEVICE="${DEVICE_SPECIFIED_COMMON}"
+        export DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
+
+        # Reinitialize the helper for device specified common
+        setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+
+        # Warning headers and guards
+        write_headers "$DEVICE_SPECIFIED_COMMON_DEVICE"
+
+        # The standard device blobs
+        write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
+
+        # Finish
+        write_footers
+    fi
 fi
