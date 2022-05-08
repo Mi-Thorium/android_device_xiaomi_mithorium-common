@@ -29,13 +29,17 @@ ONLY_TARGET=
 KANG=
 SECTION=
 
+SETUP_MAKEFILES_ARGS=
+
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
         --only-common )
                 ONLY_COMMON=true
+                SETUP_MAKEFILES_ARGS+=" ${1}"
                 ;;
         --only-target )
                 ONLY_TARGET=true
+                SETUP_MAKEFILES_ARGS+=" ${1}"
                 ;;
         -n | --no-cleanup )
                 CLEAN_VENDOR=false
@@ -92,4 +96,4 @@ if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/prop
     extract "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
-"${MY_DIR}/setup-makefiles.sh"
+"${MY_DIR}/setup-makefiles.sh" ${SETUP_MAKEFILES_ARGS}
