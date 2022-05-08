@@ -420,6 +420,11 @@ MITHORIUM_PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/commonsys/display \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display
+
 # Telephony
 MITHORIUM_PRODUCT_PACKAGES += \
     ims-ext-common \
