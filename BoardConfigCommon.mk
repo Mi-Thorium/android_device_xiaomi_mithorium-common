@@ -170,6 +170,9 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 ifeq (true,$(call math_lt,$(PRODUCT_SHIPPING_API_LEVEL),28))
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/legacy/vendor
 endif
+ifeq ($(ROM),cipher)
+SELINUX_IGNORE_NEVERALLOWS := true
+endif
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
