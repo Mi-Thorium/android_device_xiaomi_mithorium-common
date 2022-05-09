@@ -45,12 +45,15 @@ static const std::string kLCDMaxFile2 = "/sys/class/backlight/panel0-backlight/m
 static int LCD_MaxBrightness = 0;
 static bool LED_UseRedAsWhite = false;
 
+static const std::string kButtonFile = "/sys/class/leds/button-backlight/brightness";
+
 #define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
 
 // List of supported lights
 const static std::vector<HwLight> kAvailableLights = {
     AutoHwLight(LightType::BACKLIGHT),
     AutoHwLight(LightType::BATTERY),
+    AutoHwLight(LightType::BUTTONS),
     AutoHwLight(LightType::NOTIFICATIONS)
 };
 
@@ -58,6 +61,7 @@ Lights::Lights() {
     std::string tempstr;
 
     mBacklightNode = !access(kLCDFile.c_str(), F_OK) ? kLCDFile : kLCDFile2;
+    mButtonExists = !access(kButtonFile.c_str(), F_OK);
     mWhiteLed = !!access((led_paths[GREEN] + "brightness").c_str(), W_OK);
     LED_UseRedAsWhite = mWhiteLed && !access((led_paths[RED] + "brightness").c_str(), F_OK);
     if (LED_UseRedAsWhite)
@@ -82,6 +86,10 @@ ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
         case (int)LightType::BATTERY:
             mBattery = state;
             handleSpeakerBatteryLocked();
+            break;
+        case (int)LightType::BUTTONS:
+            if (mButtonExists)
+                WriteToFile(kButtonFile, state.color & 0xFF);
             break;
         case (int)LightType::NOTIFICATIONS:
             mNotification = state;
