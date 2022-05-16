@@ -136,7 +136,7 @@ system_ext/lib64/vendor.qti.gnss@4.0.so
 # Perf
 system/framework/QPerformance.jar
 system/framework/UxPerformance.jar
--system_ext/app/workloadclassifier/workloadclassifier.apk
+#-system_ext/app/workloadclassifier/workloadclassifier.apk
 system_ext/bin/perfservice
 system_ext/etc/init/perfservice.rc
 system_ext/etc/seccomp_policy/perfservice.policy
