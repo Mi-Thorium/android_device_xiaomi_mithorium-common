@@ -84,6 +84,9 @@ $(WCNSS_INI_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /vendor/etc/wifi/$(notdir $@) $@
 
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK)
+
+ifneq ($(TARGET_DEVICE),oxygen)
 WCNSS_BIN_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 $(WCNSS_BIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS bin link: $@"
@@ -98,7 +101,8 @@ $(WCNSS_DAT_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /mnt/vendor/persist/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_BIN_SYMLINK) $(WCNSS_DAT_SYMLINK)
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_BIN_SYMLINK) $(WCNSS_DAT_SYMLINK)
+endif
 
 ifneq ($(TARGET_DEVICE),Mi439)
 WCNSS_MAC_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/wlan_mac.bin
