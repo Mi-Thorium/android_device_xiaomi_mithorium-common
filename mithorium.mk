@@ -454,6 +454,9 @@ $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.m
 # ih8sn
 $(call inherit-product-if-exists, ih8sn/ih8sn.mk)
 
+# ringtones
+$(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
+
 # Inherit private extras
 USE_EXTRAS := true
 $(call inherit-product-if-exists, vendor/extras/product.mk)
