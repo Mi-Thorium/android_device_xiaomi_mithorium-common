@@ -10,7 +10,8 @@ TARGET_BOARD_PLATFORM ?= msm8937
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.activity_recognition=msm8937 \
-    ro.hardware.sound_trigger=msm8937
+    ro.hardware.sound_trigger=msm8937 \
+    vendor.opengles.version=196610
 endif
 
 # Overlays
