@@ -499,3 +499,4 @@ endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+PRODUCT_EXCLUDE_IH8SN := true
