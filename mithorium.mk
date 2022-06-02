@@ -491,3 +491,4 @@ $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.m
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+PRODUCT_EXCLUDE_IH8SN := true
