@@ -504,6 +504,7 @@ endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+PRODUCT_EXCLUDE_IH8SN := true
 
 # CipherOS
 TARGET_FACE_UNLOCK_SUPPORTED := true
