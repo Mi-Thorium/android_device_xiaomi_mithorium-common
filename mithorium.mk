@@ -499,6 +499,7 @@ endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+PRODUCT_EXCLUDE_IH8SN := true
 
 # Inherit extra if exists
 $(call inherit-product-if-exists, vendor/extra/product.mk)
