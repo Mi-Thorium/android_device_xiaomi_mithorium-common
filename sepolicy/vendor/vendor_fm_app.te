@@ -1,0 +1,4 @@
+typeattribute vendor_fm_app system_writes_vendor_properties_violators;
+
+get_prop(vendor_fm_app, vendor_fm_prop);
+set_prop(vendor_fm_app, vendor_fm_prop);
