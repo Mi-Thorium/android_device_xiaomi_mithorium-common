@@ -485,3 +485,13 @@ $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.m
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+
+# ROM - Awaken
+ifeq ($(ROM),awaken)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-awaken
+
+USE_PIXEL_CHARGER := true
+
+#USE_GAPPS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+endif
