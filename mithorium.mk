@@ -490,6 +490,9 @@ EXTRA_DEVICE_BRACKET := low-end
 ifeq ($(ROM),awaken)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-awaken
 
+PRODUCT_PACKAGES += \
+    RemoveVelvet
+
 USE_PIXEL_CHARGER := true
 
 #USE_GAPPS := true

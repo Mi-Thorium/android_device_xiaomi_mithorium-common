@@ -10,6 +10,17 @@ LOCAL_PATH := $(call my-dir)
 # Just moving stuff among trees won't make any difference, lol
 ifneq ($(filter Mi8937 Mi439 Tiare oxygen uter vince,$(TARGET_DEVICE)),)
 
+ifeq ($(ROM),awaken)
+include $(CLEAR_VARS)
+LOCAL_MODULE := RemoveVelvet
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)
+LOCAL_SRC_FILES := README.md
+LOCAL_OVERRIDES_MODULES := Velvet
+include $(BUILD_PREBUILT)
+endif
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
