@@ -518,4 +518,7 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_SUPPORTS_NOW_PLAYING := false
 # Pixel charger animation
 USE_PIXEL_CHARGER_IMAGES := true
+
+PRODUCT_PACKAGES += \
+    RemoveVelvet
 endif
