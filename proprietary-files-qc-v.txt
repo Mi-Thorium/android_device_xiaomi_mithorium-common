@@ -413,11 +413,12 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
-# RIL (QCRILD) - from LA.UM.9.6.3.r1-04400-89xx.0
+# RIL (QCRILD) - from LA.UM.9.6.3.r1-06200-89xx.0
 vendor/lib64/libqmiservices.so:vendor/lib64/libQmiservices.so
 vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.2.so
 
 # Sensors
 vendor/etc/sensors/hals.conf
