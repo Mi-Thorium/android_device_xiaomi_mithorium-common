@@ -1,3 +1,6 @@
+# Baseband
+vendor_public_prop(baseband_prop);
+
 # Dirac
 vendor_public_prop(dirac_prop);
 
