@@ -56,7 +56,6 @@
             Id="0x00001331" Enable="true" Timeout="0" Target="qm215"
             Resources="0x41820000, 0xa, 0x40c68100, 0xfffffffa, 0x40c68110, 0xfffffffa, 0x40c68120, 0xfffffffa,
             0x40c68130, 0xfffffffa, 0x41440100, 0x5f, 0x4143c100, 0x3e6"/>
-    </Powerhint>
 
 <!-- LA.UM.9.6.3.r1-06200-89xx.0 config/msm8953/powerhint.xml -->
  <!-- camera 30fps and camera preview -->
@@ -71,7 +70,6 @@
             Id="0x00001331" Enable="true" Timeout="0" Target="msm8953"
             Resources="0x41820000, 0xa, 0x40c68100, 0xfffffffa, 0x40c68110, 0xfffffffa, 0x40c68120, 0xfffffffa,
             0x40c68130, 0xfffffffa, 0x41440100, 0x5f, 0x4143c100, 0x40c"/>
-    </Powerhint>
 
 <!-- LA.UM.9.6.3.r1-01200-89xx.0 config/msm8937/powerhint.xml -->
  <!-- camera 30fps and camera preview -->
@@ -86,6 +84,7 @@
             Id="0x00001331" Enable="true" Timeout="0" Target="msm8937"
             Resources="0x41820000, 0xa, 0x40c68100, 0xfffffffa, 0x40c68110, 0xfffffffa, 0x40c68120, 0xfffffffa,
             0x40c68130, 0xfffffffa, 0x41440100, 0x5f, 0x4143c100, 0x3e6"/>
+
     </Powerhint>
 
 </HintConfigs>
