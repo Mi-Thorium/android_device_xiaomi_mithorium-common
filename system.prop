@@ -161,5 +161,10 @@ ro.vendor.qti.va_aosp.support=1
 # fastbootd
 ro.fastbootd.available=true
 
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
 # System
 persist.sys.binary_xml=false
