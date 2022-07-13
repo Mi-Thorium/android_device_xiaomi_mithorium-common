@@ -407,8 +407,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 ifeq ($(ROM),arcana)
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/display
 endif
 

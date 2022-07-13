@@ -151,6 +151,7 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_ENFORCES_QSSI := true
 ifeq ($(ROM),arcana)
 OVERRIDE_QCOM_HARDWARE_VARIANT := msm8996-R
+TARGET_USES_UM_4_19 := true
 endif
 
 # Properties
