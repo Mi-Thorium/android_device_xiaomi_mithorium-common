@@ -149,6 +149,9 @@ TARGET_USES_INTERACTION_BOOST := true
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_ENFORCES_QSSI := true
+ifeq ($(ROM),arcana)
+OVERRIDE_QCOM_HARDWARE_VARIANT := msm8996-R
+endif
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
