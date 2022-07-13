@@ -492,3 +492,30 @@ $(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
 # Inherit private extras
 USE_EXTRAS := true
 $(call inherit-product-if-exists, vendor/extras/product.mk)
+
+# ROM - Arcana
+ifeq ($(ROM),arcana)
+# pixel build flag, if not define build type is vanilla
+WITH_GAPPS := false
+# disable/enable blur support, default is false
+TARGET_SUPPORTS_BLUR := false
+# prebuilt graphene camera flag, default is false
+TARGET_BUILD_GRAPHENEOS_CAMERA := true
+# whether to copy apns-conf.xml to system
+# (for devices having issues with TelephonyProvider: FileNotFoundException)
+# default is false (product)
+COPY_APN_SYSTEM := false
+# Misc flags to enable certain features
+# UDFPS ICONS/ANIMATIONS
+EXTRA_UDFPS_ANIMATIONS := false
+# Quick tap feature
+TARGET_SUPPORTS_QUICK_TAP := false
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+# Bloom and Living Universe Pixel Wallpapers
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+# Pixel Now playing feature
+TARGET_SUPPORTS_NOW_PLAYING := false
+# Pixel charger animation
+USE_PIXEL_CHARGER_IMAGES := true
+endif
