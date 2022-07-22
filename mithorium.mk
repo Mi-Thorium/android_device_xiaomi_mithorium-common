@@ -483,12 +483,5 @@ endif
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)
 
-# ih8sn
-$(call inherit-product-if-exists, ih8sn/ih8sn.mk)
-
-# ringtones
-$(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
-
-# Inherit private extras
-USE_EXTRAS := true
-$(call inherit-product-if-exists, vendor/extras/product.mk)
+# Extra
+EXTRA_DEVICE_BRACKET := low-end

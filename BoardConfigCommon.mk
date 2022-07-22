@@ -193,6 +193,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
-
-# Inherit private extras
--include vendor/extras/board.mk
