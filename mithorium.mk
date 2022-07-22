@@ -459,3 +459,6 @@ endif
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)
+
+# Extra
+EXTRA_DEVICE_BRACKET := low-end
