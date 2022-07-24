@@ -144,7 +144,11 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
+ifeq ($(USE_MITHORIUM_HALS),true)
+QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)
+else
 TARGET_ENFORCE_QSSI := true
+endif
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
