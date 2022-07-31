@@ -7,6 +7,12 @@ persist.vendor.camera.     u:object_r:camera_prop:s0
 ctl.vendor.imsrcsd         u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
 
 # Camera
+camera.clientName			u:object_r:camera_prop:s0
+camera.client.				u:object_r:camera_prop:s0
+camera.cpp.				u:object_r:camera_prop:s0
+camera.debug.				u:object_r:camera_prop:s0
+camera.llvd.preview.disable		u:object_r:camera_prop:s0
+camera.otp.filename			u:object_r:camera_prop:s0
 vendor.camera.lowpower.record.enable	u:object_r:camera_prop:s0
 
 # Dirac
