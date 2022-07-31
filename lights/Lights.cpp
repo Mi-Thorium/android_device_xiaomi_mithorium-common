@@ -63,7 +63,11 @@ Lights::Lights() {
     mBacklightNode = !access(kLCDFile.c_str(), F_OK) ? kLCDFile : kLCDFile2;
     mButtonExists = !access(kButtonFile.c_str(), F_OK);
     mWhiteLed = !!access((led_paths[GREEN] + "brightness").c_str(), W_OK);
-    mBreath = (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "blink").c_str(), W_OK) || !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK));
+    LED_UseRedAsWhite = mWhiteLed && !access((led_paths[RED] + "brightness").c_str(), F_OK);
+    if (LED_UseRedAsWhite)
+        mBreath = (!access(((LED_UseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "blink").c_str(), W_OK) || !access(((LED_UseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "breath").c_str(), W_OK));
+    else
+        mBreath = (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "blink").c_str(), W_OK) || !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK));
 
     ReadFileToString(!access(kLCDFile.c_str(), F_OK) ? kLCDMaxFile : kLCDMaxFile2, &tempstr, true);
     if (!tempstr.empty()) {
@@ -71,12 +75,6 @@ Lights::Lights() {
     }
     if (LCD_MaxBrightness < 255)
         LCD_MaxBrightness = 255;
-
-    if (mWhiteLed) {
-        if (!access((led_paths[RED] + "brightness").c_str(), F_OK)) {
-            LED_UseRedAsWhite = true;
-        }
-    }
 }
 
 // AIDL methods
