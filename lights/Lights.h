@@ -16,6 +16,8 @@
 
 #pragma once
 
+#define LOG_TAG "lights-xiaomi_mithorium"
+
 #include <aidl/android/hardware/light/BnLights.h>
 
 namespace aidl {
