@@ -1,4 +1,5 @@
 # All unpinned blobs below are extracted from Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# sweet Package version: Redmi/sweet_global/sweet:12/SKQ1.210908.001/V13.0.3.0.SKFMIXM:user/release-keys
 
 # Audiosphere
 system_ext/etc/permissions/audiosphere.xml
@@ -90,11 +91,8 @@ system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so
 system_ext/lib64/lib-imscamera.so
-system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
-system_ext/lib64/lib-imsvtutils.so
-system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.hardware.radio.ims@1.0.so
 system_ext/lib64/vendor.qti.hardware.radio.ims@1.1.so
@@ -114,6 +112,11 @@ system_ext/lib64/vendor.qti.ims.rcsconfig@2.1.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 -system_ext/priv-app/ims/ims.apk
+
+# IMS - from sweet
+system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/libimscamera_jni.so
 
 # Location
 system_ext/etc/permissions/com.qti.location.sdk.xml
@@ -164,9 +167,6 @@ system_ext/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
 
 # Telephony (ATFWD)
 -system_ext/app/atfwd/atfwd.apk
-
-# Telephony (datastatusnotification)
--system_ext/app/datastatusnotification/datastatusnotification.apk
 
 # Telephony (DeviceInfo)
 -system_ext/app/DeviceInfo/DeviceInfo.apk

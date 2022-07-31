@@ -1,3 +1,9 @@
+# Bluetooth
+persist.vendor.bt.enable.splita2dp=false
+
+# Charger
+ro.charger.disable_init_blank=true
+
 #
 # from device/qcom/T89571AA3/system.prop
 #
@@ -108,9 +114,6 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=2048
 
-# set cutoff voltage to 3200mV
-ro.cutoff_voltage_mv=3200
-
 #set cutoff voltage to 3400mV
 ro.cutoff_voltage_mv=3400
 
@@ -162,3 +165,6 @@ ro.fastbootd.available=true
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
+
+# System
+persist.sys.binary_xml=false

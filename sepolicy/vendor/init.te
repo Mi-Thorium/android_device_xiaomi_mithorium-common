@@ -1,10 +1,10 @@
 allow init proc_boot_reason:file r_file_perms;
 
+# Baseband
+get_prop(init, baseband_prop);
+
 # Firmware
 allow init firmware_file:filesystem getattr;
 
 # LED
 allow init sysfs_leds:lnk_file r_file_perms;
-
-# Prop
-get_prop(init, vendor_xiaomi_prop)

@@ -1,8 +1,5 @@
-# Bpf
-ro.kernel.ebpf.supported=1
-
-# Charger
-ro.charger.disable_init_blank=true
+# Camera
+persist.vendor.camera.HAL3.enabled=1
 
 # Display
 debug.sf.enable_hwc_vds=1
@@ -37,7 +34,6 @@ persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.hw.binder.size_kbyte=1024
 persist.vendor.audio.speaker.prot.enable=false
-persist.vendor.bt.enable.splita2dp=false
 persist.vendor.dpmhalservice.enable=1
 persist.vendor.qcom.bluetooth.enable.splita2dp=false
 persist.vendor.qcom.bluetooth.soc=pronto

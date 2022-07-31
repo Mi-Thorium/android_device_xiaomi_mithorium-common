@@ -1,5 +1,8 @@
+# Baseband
+vendor_public_prop(baseband_prop);
+
 # Dirac
-type dirac_prop, property_type;
+vendor_public_prop(dirac_prop);
 
 # Xiaomi
-type vendor_xiaomi_prop, property_type;
+vendor_public_prop(vendor_xiaomi_prop);
