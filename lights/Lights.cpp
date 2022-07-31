@@ -75,6 +75,13 @@ Lights::Lights() {
     }
     if (LCD_MaxBrightness < 255)
         LCD_MaxBrightness = 255;
+
+    LOG(INFO) << "mBacklightNode = " << mBacklightNode ;
+    LOG(INFO) << "mButtonExists = " << (mButtonExists ? "True" : "False") ;
+    LOG(INFO) << "mWhiteLed = " << (mWhiteLed ? "True" : "False") ;
+    LOG(INFO) << "mBreath = " << (mBreath ? "True" : "False") ;
+    LOG(INFO) << "LCD_MaxBrightness = " << std::to_string(LCD_MaxBrightness) ;
+    LOG(INFO) << "LED_UseRedAsWhite = " << (LED_UseRedAsWhite ? "True" : "False") ;
 }
 
 // AIDL methods
