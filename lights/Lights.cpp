@@ -177,7 +177,7 @@ void Lights::handleSpeakerBatteryLocked() {
 }
 
 bool Lights::setLedBreath(led_type led, uint32_t value) {
-    if (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK))
+    if (!access((led_paths[led] + "breath").c_str(), W_OK))
         return WriteToFile(led_paths[led] + "breath", value);
     else
         return WriteToFile(led_paths[led] + "blink", value);
