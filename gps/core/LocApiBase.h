@@ -92,7 +92,8 @@ public:
     inline LocApiProxyBase() {}
     inline virtual ~LocApiProxyBase() {}
     inline virtual void* getSibling2() { return NULL; }
-    inline virtual double getGloRfLoss()
+    inline virtual double getGloRfLoss(uint32_t left,
+            uint32_t center, uint32_t right, uint8_t gloFrequency)
                                        { return 0.0; }
 };
 
