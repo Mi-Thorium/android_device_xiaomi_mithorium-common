@@ -1,4 +1,4 @@
-typeattribute netmgrd ve
+
 
 set_prop(netmgrd, vendor_xlat_prop)
 
