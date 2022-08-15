@@ -1,2 +1,2 @@
 # Power-off Alarm
-user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=app_data_file levelFrom=all
+#user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=app_data_file levelFrom=all
