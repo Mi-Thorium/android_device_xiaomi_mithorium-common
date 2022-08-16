@@ -89,7 +89,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1-impl
 
 MITHORIUM_PRODUCT_PACKAGES += \
-    audio.a2dp.default \
     audio.bluetooth.default \
     audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.r_submix.default \
