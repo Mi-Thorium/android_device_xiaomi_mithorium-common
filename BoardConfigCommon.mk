@@ -123,9 +123,6 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_k$(TARGET_KERNEL_VERSION).xml
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/consumerir.xml
 endif
-ifneq ($(TARGET_EXCLUDE_CRYPTFSHW),true)
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/cryptfshw.xml
-endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 endif
@@ -133,11 +130,6 @@ ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
 endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-
-# HW crypto
-ifneq ($(TARGET_EXCLUDE_CRYPTFSHW),true)
-TARGET_HW_DISK_ENCRYPTION := true
-endif
 
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_mithorium
