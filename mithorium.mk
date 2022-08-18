@@ -153,10 +153,6 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service
 endif
 
-# Device-specific Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
