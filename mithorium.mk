@@ -73,26 +73,26 @@ PRODUCT_COPY_FILES += \
 endif
 
 # ANT
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
 
 # Audio
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.1-impl
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.r_submix.default \
     audio.usb.default
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libaudiopreprocessing \
     libaudioroute \
     libaacwrapper \
@@ -103,7 +103,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     libtinycompress
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     liba2dpoffload \
     libautohal \
     libbatterylistener \
@@ -129,48 +129,48 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Camera
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.$(TARGET_BOARD_PLATFORM) \
     libmm-qcamera
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
 
 # Consumer IR
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 endif
 
 # Display
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     gralloc.$(TARGET_BOARD_PLATFORM)
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     hwcomposer.$(TARGET_BOARD_PLATFORM)
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     memtrack.$(TARGET_BOARD_PLATFORM)
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgralloc.qti \
     liboverlay \
@@ -181,28 +181,28 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0.vendor
 
 # DPM
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libshim_dpmframework
 
 # DRM
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.4.vendor
 
 # Fastbootd
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
 # Gatekeeper HAL
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0.vendor
@@ -211,30 +211,30 @@ endif
 # GPS / Location
 include $(LOCAL_PATH)/gps/gps_vendor_product.mk
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.gnss@1.2.vendor \
     android.hardware.gnss@2.1.vendor \
     android.hardware.gnss@3.0.vendor
 
 # Health
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
 # HIDL
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
     android.hidl.manager@1.0
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
 
 # IMS
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.3 \
     android.hardware.camera.device@3.4 \
     android.hardware.camera.device@3.5 \
@@ -246,7 +246,7 @@ PRODUCT_PACKAGES += \
 
 # HW crypto
 ifneq ($(TARGET_EXCLUDE_CRYPTFSHW),true)
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
 endif
 
@@ -255,24 +255,24 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
 
 # IPACM
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
 # Keymaster HAL
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service \
     android.hardware.keymaster@3.0.vendor
 endif
 
 # Lights
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.lights-service.xiaomi_mithorium
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
@@ -314,14 +314,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
-PRODUCT_PACKAGES += libavservices_minijail.vendor
+MITHORIUM_PRODUCT_PACKAGES += libavservices_minijail.vendor
 
 # MSM IRQ Balancer
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # OMX
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
     libOmxAacEnc \
@@ -336,16 +336,16 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Network
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
 
 # Perf
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
     vendor.qti.hardware.perf@2.2.vendor
 
 # Power
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti
 
@@ -356,7 +356,7 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # QMI
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     libjson \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
@@ -367,7 +367,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Ramdisk
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
@@ -376,7 +376,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.qcom.sh \
     init.qcom.early_boot.sh \
@@ -386,7 +386,7 @@ PRODUCT_PACKAGES += \
     init.qti.qseecomd.sh
 
 # RIL
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
@@ -399,7 +399,7 @@ PRODUCT_PACKAGES += \
     libxml2
 
 # Sensors
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
@@ -409,7 +409,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Telephony
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -426,19 +426,19 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti.xiaomi_mithorium
 
 # Trust HAL
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
 # USB HAL
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # Tethering
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # Vibrator
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
 # Whitelisted app
@@ -448,7 +448,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 
 # Wifi
-PRODUCT_PACKAGES += \
+MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcld80211 \
     libQWiFiSoftApCfg \
@@ -462,7 +462,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
-PRODUCT_PACKAGES += WifiOverlay_5GHz
+MITHORIUM_PRODUCT_PACKAGES += WifiOverlay_5GHz
 endif
 
 PRODUCT_COPY_FILES += \
@@ -480,3 +480,6 @@ $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.m
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+
+# Build MITHORIUM_PRODUCT_PACKAGES
+PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
