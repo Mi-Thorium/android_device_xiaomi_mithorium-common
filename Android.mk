@@ -10,6 +10,7 @@ LOCAL_PATH := $(call my-dir)
 # Just moving stuff among trees won't make any difference, lol
 ifneq ($(filter MiThoriumSSI Mi8937 Mi439 Tiare oxygen uter vince,$(TARGET_DEVICE)),)
 
+include $(LOCAL_PATH)/AndroidKernel.mk
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
