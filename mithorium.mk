@@ -447,7 +447,13 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/qcom-caf/msm8953 \
+    vendor/qcom/opensource/commonsys/display \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display \
+    vendor/qcom/opensource/data-ipa-cfg-mgr \
+    vendor/qcom/opensource/dataservices
 
 # Telephony
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -512,6 +518,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_$(TARGET_BOARD_PLATFORM).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+PRODUCT_CFI_INCLUDE_PATHS += \
+    hardware/qcom-caf/wlan/qcwcn/wpa_supplicant_8_lib
 
 # Build MITHORIUM_PRODUCT_PACKAGES
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
