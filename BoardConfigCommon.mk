@@ -206,6 +206,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
 
 # Qualcomm platform configurations
+include $(COMMON_PATH)/qcom/utils.mk
 include $(COMMON_PATH)/qcom/pathmap.mk
 include $(COMMON_PATH)/qcom/qcom_boards.mk
 include $(COMMON_PATH)/qcom/BoardConfigQcom.mk
