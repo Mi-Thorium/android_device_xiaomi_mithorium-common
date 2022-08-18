@@ -217,6 +217,7 @@ include vendor/xiaomi/mithorium-common-4.19/BoardConfigVendor.mk
 endif
 
 # Qualcomm platform configurations
+include $(COMMON_PATH)/qcom/utils.mk
 include $(COMMON_PATH)/qcom/pathmap.mk
 include $(COMMON_PATH)/qcom/qcom_boards.mk
 include $(COMMON_PATH)/qcom/BoardConfigQcom.mk
