@@ -270,12 +270,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libshim_imscamera \
     vendor.qti.hardware.camera.device@1.0
 
-# HW crypto
-ifneq ($(TARGET_EXCLUDE_CRYPTFSHW),true)
-MITHORIUM_PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
-endif
-
 # Input
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
