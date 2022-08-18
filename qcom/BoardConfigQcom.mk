@@ -144,29 +144,3 @@ endif
 
 # Allow a device to opt-out hardset of PRODUCT_SOONG_NAMESPACES
 QCOM_SOONG_NAMESPACE ?= hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
-PRODUCT_SOONG_NAMESPACES += $(QCOM_SOONG_NAMESPACE)
-
-# Add display-commonsys to PRODUCT_SOONG_NAMESPACES for QSSI supported platforms
-ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/commonsys-intf/display \
-    vendor/qcom/opensource/display
-endif
-
-# Add data-ipa-cfg-mgr to PRODUCT_SOONG_NAMESPACES if needed
-ifneq ($(USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR),true)
-    PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr
-endif
-
-# Add dataservices to PRODUCT_SOONG_NAMESPACES if needed
-ifneq ($(USE_DEVICE_SPECIFIC_DATASERVICES),true)
-    PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/dataservices
-endif
-
-ifeq ($(TARGET_USE_QTI_BT_STACK),true)
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
-    vendor/qcom/opensource/commonsys/system/bt/conf \
-    vendor/qcom/opensource/commonsys/system/bt/main
-endif #TARGET_USE_QTI_BT_STACK
