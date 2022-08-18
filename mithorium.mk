@@ -195,10 +195,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service
 endif
 
-# Device-specific Settings
-MITHORIUM_PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Display
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 MITHORIUM_PRODUCT_PACKAGES += \
