@@ -215,3 +215,9 @@ include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
 else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 include vendor/xiaomi/mithorium-common-4.19/BoardConfigVendor.mk
 endif
+
+# Qualcomm platform configurations
+include $(COMMON_PATH)/qcom/pathmap.mk
+include $(COMMON_PATH)/qcom/qcom_boards.mk
+include $(COMMON_PATH)/qcom/BoardConfigQcom.mk
+include $(COMMON_PATH)/qcom/qcom_target.mk
