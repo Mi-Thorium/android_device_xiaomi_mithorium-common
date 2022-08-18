@@ -311,9 +311,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
 
-MITHORIUM_PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # HIDL
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -364,12 +361,6 @@ endif
 # Lights
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.lights-service.xiaomi_mithorium
-
-# LiveDisplay
-MITHORIUM_PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay-service.sdm
-
-$(call soong_config_set,livedisplay_sdm,enable_dm,false)
 
 # Media
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
