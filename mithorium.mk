@@ -130,7 +130,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 MITHORIUM_PRODUCT_PACKAGES += \
     liba2dpoffload \
-    libautohal \
     libbatterylistener \
     libcirrusspkrprot \
     libcomprcapture \
@@ -164,12 +163,12 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    camera.$(TARGET_BOARD_PLATFORM) \
-    libmm-qcamera
+    android.hardware.camera.provider@2.4-service
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
+
+PRODUCT_PACKAGES += camera.$(TARGET_BOARD_PLATFORM)
 
 # Consumer IR
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
@@ -198,16 +197,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgralloc.qti \
-    liboverlay \
     libqdMetaData \
-    libgenlock \
     libtinyxml \
     vendor.display.config@1.11.vendor \
     vendor.display.config@2.0.vendor
-
-# DPM
-MITHORIUM_PRODUCT_PACKAGES += \
-    libshim_dpmframework
 
 # DRM
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -232,9 +225,7 @@ endif
 include $(LOCAL_PATH)/gps/gps_vendor_product.mk
 
 MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.2.vendor \
-    android.hardware.gnss@2.1.vendor \
-    android.hardware.gnss@3.0.vendor
+    android.hardware.gnss@2.1.vendor
 
 # Health
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -346,7 +337,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
@@ -411,7 +401,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor \
     librmnetctl \
-    libcnefeatureconfig \
     libxml2
 
 # Sensors
@@ -469,11 +458,9 @@ PRODUCT_COPY_FILES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcld80211 \
-    libQWiFiSoftApCfg \
     libwifi-hal-ctrl \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wificond \
     WifiOverlay \
     wpa_supplicant \
