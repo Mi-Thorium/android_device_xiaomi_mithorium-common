@@ -64,6 +64,9 @@ cc_library_shared {
     shared_libs: [
         "libgui_vendor",
     ],
+    include_dirs: [
+        "frameworks/native/include",
+    ],
 }
 
 // libshim_camera
