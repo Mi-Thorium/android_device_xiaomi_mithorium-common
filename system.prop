@@ -158,6 +158,11 @@ persist.radio.sarvalue=-1
 
 ro.vendor.qti.va_aosp.support=1
 
+# Dex2Oat
+dalvik.vm.dex2oat64.enabled=1
+dalvik.vm.dex2oat-cpu-set=0,1,2,3
+dalvik.vm.dex2oat-threads=4
+
 # Fastbootd
 ro.fastbootd.available=true
 
