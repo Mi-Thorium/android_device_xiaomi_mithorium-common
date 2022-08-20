@@ -618,3 +618,6 @@ $(call inherit-product, vendor/xiaomi/mithorium-common-graphics/mithorium-common
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+
+# Inherit extra if exists
+$(call inherit-product-if-exists, vendor/extra/product.mk)
