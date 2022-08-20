@@ -77,10 +77,6 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
 
-# Device-specific Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
