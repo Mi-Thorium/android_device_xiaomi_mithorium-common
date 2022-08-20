@@ -504,3 +504,6 @@ EXTRA_DEVICE_BRACKET := low-end
 
 # Build MITHORIUM_PRODUCT_PACKAGES
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
+
+# Inherit extra if exists
+$(call inherit-product-if-exists, vendor/extra/product.mk)
