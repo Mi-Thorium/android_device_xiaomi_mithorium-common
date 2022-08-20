@@ -6,6 +6,34 @@
 
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 
+# APEX (Must be set before product makefile inclusions below)
+OVERRIDE_TARGET_FLATTEN_APEX := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
+#
+# All components inherited here go to system image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+
+#
+# All components inherited here go to system_ext image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+
+#
+# All components inherited here go to product image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+
+#
+# All components inherited here go to vendor image
+#
+# TODO(b/136525499): move *_vendor.mk into the vendor makefile later
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+
 # Userspace Reboot
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
@@ -87,10 +115,6 @@ endif
 MITHORIUM_PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
-
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Audio
 MITHORIUM_PRODUCT_PACKAGES += \
