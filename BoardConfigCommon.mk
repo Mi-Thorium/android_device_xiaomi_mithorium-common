@@ -202,3 +202,6 @@ include $(COMMON_PATH)/qcom/pathmap.mk
 include $(COMMON_PATH)/qcom/qcom_boards.mk
 include $(COMMON_PATH)/qcom/BoardConfigQcom.mk
 include $(COMMON_PATH)/qcom/qcom_target.mk
+
+# Inherit extra if exists
+-include vendor/extra/BoardConfigExtra.mk
