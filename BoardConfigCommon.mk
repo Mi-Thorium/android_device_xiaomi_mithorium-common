@@ -269,3 +269,6 @@ include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
 else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 include vendor/xiaomi/mithorium-common-4.19/BoardConfigVendor.mk
 endif
+
+# Inherit extra if exists
+-include vendor/extra/BoardConfigExtra.mk
