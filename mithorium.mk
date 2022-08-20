@@ -103,6 +103,10 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     libtinycompress
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 PRODUCT_PACKAGES += \
     liba2dpoffload \
     libautohal \
