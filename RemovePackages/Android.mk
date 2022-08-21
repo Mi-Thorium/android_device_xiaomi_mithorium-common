@@ -48,7 +48,10 @@ LOCAL_OVERRIDES_PACKAGES := \
     VZWAPNLib \
     VzwOmaTrigger \
     YouTube \
-    YouTubeMusicPrebuilt
+    YouTubeMusicPrebuilt \
+    GoogleTTS \
+    MaestroPrebuilt \
+    GoogleContacts
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null
