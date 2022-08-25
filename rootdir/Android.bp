@@ -90,3 +90,9 @@ sh_binary {
     src: "bin/init.qcom.sensors.sh",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.qcom.usb.sh",
+    src: "bin/init.qcom.usb.sh",
+    vendor: true,
+}
