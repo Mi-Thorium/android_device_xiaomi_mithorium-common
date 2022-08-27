@@ -16,6 +16,50 @@ librmnetctl_pre_uplink {
     },
 }
 
+soong_config_module_type {
+    name: "vold_hw_fde",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["supports_hw_fde"],
+    properties: [
+        "cflags",
+        "header_libs",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde {
+    name: "vold_hw_fde_defaults",
+    soong_config_variables: {
+        supports_hw_fde: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPTION"],
+            header_libs: ["libcryptfs_hw_headers"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "vold_hw_fde_perf",
+    module_type: "cc_defaults",
+    config_namespace: "lineageQcomVars",
+    bool_variables: ["supports_hw_fde_perf"],
+    properties: [
+        "cflags",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde_perf {
+    name: "vold_hw_fde_perf_defaults",
+    soong_config_variables: {
+        supports_hw_fde_perf: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPT_PERF"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
+
 // Target platform agnostic config modules
 soong_config_module_type {
     name: "vendor_init",

@@ -174,6 +174,16 @@ SOONG_CONFIG_NAMESPACES += lineageGlobalVars
 SOONG_CONFIG_lineageGlobalVars += target_init_vendor_lib
 SOONG_CONFIG_lineageGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 
+SOONG_CONFIG_NAMESPACES += lineageQcomVars
+ifneq ($(TARGET_HW_DISK_ENCRYPTION),)
+SOONG_CONFIG_lineageQcomVars += supports_hw_fde
+SOONG_CONFIG_lineageQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
+endif # TARGET_HW_DISK_ENCRYPTION
+ifneq ($(TARGET_HW_DISK_ENCRYPTION_PERF),)
+SOONG_CONFIG_lineageQcomVars += supports_hw_fde_perf
+SOONG_CONFIG_lineageQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
+endif # TARGET_HW_DISK_ENCRYPTION_PERF
+
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
