@@ -183,6 +183,10 @@ ifneq ($(TARGET_HW_DISK_ENCRYPTION_PERF),)
 SOONG_CONFIG_lineageQcomVars += supports_hw_fde_perf
 SOONG_CONFIG_lineageQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
 endif # TARGET_HW_DISK_ENCRYPTION_PERF
+ifneq ($(TARGET_KEYMASTER_WAIT_FOR_QSEE),)
+SOONG_CONFIG_lineageQcomVars += should_wait_for_qsee
+SOONG_CONFIG_lineageQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
+endif # TARGET_KEYMASTER_WAIT_FOR_QSEE
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
