@@ -21,7 +21,7 @@ cc_library_static {
         "CryptfsHwUtils.cpp",
     ],
     export_include_dirs: ["."],
-    header_libs: ["generated_kernel_headers"],
+    header_libs: ["qti_kernel_headers"],
     shared_libs: [
         "libbase",
         "libhidlbase",
