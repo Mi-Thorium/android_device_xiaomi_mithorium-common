@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017-2021 The LineageOS Project
+# Copyright (C) 2017-2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 TARGET_BOARD_PLATFORM ?= msm8937
 
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.activity_recognition=msm8937 \
     ro.hardware.sound_trigger=msm8937 \
     vendor.opengles.version=196610
@@ -76,10 +76,6 @@ endif
 PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
-
-# Device-specific Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -157,6 +153,10 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service
 endif
 
+# Device-specific Settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.4.vendor
 
-# fastbootd
+# Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
 
@@ -256,8 +256,7 @@ endif
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/qpnp_pon.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qpnp_pon.kl
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -296,16 +295,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/msm8953/media_codecs_performance_8953_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_v1.xml \
     $(LOCAL_PATH)/media/msm8953/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
 else
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/msm8937/media_profiles_8937.xml:system/etc/media_profiles.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_profiles_8937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_profiles_8956.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_8956.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs_8937_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8937_v1.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs_8956.xml::$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8956.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs_performance_8937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-                      $(LOCAL_PATH)/media/msm8937/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/msm8937/media_profiles_8937.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/media/msm8937/media_profiles_8937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/media/msm8937/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
+    $(LOCAL_PATH)/media/msm8937/media_profiles_8956.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_8956.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs_8937_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8937_v1.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs_8956.xml::$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8956.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs_performance_8937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/media/msm8937/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
 endif
 
 PRODUCT_COPY_FILES += \
@@ -472,13 +472,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat
 
-ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_msm8953.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_msm8937.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-endif
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_$(TARGET_BOARD_PLATFORM).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)

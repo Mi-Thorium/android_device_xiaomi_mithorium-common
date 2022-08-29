@@ -158,7 +158,7 @@ persist.radio.sarvalue=-1
 
 ro.vendor.qti.va_aosp.support=1
 
-# fastbootd
+# Fastbootd
 ro.fastbootd.available=true
 
 # IMS

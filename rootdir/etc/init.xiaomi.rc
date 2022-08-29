@@ -1,32 +1,8 @@
 import /vendor/etc/init/hw/init.xiaomi.device.rc
 import /vendor/etc/init/hw/init.xiaomi.series.rc
 
-on boot
-    enable vendor.qcrild
-    enable vendor.qcrild2
-
-on init
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
-
-    # Setup all the sub-system as related
-    write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys1/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys2/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys3/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys4/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys5/restart_level RELATED
-    write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
-
-on post-fs-data
-    mkdir /data/vendor/qcam 0770 camera camera
-
-# Restart camera provider after vendor.qcamerasvr is running
-on property:init.svc.vendor.qcamerasvr=running
-    exec /bin/sleep 1s
-    restart vendor.camera-provider-2-4
-
 # Acdbdata
-service acdbdata-sh /vendor/bin/init.acdbdata.sh
+service vendor.acdbdata-sh /vendor/bin/init.acdbdata.sh
     class hal
     user system
     group system
@@ -37,16 +13,46 @@ on property:persist.vendor.audio.calfile0=*
     restart vendor.audio-hal
 
 # Baseband
-service baseband-sh /vendor/bin/init.baseband.sh
+service vendor.baseband-sh /vendor/bin/init.baseband.sh
     class late_start
     user system
     group system
     oneshot
     disabled
 
+# Camera
+on post-fs-data
+    mkdir /data/vendor/qcam 0770 camera camera
+
+on property:init.svc.vendor.qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
+
+# RIL
+on boot
+    enable vendor.qcrild
+    enable vendor.qcrild2
+
+# Subsystem Restart
+on init
+    # Setup all the sub-system as related
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys4/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys5/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
+
+# Time
 on property:sys.boot_completed=1
     restart time_daemon
 
+# Wi-Fi
+on init
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
+# Write caching
 on property:ro.vendor.xiaomi.enable_write_caching=1
  # write caching
     # Tell the kernel to use up to 99% of the RAM as cache for writes
