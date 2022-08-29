@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 TARGET_BOARD_PLATFORM ?= msm8937
 
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.activity_recognition=msm8937 \
     ro.hardware.sound_trigger=msm8937 \
     vendor.opengles.version=196610
