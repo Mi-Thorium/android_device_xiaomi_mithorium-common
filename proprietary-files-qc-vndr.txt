@@ -120,6 +120,9 @@ vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # GNSS
 vendor/bin/loc_launcher
+vendor/bin/mlid
+vendor/lib64/liblowi_client.so
+vendor/lib64/libminksocket.so
 
 # GNSS (configs)
 vendor/etc/apdr.conf
@@ -127,11 +130,6 @@ vendor/etc/izat.conf
 vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
-
-# GNSS (mlid)
-vendor/bin/mlid
-vendor/lib64/liblowi_client.so
-vendor/lib64/libminksocket.so
 
 # GNSS (HIDL)
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
