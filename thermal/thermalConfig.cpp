@@ -116,6 +116,49 @@ namespace implementation {
 		},
 	};
 
+	std::vector<std::string> cpu_sensors_8953 =
+	{
+		"tsens_tz_sensor9",
+		"tsens_tz_sensor10",
+		"tsens_tz_sensor11",
+		"tsens_tz_sensor12",
+		"tsens_tz_sensor4",
+		"tsens_tz_sensor5",
+		"tsens_tz_sensor6",
+		"tsens_tz_sensor7",
+	};
+
+	std::vector<struct target_therm_cfg> sensor_cfg_8953 =
+	{
+		{
+			TemperatureType::CPU,
+			cpu_sensors_8953,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "tsens_tz_sensor15" },
+			"GPU",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "xo_therm" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+	};
+
 	std::vector<std::string> cpu_sensors_429 =
 	{
 		"apc1-cpu0-usr",
@@ -1095,6 +1138,10 @@ namespace implementation {
 		{294, sensor_cfg_8937}, // MSM8937
 		{295, sensor_cfg_8937}, // APQ8937
 		{313, sensor_cfg_8937}, // MSM8940
+		{293, sensor_cfg_8953},
+		{304, sensor_cfg_8953},
+		{338, sensor_cfg_8953},
+		{351, sensor_cfg_8953},
 		{353, sensor_cfg_439},
 		{354, sensor_cfg_429},
 		{363, sensor_cfg_429},
