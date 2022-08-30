@@ -48,10 +48,6 @@ namespace implementation {
 		"apc1-cpu1-usr",
 		"apc1-cpu2-usr",
 		"apc1-cpu3-usr",
-		"cpuss0-usr",
-		"cpuss0-usr",
-		"cpuss0-usr",
-		"cpuss0-usr",
 	};
 
 	std::vector<struct target_therm_cfg> sensor_cfg_8917 =
@@ -85,11 +81,23 @@ namespace implementation {
 		},
 	};
 
+	std::vector<std::string> cpu_sensors_8937 =
+	{
+		"apc1-cpu0-usr",
+		"apc1-cpu1-usr",
+		"apc1-cpu2-usr",
+		"apc1-cpu3-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+	};
+
 	std::vector<struct target_therm_cfg> sensor_cfg_8937 =
 	{
 		{
 			TemperatureType::CPU,
-			cpu_sensors_8917,
+			cpu_sensors_8937,
 			"",
 			95000,
 			115000,
