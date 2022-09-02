@@ -374,7 +374,6 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 MITHORIUM_PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
@@ -390,6 +389,8 @@ MITHORIUM_PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.usb.sh \
     init.qti.qseecomd.sh
+
+PRODUCT_PACKAGES += fstab.qcom
 
 # RIL
 MITHORIUM_PRODUCT_PACKAGES += \
