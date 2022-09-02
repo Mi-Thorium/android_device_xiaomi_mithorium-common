@@ -174,7 +174,6 @@ SOONG_CONFIG_NAMESPACES += lineageGlobalVars
 SOONG_CONFIG_lineageGlobalVars += target_init_vendor_lib
 SOONG_CONFIG_lineageGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 
-SOONG_CONFIG_NAMESPACES += lineageQcomVars
 ifneq ($(TARGET_HW_DISK_ENCRYPTION),)
 SOONG_CONFIG_lineageQcomVars += supports_hw_fde
 SOONG_CONFIG_lineageQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
@@ -187,6 +186,9 @@ ifneq ($(TARGET_KEYMASTER_WAIT_FOR_QSEE),)
 SOONG_CONFIG_lineageQcomVars += should_wait_for_qsee
 SOONG_CONFIG_lineageQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 endif # TARGET_KEYMASTER_WAIT_FOR_QSEE
+ifneq ($(SOONG_CONFIG_lineageQcomVars),)
+SOONG_CONFIG_NAMESPACES += lineageQcomVars
+endif # SOONG_CONFIG_lineageQcomVars
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
