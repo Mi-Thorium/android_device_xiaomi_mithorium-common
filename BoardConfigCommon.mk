@@ -98,6 +98,8 @@ TARGET_KERNEL_CONFIG += \
     vendor/feature/lindroid.config
 endif
 
+$(call soong_config_set,MITHORIUM_KERNEL,DEVICE,$(TARGET_DEVICE))
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
