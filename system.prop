@@ -165,7 +165,7 @@ ro.bluetooth.a2dp_offload.supported=false
 ro.fastbootd.available=true
 
 # Graphics
-debug.renderengine.backend=threaded
+debug.renderengine.backend=skiaglthreaded
 
 # IMS
 persist.dbg.volte_avail_ovr=1
