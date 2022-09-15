@@ -24,9 +24,7 @@ ro.surface_flinger.max_virtual_display_dimension=4096
 persist.vendor.radio.mt_sms_ack=30
 
 af.fast_track_multiplier=1
-audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
-audio.offload.video=true
 debug.stagefright.omx_default_rank=0
 drm.service.enabled=true
 persist.backup.ntpServer=0.pool.ntp.org
@@ -37,7 +35,6 @@ persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.hw.binder.size_kbyte=1024
 persist.vendor.audio.speaker.prot.enable=false
-persist.vendor.bt.enable.splita2dp=false
 persist.vendor.dpmhalservice.enable=1
 persist.vendor.qcom.bluetooth.enable.splita2dp=false
 persist.vendor.qcom.bluetooth.soc=pronto
