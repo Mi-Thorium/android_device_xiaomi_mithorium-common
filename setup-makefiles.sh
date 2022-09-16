@@ -29,21 +29,37 @@ while [ "${#}" -gt 0 ]; do
         --only-target )
                 ONLY_TARGET=true
                 ;;
+        --kernel-4.19 )
+                KERNEL_4_19=true
+                SETUP_MAKEFILES_ARGS+=" ${1}"
+                ;;
     esac
     shift
 done
+
+if [ "${KERNEL_4_19}" == "true" ]; then
+    DEVICE_COMMON="mithorium-common-4.19"
+fi
 
 if [ -z "$ONLY_TARGET" ]; then
     # Initialize the helper for common
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
     # Warning headers and guards
-    write_headers "MiThoriumSSI Mi8937 Mi439 Tiare oxygen uter vince onc"
+    write_headers "MiThoriumSSI Mi8937 Mi439_4_19 Tiare oxygen uter vince onc"
 
     # The standard common blobs
-    write_makefiles "${MY_DIR}/proprietary-files-qc-sys.txt" true
-    write_makefiles "${MY_DIR}/proprietary-files-qc-vndr.txt" true
-    write_makefiles "${MY_DIR}/proprietary-files-qc-vndr-32.txt" true
+    if [ "${KERNEL_4_19}" != "true" ]; then
+        # Kernel 4.9
+        write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-vendor.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-vendor-32.txt" true
+    else
+        # Kernel 4.19
+        write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-system.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-vendor.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-vendor-32.txt" true
+    fi
 
     # Finish
     write_footers
