@@ -435,8 +435,10 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Thermal
+ifneq ($(TARGET_KERNEL_VERSION),4.19)
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti.xiaomi_mithorium
+endif
 
 # Trust HAL
 PRODUCT_PACKAGES += \
