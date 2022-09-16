@@ -115,7 +115,7 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 -system_ext/priv-app/ims/ims.apk
 
-# Location
+# Location - from LA.UM.9.6.3.r1-06200-89xx.0
 system_ext/etc/permissions/com.qti.location.sdk.xml
 system_ext/etc/permissions/com.qualcomm.location.xml
 system_ext/etc/permissions/izat.xt.srv.xml
@@ -129,6 +129,7 @@ system_ext/lib64/vendor.qti.gnss@2.0.so
 system_ext/lib64/vendor.qti.gnss@2.1.so
 system_ext/lib64/vendor.qti.gnss@3.0.so
 system_ext/lib64/vendor.qti.gnss@4.0.so
+system_ext/lib64/vendor.qti.gnss@4.1.so
 -system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
 # Perf
