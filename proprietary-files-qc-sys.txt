@@ -129,6 +129,7 @@ system_ext/lib64/vendor.qti.gnss@2.0.so
 system_ext/lib64/vendor.qti.gnss@2.1.so
 system_ext/lib64/vendor.qti.gnss@3.0.so
 system_ext/lib64/vendor.qti.gnss@4.0.so
+-system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
 # Perf
 #-system_ext/app/workloadclassifier/workloadclassifier.apk
