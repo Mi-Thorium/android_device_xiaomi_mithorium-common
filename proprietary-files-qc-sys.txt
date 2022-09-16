@@ -136,6 +136,7 @@ system/framework/QPerformance.jar
 system/framework/UxPerformance.jar
 system_ext/bin/perfservice
 system_ext/etc/init/perfservice.rc
+system_ext/etc/perf/wlc_model.tflite
 system_ext/etc/seccomp_policy/perfservice.policy
 system_ext/lib64/libqti-iopd-client_system.so
 system_ext/lib64/libqti-perfd-client_system.so
@@ -214,3 +215,5 @@ system_ext/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 system/etc/public.libraries-qti.txt
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
+system_ext/etc/cdma_call_conf.xml
+system_ext/etc/spn-conf.xml
