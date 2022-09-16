@@ -26,6 +26,7 @@ CLEAN_VENDOR=true
 
 ONLY_COMMON=
 ONLY_TARGET=
+KERNEL_4_19=
 KANG=
 SECTION=
 
@@ -39,6 +40,10 @@ while [ "${#}" -gt 0 ]; do
                 ;;
         --only-target )
                 ONLY_TARGET=true
+                SETUP_MAKEFILES_ARGS+=" ${1}"
+                ;;
+        --kernel-4.19 )
+                KERNEL_4_19=true
                 SETUP_MAKEFILES_ARGS+=" ${1}"
                 ;;
         -n | --no-cleanup )
@@ -62,6 +67,10 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+if [ "${KERNEL_4_19}" == "true" ]; then
+    DEVICE_COMMON="mithorium-common-4.19"
+fi
+
 function blob_fixup() {
     case "${1}" in
         product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
@@ -78,9 +87,17 @@ if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/proprietary-files-qc-sys.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-    extract "${MY_DIR}/proprietary-files-qc-vndr.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-    extract "${MY_DIR}/proprietary-files-qc-vndr-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    if [ "${KERNEL_4_19}" != "true" ]; then
+        # Kernel 4.9
+        extract "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    else
+        # Kernel 4.19
+        extract "${MY_DIR}/proprietary-files/4.19/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    fi
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then

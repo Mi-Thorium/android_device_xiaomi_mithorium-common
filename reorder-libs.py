@@ -10,9 +10,12 @@ from locale import LC_ALL, setlocale, strcoll
 from pathlib import Path
 
 FILES = [Path(file) for file in [
-    "proprietary-files-qc-sys.txt",
-    "proprietary-files-qc-vndr.txt",
-    "proprietary-files-qc-vndr-32.txt",
+    "proprietary-files/4.9/qcom-system.txt",
+    "proprietary-files/4.9/qcom-vendor.txt",
+    "proprietary-files/4.9/qcom-vendor-32.txt",
+    "proprietary-files/4.19/qcom-system.txt",
+    "proprietary-files/4.19/qcom-vendor.txt",
+    "proprietary-files/4.19/qcom-vendor-32.txt",
 ]]
 
 setlocale(LC_ALL, "C")
