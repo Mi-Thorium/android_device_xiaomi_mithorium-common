@@ -7,6 +7,9 @@
 # Userspace Reboot
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
+# Kernel
+TARGET_KERNEL_VERSION ?= 4.9
+
 # Platform
 TARGET_BOARD_PLATFORM ?= msm8937
 
@@ -463,7 +466,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_$(TARGET_BOARD_PLATFORM).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Inherit the proprietary files
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
 $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)
+else ifeq ($(TARGET_KERNEL_VERSION),4.19)
+$(call inherit-product, vendor/xiaomi/mithorium-common-4.19/mithorium-common-4.19-vendor.mk)
+endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
