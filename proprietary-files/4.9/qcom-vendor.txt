@@ -132,8 +132,8 @@ vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
 
-# GNSS (HIDL)
--vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
+# GNSS (HIDL) - from LA.UM.9.6.3.r1-06200-89xx.0
+-vendor/etc/vintf/manifest/vendor.qti.gnss@4.1-service.xml
 vendor/lib64/libloc_socket.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
@@ -141,11 +141,12 @@ vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0.so
-vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
+vendor/lib64/vendor.qti.gnss@4.1-service.so
+vendor/lib64/vendor.qti.gnss@4.1.so
 
-# GNSS (IMPL)
-vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
+# GNSS (IMPL) - from LA.UM.9.6.3.r1-06200-89xx.0
+vendor/lib64/hw/vendor.qti.gnss@4.1-impl.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libizat_client_api.so
