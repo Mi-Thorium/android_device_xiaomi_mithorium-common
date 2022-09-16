@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# All unpinned blobs below are extracted from LA.UM.9.6.3.r1-06200-89xx.0
 
 # Audiosphere
 system_ext/etc/permissions/audiosphere.xml
@@ -16,6 +16,9 @@ system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
 system_ext/framework/vendor.qti.data.factory-V1.0-java.jar
 system_ext/framework/vendor.qti.data.factory-V2.0-java.jar
 system_ext/framework/vendor.qti.data.factory-V2.1-java.jar
+system_ext/framework/vendor.qti.data.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.data.factory-V2.3-java.jar
+system_ext/framework/vendor.qti.data.mwqem-V1.0-java.jar
 system_ext/framework/vendor.qti.data.slm-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
@@ -26,16 +29,22 @@ system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
+system_ext/framework/vendor.qti.hardware.mwqemadapter-V1.0-java.jar
 system_ext/framework/vendor.qti.hardware.slmadapter-V1.0-java.jar
 system_ext/framework/vendor.qti.latency-V2.0-java.jar
+system_ext/framework/vendor.qti.latency-V2.1-java.jar
 system_ext/lib64/com.quicinc.cne.api@1.0.so
 system_ext/lib64/com.quicinc.cne.api@1.1.so
 system_ext/lib64/com.quicinc.cne.constants@1.0.so
 system_ext/lib64/com.quicinc.cne.constants@2.0.so
 system_ext/lib64/com.quicinc.cne.constants@2.1.so
+system_ext/lib64/libmwqemiptablemgr.so
 system_ext/lib64/vendor.qti.data.factory@1.0.so
 system_ext/lib64/vendor.qti.data.factory@2.0.so
 system_ext/lib64/vendor.qti.data.factory@2.1.so
+system_ext/lib64/vendor.qti.data.factory@2.2.so
+system_ext/lib64/vendor.qti.data.factory@2.3.so
+system_ext/lib64/vendor.qti.data.mwqem@1.0.so
 system_ext/lib64/vendor.qti.data.slm@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
@@ -45,9 +54,12 @@ system_ext/lib64/vendor.qti.hardware.data.connection@1.1.so
 system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.lce@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.qmi@1.0.so
+system_ext/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
 system_ext/lib64/vendor.qti.hardware.slmadapter@1.0.so
 system_ext/lib64/vendor.qti.latency@2.0.so
+system_ext/lib64/vendor.qti.latency@2.1.so
 
 # DPM
 system/framework/tcmclient.jar
@@ -64,7 +76,7 @@ system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
 system_ext/lib64/libdpmframework.so
 system_ext/lib64/libdpmtcm.so
-system_ext/lib64/libslmiptablemgr.so
+system_ext/lib64/libmwqemiptablemgr.so
 -system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # IMS
