@@ -104,7 +104,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 MITHORIUM_PRODUCT_PACKAGES += \
     liba2dpoffload \
-    libautohal \
     libbatterylistener \
     libcirrusspkrprot \
     libcomprcapture \
@@ -204,16 +203,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgralloc.qti \
-    liboverlay \
     libqdMetaData \
-    libgenlock \
     libtinyxml \
     vendor.display.config@1.11.vendor \
     vendor.display.config@2.0.vendor
-
-# DPM
-MITHORIUM_PRODUCT_PACKAGES += \
-    libshim_dpmframework
 
 # DRM
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -350,7 +343,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
@@ -412,7 +404,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 # RIL
 MITHORIUM_PRODUCT_PACKAGES += \
     librmnetctl \
-    libcnefeatureconfig \
     libxml2
 
 # Sensors
@@ -471,11 +462,9 @@ PRODUCT_COPY_FILES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcld80211 \
-    libQWiFiSoftApCfg \
     libwifi-hal-ctrl \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wificond \
     WifiOverlay \
     wpa_supplicant \
