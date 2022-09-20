@@ -455,10 +455,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/qcom-caf/msm8953 \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/commonsys-intf/display \
-    vendor/qcom/opensource/display \
     vendor/qcom/opensource/data-ipa-cfg-mgr \
     vendor/qcom/opensource/dataservices
 
@@ -537,6 +533,17 @@ ifeq ($(TARGET_KERNEL_VERSION),4.9)
 $(call inherit-product-if-exists, hardware/mithorium-4.9/mithorium_qcom_hals.mk)
 else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 $(call inherit-product, hardware/mithorium-4.19/mithorium_qcom_hals.mk)
+endif
+
+ifneq ($(wildcard hardware/mithorium-$(TARGET_KERNEL_VERSION)/mithorium_qcom_hals.mk),)
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/mithorium-$(TARGET_KERNEL_VERSION)
+else
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/msm8953 \
+    vendor/qcom/opensource/commonsys/display \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display
 endif
 
 # Inherit the proprietary files
