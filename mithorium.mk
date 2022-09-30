@@ -162,10 +162,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service
 endif
 
-# Device-specific Settings
-MITHORIUM_PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Display
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
