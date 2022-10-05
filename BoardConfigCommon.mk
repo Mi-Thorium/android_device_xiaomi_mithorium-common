@@ -212,4 +212,8 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
 include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
+else ifeq ($(TARGET_KERNEL_VERSION),4.19)
+include vendor/xiaomi/mithorium-common-4.19/BoardConfigVendor.mk
+endif
