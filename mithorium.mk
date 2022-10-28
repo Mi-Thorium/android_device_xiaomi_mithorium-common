@@ -566,7 +566,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     libcld80211 \
     libwifi-hal-ctrl \
     libwpa_client \
