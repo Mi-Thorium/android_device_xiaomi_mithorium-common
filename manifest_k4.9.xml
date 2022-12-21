@@ -14,19 +14,4 @@
         <transport arch="32+64">passthrough</transport>
         <fqname>@2.1::IMapper/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>com.qualcomm.qti.uceservice</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.2::IUceService/com.qualcomm.qti.uceservice</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.data.factory</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.1::IFactory/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.ims.factory</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IImsFactory/default</fqname>
-    </hal>
 </manifest>
