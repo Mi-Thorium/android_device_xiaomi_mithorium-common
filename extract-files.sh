@@ -78,15 +78,6 @@ function blob_fixup() {
             sed -i 's|version="2.0"|version="1.0"|g' "${2}"
             ;;
     esac
-
-    if [ "${KERNEL_419}" != "true" ]; then
-        # Kernel 4.9
-        case "${1}" in
-            vendor/lib64/libQmiservices.so | vendor/lib64/libril-qc-hal-qmi.so )
-                sed -i 's|libqmiservices.so|libQmiservices.so|g' "${2}"
-                ;;
-        esac
-    fi
 }
 
 if [ -z "${ONLY_TARGET}" ]; then
