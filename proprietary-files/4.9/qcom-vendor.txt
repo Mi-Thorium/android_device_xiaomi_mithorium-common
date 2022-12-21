@@ -109,10 +109,12 @@ vendor/lib64/libdiag.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libqisl.so
-vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
+
+# DRM - from PAN
+vendor/lib64/librpmb.so
 
 # Firmware (Camera)
 vendor/firmware/cpp_firmware_v1_10_0.fw
