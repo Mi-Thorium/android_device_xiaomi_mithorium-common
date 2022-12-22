@@ -82,19 +82,7 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libshim_imscamera.so" "${2}"
             done
             ;;
-        vendor/lib64/libQmiservices.so | vendor/lib64/libril-qc-hal-qmi.so )
-            sed -i 's|libqmiservices.so|libQmiservices.so|g' "${2}"
-            ;;
     esac
-
-    if [ "${KERNEL_419}" != "true" ]; then
-        # Kernel 4.9
-        case "${1}" in
-            vendor/lib64/libQmiservices.so | vendor/lib64/libril-qc-hal-qmi.so )
-                sed -i 's|libqmiservices.so|libQmiservices.so|g' "${2}"
-                ;;
-        esac
-    fi
 }
 
 if [ -z "${ONLY_TARGET}" ]; then
