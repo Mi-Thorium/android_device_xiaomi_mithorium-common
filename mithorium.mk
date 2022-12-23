@@ -148,10 +148,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
 
-PRODUCT_PACKAGES += \
-    camera.$(TARGET_BOARD_PLATFORM) \
-    libmm-qcamera
-
 # Configstore
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 MITHORIUM_PRODUCT_PACKAGES += \
