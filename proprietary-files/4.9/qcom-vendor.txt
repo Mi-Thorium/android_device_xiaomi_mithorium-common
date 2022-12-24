@@ -170,7 +170,7 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libxtadapter.so
 
-# Graphics - from PAN
+# Graphics
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -180,8 +180,6 @@ vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/hw/vulkan.adreno.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
-vendor/lib64/libEGL_adreno.so
-vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libc2d30-a3xx.so
@@ -189,7 +187,6 @@ vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
-vendor/lib64/libq3dtools_adreno.so
 
 # Graphics (Postprocessing) - mm-pp-dpps
 vendor/bin/mm-pp-dpps

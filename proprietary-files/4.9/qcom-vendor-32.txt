@@ -1,5 +1,4 @@
 # All unpinned blobs below are extracted from LA.UM.9.6.3.r1-06200-89xx.0 (4.9)
-# PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
 # riva Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
 
 # ADSP
@@ -56,7 +55,7 @@ vendor/lib/soundfx/libasphere.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
 
-# Graphics - from PAN
+# Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -66,8 +65,6 @@ vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
-vendor/lib/libEGL_adreno.so
-vendor/lib/libGLESv2_adreno.so
 vendor/lib/libOpenCL.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30-a3xx.so
@@ -75,7 +72,6 @@ vendor/lib/libc2d30_bltlib.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
-vendor/lib/libq3dtools_adreno.so
 
 # Media
 vendor/lib/libAlacSwDec.so
