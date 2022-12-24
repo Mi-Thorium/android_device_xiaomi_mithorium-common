@@ -165,7 +165,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     XiaomiParts
 
 # Display
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.mapper@2.0.vendor \
@@ -174,12 +173,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display
-else
-MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1
-endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     gralloc.$(TARGET_BOARD_PLATFORM)
