@@ -170,7 +170,7 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libxtadapter.so
 
-# Graphics - from PAN
+# Graphics
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
