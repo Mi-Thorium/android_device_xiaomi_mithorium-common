@@ -504,3 +504,6 @@ endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+
+# CipherOS
+TARGET_FACE_UNLOCK_SUPPORTED := true
