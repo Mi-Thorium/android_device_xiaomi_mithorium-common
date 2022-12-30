@@ -188,9 +188,6 @@ vendor.camera.hal1.packagelist=com.facebook.katana,com.facebook.orca,com.instagr
 persist.vendor.camera.display.umax=1920x1080
 persist.vendor.camera.display.lmax=1280x720
 
-#expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.hmdglobal.app.camera
-
 #Whitelisting the below packages
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam
 persist.camera.privapp.list=org.codeaurora.snapcam
