@@ -388,8 +388,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.qseecomd.sh
 
+ifneq ($(MITHORIUM_BUILDING_SSI),true)
 PRODUCT_PACKAGES += \
     fstab.qcom
+endif
 
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 MITHORIUM_PRODUCT_PACKAGES += \
