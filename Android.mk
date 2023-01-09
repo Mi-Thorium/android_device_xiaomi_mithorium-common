@@ -6,9 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-# Wanna decommonize trees for better stability or performance?
-# Just moving stuff among trees won't make any difference, lol
-ifneq ($(filter MiThoriumSSI Mi8937 Mi439 Mi439_4_19 Tiare oxygen uter vince onc,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE),true)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
