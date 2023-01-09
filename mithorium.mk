@@ -89,31 +89,8 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
-    audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.r_submix.default \
     audio.usb.default
-
-MITHORIUM_PRODUCT_PACKAGES += \
-    libaudiopreprocessing \
-    libaudioroute \
-    libaacwrapper \
-    libaudio-resampler \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libqcompostprocbundle \
-    libvolumelistener \
-    libtinycompress
-
-MITHORIUM_PRODUCT_PACKAGES += \
-    liba2dpoffload \
-    libbatterylistener \
-    libcirrusspkrprot \
-    libcomprcapture \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
-    libsndmonitor \
-    libspkrprot
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -323,12 +300,7 @@ PRODUCT_COPY_FILES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
     libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
