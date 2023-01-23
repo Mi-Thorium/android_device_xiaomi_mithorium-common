@@ -67,6 +67,10 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+if [ -z "${DEVICE_PARENT}" ]; then
+    DEVICE_PARENT="."
+fi
+
 if [ "${KERNEL_4_19}" == "true" ]; then
     DEVICE_COMMON="mithorium-common-4.19"
 fi
@@ -97,12 +101,12 @@ if [ -z "${ONLY_TARGET}" ]; then
     fi
 fi
 
-if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
+if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
-    source "${MY_DIR}/../${DEVICE}/extract-files.sh"
+    source "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/extract-files.sh"
     setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    extract "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
