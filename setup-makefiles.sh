@@ -33,6 +33,10 @@ while [ "${#}" -gt 0 ]; do
     shift
 done
 
+if [ -z "${DEVICE_PARENT}" ]; then
+    DEVICE_PARENT="."
+fi
+
 if [ -z "$ONLY_TARGET" ]; then
     # Initialize the helper for common
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
@@ -50,7 +54,7 @@ if [ -z "$ONLY_TARGET" ]; then
 fi
 
 if [ -z "$ONLY_COMMON" ]; then
-    if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
+    if [ -s "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" ]; then
         # Reinitialize the helper for device
         setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
@@ -58,7 +62,7 @@ if [ -z "$ONLY_COMMON" ]; then
         write_headers
 
         # The standard device blobs
-        write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
+        write_makefiles "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" true
 
         # Finish
         write_footers
