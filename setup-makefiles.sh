@@ -42,7 +42,7 @@ if [ -z "$ONLY_TARGET" ]; then
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
     # Warning headers and guards
-    write_headers "Mi8937 Mi439"
+    write_headers "Mi8917 Mi8937 Mi439"
 
     # The standard common blobs
     write_makefiles "${MY_DIR}/proprietary-files-qc-sys.txt" true
