@@ -500,5 +500,9 @@ endif
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
 
+# Extra - Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/extra-priv/bootanim/miku/bootanimation-720p.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+
 # Inherit extra if exists
 $(call inherit-product-if-exists, vendor/extra/product.mk)
