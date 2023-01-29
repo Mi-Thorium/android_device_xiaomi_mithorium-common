@@ -161,6 +161,10 @@ ro.vendor.qti.va_aosp.support=1
 # Audio
 ro.bluetooth.a2dp_offload.supported=false
 
+# Blur
+ro.sf.blurs_are_expensive=1
+ro.surface_flinger.supports_background_blur=1
+
 # Fastbootd
 ro.fastbootd.available=true
 
