@@ -412,15 +412,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/display
-
-ifeq ($(wildcard hardware/mithorium-$(TARGET_KERNEL_VERSION)/display),)
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys-intf/display
-endif
-
 # Telephony
 MITHORIUM_PRODUCT_PACKAGES += \
     ims-ext-common \
