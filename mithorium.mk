@@ -504,6 +504,7 @@ endif
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+EXTRA_DISABLE_BOOT_IMAGE_PROFILE := true
 PRODUCT_EXCLUDE_IH8SN := true
 
 # CipherOS
