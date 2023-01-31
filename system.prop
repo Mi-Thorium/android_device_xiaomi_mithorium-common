@@ -158,6 +158,9 @@ persist.radio.sarvalue=-1
 
 ro.vendor.qti.va_aosp.support=1
 
+# ADB
+ro.adb.secure=1
+
 # Audio
 ro.bluetooth.a2dp_offload.supported=false
 
