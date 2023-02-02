@@ -476,7 +476,7 @@ PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
 
 # Inherit MiThorium QCOM HALs
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
-$(call inherit-product-if-exists, hardware/mithorium-4.9/mithorium_qcom_hals.mk)
+$(call inherit-product, hardware/mithorium-4.9/mithorium_qcom_hals.mk)
 else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 $(call inherit-product, hardware/mithorium-4.19/mithorium_qcom_hals.mk)
 endif
