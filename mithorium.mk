@@ -163,8 +163,13 @@ MITHORIUM_PRODUCT_PACKAGES += \
 endif
 
 # Device-specific Settings
+ifeq ($(TARGET_USES_MISOUND),true)
 MITHORIUM_PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiParts_MiSound
+else
+MITHORIUM_PRODUCT_PACKAGES += \
+    XiaomiParts_Dirac
+endif
 
 # Display
 MITHORIUM_PRODUCT_PACKAGES += \
