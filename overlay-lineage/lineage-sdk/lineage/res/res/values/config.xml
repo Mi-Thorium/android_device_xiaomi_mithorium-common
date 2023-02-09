@@ -29,6 +29,13 @@
         <item>restart_fastboot</item>
      </string-array>
 
+    <!-- The list of components which should be automatically disabled for a specific device.
+         Note: this MUST not be used to randomly disable components, ask for approval first! -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
+    </string-array>
+
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
     <string-array name="config_cameraAuxPackageAllowList" translatable="false">
