@@ -93,9 +93,11 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+ifneq ($(TARGET_USES_Q_DISPLAY_STACK),true)
 TARGET_USES_GRALLOC4 := true
 TARGET_USES_QTI_MAPPER_2_0 := true
 TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
+endif
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -126,6 +128,9 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
+endif
+ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/q-display-stack.xml
 endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
