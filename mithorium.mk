@@ -499,5 +499,7 @@ else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 $(call inherit-product, vendor/xiaomi/mithorium-common-4.19/mithorium-common-4.19-vendor.mk)
 endif
 
+$(call inherit-product, vendor/xiaomi/mithorium-common-graphics/mithorium-common-graphics-vendor.mk)
+
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
