@@ -486,10 +486,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
 
 # Inherit MiThorium QCOM HALs
-ifeq ($(TARGET_KERNEL_VERSION),4.9)
-$(call inherit-product, hardware/mithorium-4.9/mithorium_qcom_hals.mk)
-else ifeq ($(TARGET_KERNEL_VERSION),4.19)
-$(call inherit-product, hardware/mithorium-4.19/mithorium_qcom_hals.mk)
+ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+$(call inherit-product, hardware/mithorium-$(TARGET_KERNEL_VERSION)-q-display/mithorium_qcom_hals.mk)
+else
+$(call inherit-product, hardware/mithorium-$(TARGET_KERNEL_VERSION)/mithorium_qcom_hals.mk)
 endif
 
 # Inherit the proprietary files
