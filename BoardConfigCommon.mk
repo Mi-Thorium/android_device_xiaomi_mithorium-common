@@ -81,6 +81,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
+TARGET_SUPPORT_HAL1 := false
 TARGET_TS_MAKEUP := true
 
 # Display
@@ -149,9 +150,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
-
-# Camera
-TARGET_SUPPORT_HAL1 := false
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
