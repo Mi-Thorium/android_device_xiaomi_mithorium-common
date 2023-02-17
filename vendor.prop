@@ -49,7 +49,6 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 ro.hardware.egl=adreno
 ro.hardware.keystore_desede=true
-ro.hardware.vulkan=adreno
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
 ro.vendor.bluetooth.wipower=false

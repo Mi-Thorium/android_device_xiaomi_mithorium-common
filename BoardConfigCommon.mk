@@ -85,9 +85,11 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
+ifneq ($(TARGET_USES_Q_DISPLAY_STACK),true)
 TARGET_USES_GRALLOC4 := true
 TARGET_USES_QTI_MAPPER_2_0 := true
 TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
+endif
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -119,6 +121,9 @@ endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
 endif
+ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/q-display-stack.xml
+endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
@@ -143,7 +148,11 @@ TARGET_USES_INTERACTION_BOOST := true
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 ifeq ($(USE_MITHORIUM_HALS),true)
-QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)
+    ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+        QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)-q-display
+    else
+        QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)
+    endif
 else
 TARGET_ENFORCES_QSSI := true
 endif

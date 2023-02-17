@@ -167,6 +167,14 @@ MITHORIUM_PRODUCT_PACKAGES += \
     XiaomiParts
 
 # Display
+ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+MITHORIUM_PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl-2.1
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.vulkan=$(TARGET_BOARD_PLATFORM)
+else
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.mapper@2.0.vendor \
@@ -174,7 +182,11 @@ MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    libgralloc.qti
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.vulkan=adreno
+endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     gralloc.$(TARGET_BOARD_PLATFORM)
@@ -193,7 +205,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libdisplayconfig \
-    libgralloc.qti \
     libqdMetaData \
     libtinyxml \
     vendor.display.config@1.11.vendor \
@@ -492,10 +503,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
 
 # Inherit MiThorium QCOM HALs
-ifeq ($(TARGET_KERNEL_VERSION),4.9)
-$(call inherit-product, hardware/mithorium-4.9/mithorium_qcom_hals.mk)
-else ifeq ($(TARGET_KERNEL_VERSION),4.19)
-$(call inherit-product, hardware/mithorium-4.19/mithorium_qcom_hals.mk)
+ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
+$(call inherit-product, hardware/mithorium-$(TARGET_KERNEL_VERSION)-q-display/mithorium_qcom_hals.mk)
+else
+$(call inherit-product, hardware/mithorium-$(TARGET_KERNEL_VERSION)/mithorium_qcom_hals.mk)
 endif
 
 # Inherit the proprietary files
@@ -504,6 +515,8 @@ $(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.m
 else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 $(call inherit-product, vendor/xiaomi/mithorium-common-4.19/mithorium-common-4.19-vendor.mk)
 endif
+
+$(call inherit-product, vendor/xiaomi/mithorium-common-graphics/mithorium-common-graphics-vendor.mk)
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
