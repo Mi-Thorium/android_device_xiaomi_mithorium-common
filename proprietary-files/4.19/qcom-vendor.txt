@@ -341,7 +341,6 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 # RIL (TFTP)
 vendor/bin/tftp_server
 vendor/etc/init/vendor.qti.tftp.rc
-vendor/lib64/libqsocket.so
 
 # RIL (QCRILD)
 vendor/bin/hw/qcrild
@@ -431,4 +430,5 @@ vendor/bin/wcnss_service
 
 # Misc
 vendor/etc/public.libraries.txt
+vendor/lib64/libqsocket.so
 vendor/lib64/libsoc_helper.so

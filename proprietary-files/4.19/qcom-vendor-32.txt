@@ -20,7 +20,6 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Audio
 vendor/lib/hw/sound_trigger.primary.msm8937.so
-vendor/lib/btaudio_offload_if.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -30,8 +29,6 @@ vendor/lib/libadpcmdec.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudio_log_utils.so
 -vendor/lib/libaudioparsers.so
-vendor/lib/libbluetooth_audio_session_qti.so
-vendor/lib/libdiag.so
 vendor/lib/libdrc.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
@@ -43,13 +40,16 @@ vendor/lib/libqtigef.so
 vendor/lib/libsmwrapper.so
 vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
-vendor/lib/libthermalclient.so
 
 # Audio (64-bit)
 -vendor/lib64/libaudioparsers.so
 
 # Audiosphere
 vendor/lib/soundfx/libasphere.so
+
+# Bluetooth Audio
+vendor/lib/btaudio_offload_if.so
+vendor/lib/libbluetooth_audio_session_qti.so
 
 # Camera libts - from riva
 -vendor/lib/libts_detected_face_hal.so
@@ -84,6 +84,10 @@ vendor/lib/libwfdmmservice.so
 vendor/lib/libqti-perfd-client.so
 
 # QMI
+vendor/lib/libdiag.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_encdec.so
+
+# Thermal
+vendor/lib/libthermalclient.so
