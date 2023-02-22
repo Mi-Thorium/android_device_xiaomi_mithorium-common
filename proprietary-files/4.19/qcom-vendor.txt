@@ -27,12 +27,9 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Bluetooth Audio
-vendor/lib64/hw/audio.bluetooth_qti.default.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
-vendor/lib64/libbluetooth_audio_session_qti.so
-vendor/lib64/libbluetooth_audio_session_qti_2_1.so
+# CACert
+vendor/lib64/libcacertclient.so
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
 # CNE
 -vendor/app/CneApp/CneApp.apk
@@ -129,10 +126,27 @@ vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # GNSS
+vendor/bin/edgnss-daemon
 vendor/bin/loc_launcher
+vendor/bin/lowi-server
 vendor/bin/mlid
+vendor/bin/slim_daemon
+vendor/bin/xtra-daemon
+vendor/bin/xtwifi-client
+vendor/bin/xtwifi-inet-agent
+vendor/etc/cacert_location.pem
+vendor/etc/xtra_root_cert.pem
+vendor/lib64/libasn1cper.so
+vendor/lib64/libasn1crt.so
+vendor/lib64/libasn1crtx.so
+vendor/lib64/libcdfw_remote_api.so
+vendor/lib64/libgdtap.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/libminksocket.so
+vendor/lib64/libpal_net_if.so
+vendor/lib64/libsys_info_cache.so
+vendor/lib64/libxtwifi_server_protocol.so
+vendor/lib64/libxtwifi_server_protocol_uri_v3.so
 
 # GNSS (configs)
 vendor/etc/apdr.conf
@@ -269,6 +283,10 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
+# QDMA
+vendor/lib64/libqcc_file_agent.so
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
+
 # QMI
 vendor/etc/data/dsi_config.xml
 vendor/lib64/libconfigdb.so
@@ -341,7 +359,6 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 # RIL (TFTP)
 vendor/bin/tftp_server
 vendor/etc/init/vendor.qti.tftp.rc
-vendor/lib64/libqsocket.so
 
 # RIL (QCRILD)
 vendor/bin/hw/qcrild
@@ -422,10 +439,14 @@ vendor/lib64/libhdcpsrm.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libwvhidl.so
 
+# WiGig
+vendor/lib64/libaoa.so
+
 # WLAN
 vendor/bin/ptt_socket_app
 vendor/bin/wcnss_service
 
 # Misc
 vendor/etc/public.libraries.txt
+vendor/lib64/libqsocket.so
 vendor/lib64/libsoc_helper.so
