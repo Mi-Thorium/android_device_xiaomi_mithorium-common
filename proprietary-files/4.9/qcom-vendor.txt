@@ -289,14 +289,10 @@ vendor/lib64/libqcc_file_agent.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # QMI
-vendor/etc/data/dsi_config.xml
-vendor/lib64/libconfigdb.so
 vendor/lib64/libdiag.so
-vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
 vendor/lib64/libmdmdetect.so
-vendor/lib64/libnetmgr.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmi_cci.so
@@ -323,8 +319,10 @@ vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 # RIL (Data)
 vendor/bin/port-bridge
 vendor/bin/qti
+vendor/etc/data/dsi_config.xml
 vendor/etc/init/dataqti.rc
 vendor/etc/init/port-bridge.rc
+vendor/lib64/libdsi_netctrl.so
 
 # RIL (Data) - ADPL
 vendor/bin/adpl
@@ -335,6 +333,8 @@ vendor/lib64/libqcmaputils.so
 vendor/bin/netmgrd
 vendor/etc/data/netmgr_config.xml
 vendor/etc/init/netmgrd.rc
+vendor/lib64/libconfigdb.so
+vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnetmgr_nr_fusion.so
 vendor/lib64/libnetmgr_rmnet_ext.so
