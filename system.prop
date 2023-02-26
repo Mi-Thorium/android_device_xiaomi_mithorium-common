@@ -25,6 +25,9 @@ DEVICE_PROVISIONED=1
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
 
+persist.hwc.mdpcomp.enable=true
+persist.demo.hdmirotationlock=false
+
 #ro.hdmi.enable=true
 #tunnel.decode=true
 
