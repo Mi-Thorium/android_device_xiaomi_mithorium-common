@@ -419,6 +419,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Subsystem state notifier
+MITHORIUM_PRODUCT_PACKAGES += \
+    subsystem_state_notifier
+
 # Telephony
 MITHORIUM_PRODUCT_PACKAGES += \
     ims-ext-common \

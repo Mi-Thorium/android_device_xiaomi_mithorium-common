@@ -1,5 +1,8 @@
 # Dirac
 type dirac_prop, property_type;
 
+# Subsystem state notifier
+type vendor_subsys_state_notifier_prop, property_type;
+
 # Xiaomi
 type vendor_xiaomi_prop, property_type;

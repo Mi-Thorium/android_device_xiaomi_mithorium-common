@@ -7,4 +7,5 @@ allow init firmware_file:filesystem getattr;
 allow init sysfs_leds:lnk_file r_file_perms;
 
 # Prop
+get_prop(init, vendor_subsys_state_notifier_prop)
 get_prop(init, vendor_xiaomi_prop)
