@@ -252,6 +252,9 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
+MITHORIUM_PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # HIDL
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
