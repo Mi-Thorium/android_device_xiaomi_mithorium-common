@@ -23,6 +23,9 @@
 /mnt/vendor/persist(/.*)?                                     u:object_r:mnt_vendor_file:s0
 /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin                    u:object_r:wcnss_persist_file:s0
 
+# Executables
+/(vendor|system/vendor)/bin/edgnss-daemon	u:object_r:vendor_location_exec:s0
+
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.xiaomi_mithorium      u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.qti\.xiaomi_mithorium	u:object_r:hal_thermal_default_exec:s0
