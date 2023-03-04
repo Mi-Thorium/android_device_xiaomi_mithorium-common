@@ -24,6 +24,9 @@ vidc.enc.dcvs.extra-buff-count		u:object_r:camera_prop:s0
 # Dirac
 persist.audio.dirac.       u:object_r:dirac_prop:s0
 
+# Subsystem state notifier
+vendor.subsys_state_notifier.		u:object_r:vendor_subsys_state_notifier_prop:s0
+
 # Wifi
 vendor.wlan.driver.ath	u:object_r:vendor_wifi_version:s0
 

@@ -27,6 +27,7 @@ allow vendor_init {
 }:file w_file_perms;
 
 # Prop
+get_prop(vendor_init, vendor_subsys_state_notifier_prop)
 get_prop(vendor_init, vendor_xiaomi_prop)
 set_prop(vendor_init, camera_prop)
 set_prop(vendor_init, vendor_bservice_prop);
