@@ -1,3 +1,6 @@
+# Bluetooth
+vendor.qcom.bluetooth.soc=pronto
+
 # Bpf
 ro.kernel.ebpf.supported=1
 
