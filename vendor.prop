@@ -1,3 +1,6 @@
+# Bluetooth
+vendor.qcom.bluetooth.soc=pronto
+
 # Camera
 persist.vendor.camera.HAL3.enabled=1
 
