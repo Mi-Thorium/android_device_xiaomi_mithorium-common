@@ -157,6 +157,11 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
 
+# Charger
+MITHORIUM_PRODUCT_PACKAGES += \
+    charger_led \
+    charger_led.recovery
+
 # Configstore
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 MITHORIUM_PRODUCT_PACKAGES += \
