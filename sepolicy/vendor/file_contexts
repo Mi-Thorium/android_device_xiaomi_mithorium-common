@@ -1,4 +1,5 @@
 # Block devices
+/dev/mmcblk0rpmb	u:object_r:rpmb_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/aboot             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/cmnlib             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/cmnlib64             u:object_r:custom_ab_block_device:s0
