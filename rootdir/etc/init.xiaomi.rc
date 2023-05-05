@@ -32,6 +32,10 @@ on property:init.svc.vendor.qcamerasvr=running
 on property:hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${hw.fm.init}
 
+# GPS
+on property:persist.sys.xtra-daemon.enabled=*
+    restart loc_launcher
+
 # RIL
 on boot
     enable vendor.qcrild
