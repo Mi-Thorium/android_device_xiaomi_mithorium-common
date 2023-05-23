@@ -18,8 +18,5 @@ type rild_file, file_type, vendor_file_type;
 # Rmt
 type debugfs_rmt, debugfs_type, fs_type;
 
-# Slab
-type sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
-
 # Subsystem
 type sysfs_modem_subsys, fs_type, sysfs_type;
