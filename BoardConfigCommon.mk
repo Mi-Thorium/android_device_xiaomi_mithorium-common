@@ -185,7 +185,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
+include device/qcom/sepolicy-legacy-um_mithorium/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 ifeq (true,$(call math_lt,$(PRODUCT_SHIPPING_API_LEVEL),28))
