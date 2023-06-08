@@ -37,10 +37,10 @@ static const std::string led_paths[] {
     [WHITE] = LED_PATH("white"),
 };
 
-static const std::string kLCDFile = "/sys/class/leds/lcd-backlight/brightness";
-static const std::string kLCDFile2 = "/sys/class/backlight/panel0-backlight/brightness";
-static const std::string kLCDMaxFile = "/sys/class/leds/lcd-backlight/max_brightness";
-static const std::string kLCDMaxFile2 = "/sys/class/backlight/panel0-backlight/max_brightness";
+static const std::string kLCDFile = "/sys/class/backlight/panel0-backlight/brightness";
+static const std::string kLCDFile2 = "/sys/class/leds/lcd-backlight/brightness";
+static const std::string kLCDMaxFile = "/sys/class/backlight/panel0-backlight/max_brightness";
+static const std::string kLCDMaxFile2 = "/sys/class/leds/lcd-backlight/max_brightness";
 
 static const std::string kButtonFile = "/sys/class/leds/button-backlight/brightness";
 
