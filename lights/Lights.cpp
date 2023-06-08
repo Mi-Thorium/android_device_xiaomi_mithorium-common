@@ -138,6 +138,24 @@ void Lights::setSpeakerLightLocked(const HwLightState& state) {
     green = (state.color >> 8) & 0xFF;
     blue = state.color & 0xFF;
 
+    LOG(INFO) << "========================================";
+    LOG(INFO) << "r=" << std::to_string(red) << " g=" << std::to_string(green) << " b=" << std::to_string(blue);
+
+    switch (state.flashMode) {
+        case FlashMode::HARDWARE:
+            LOG(INFO) << "state.flashMode HARDWARE";
+            break;
+        case FlashMode::TIMED:
+            LOG(INFO) << "state.flashMode TIMED";
+            break;
+        case FlashMode::NONE:
+            LOG(INFO) << "state.flashMode NONE";
+            break;
+        default:
+            LOG(INFO) << "state.flashMode default";
+            break;
+    }
+
     // Scale RGB brightness if Alpha brightness is not 0xFF
     if (alpha != 0xFF) {
         red = (red * alpha) / 0xFF;
@@ -197,7 +215,9 @@ void Lights::handleSpeakerBatteryLocked() {
 }
 
 bool Lights::setLedTrigger(led_type led, std::string value) {
-    return WriteStringToFile(value, led_paths[led] + "trigger");
+    bool rc = WriteStringToFile(value, led_paths[led] + "trigger");
+    LOG(INFO) << "setLedTrigger path=" << led_paths[led] << "trigger value=" << value << " rc=" << std::to_string(rc);
+    return rc;
 }
 
 bool Lights::updateLedBreath(led_type led, const HwLightState& state) {
@@ -216,7 +236,9 @@ bool Lights::updateLedBreath(led_type led, const HwLightState& state) {
             break;
         case LedBreathType::TRIGGER:
             rc &= WriteToFile(led_paths[led] + "delay_on", state.flashOnMs);
+            LOG(INFO) << "Write " << led_paths[led] << "delay_on " << std::to_string(state.flashOnMs) << " rc=" << std::to_string(rc);
             rc &= WriteToFile(led_paths[led] + "delay_off", state.flashOffMs);
+            LOG(INFO) << "Write " << led_paths[led] << "delay_off " << std::to_string(state.flashOffMs) << " rc=" << std::to_string(rc);
             break;
         default:
             break;
@@ -226,7 +248,9 @@ bool Lights::updateLedBreath(led_type led, const HwLightState& state) {
 }
 
 bool Lights::setLedBrightness(led_type led, uint32_t value) {
-    return WriteToFile(led_paths[led] + "brightness", value);
+    bool rc = WriteToFile(led_paths[led] + "brightness", value);
+    LOG(INFO) << "setLedBrightness path=" << led_paths[led] << "brightness value=" << std::to_string(value) << " rc=" << std::to_string(rc);
+    return rc;
 }
 
 bool Lights::updateLedBrightness(led_type led, uint32_t value) {
