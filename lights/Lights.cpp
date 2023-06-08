@@ -42,9 +42,6 @@ static const std::string kLCDFile2 = "/sys/class/backlight/panel0-backlight/brig
 static const std::string kLCDMaxFile = "/sys/class/leds/lcd-backlight/max_brightness";
 static const std::string kLCDMaxFile2 = "/sys/class/backlight/panel0-backlight/max_brightness";
 
-static int LCD_MaxBrightness = 0;
-static bool LED_UseRedAsWhite = false;
-
 static const std::string kButtonFile = "/sys/class/leds/button-backlight/brightness";
 
 #define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
@@ -60,35 +57,40 @@ const static std::vector<HwLight> kAvailableLights = {
 Lights::Lights() {
     std::string tempstr;
 
+    // Backlight
     mBacklightNode = !access(kLCDFile.c_str(), F_OK) ? kLCDFile : kLCDFile2;
-    mButtonExists = !access(kButtonFile.c_str(), F_OK);
+    ReadFileToString(!access(kLCDFile.c_str(), F_OK) ? kLCDMaxFile : kLCDMaxFile2, &tempstr, true);
+    if (!tempstr.empty())
+        mBacklightMaxBrightness = std::stoi(tempstr);
+    if (mBacklightMaxBrightness < 255)
+        mBacklightMaxBrightness = 255;
+
+    // LED
     mWhiteLed = !!access((led_paths[GREEN] + "brightness").c_str(), W_OK);
-    LED_UseRedAsWhite = mWhiteLed && !access((led_paths[RED] + "brightness").c_str(), F_OK);
-    if (LED_UseRedAsWhite)
-        mBreath = (!access(((LED_UseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "blink").c_str(), W_OK) || !access(((LED_UseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "breath").c_str(), W_OK));
+    mLedUseRedAsWhite = mWhiteLed && !access((led_paths[RED] + "brightness").c_str(), F_OK);
+    if (mLedUseRedAsWhite)
+        mBreath = (!access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "blink").c_str(), W_OK) || !access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "breath").c_str(), W_OK));
     else
         mBreath = (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "blink").c_str(), W_OK) || !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK));
 
-    ReadFileToString(!access(kLCDFile.c_str(), F_OK) ? kLCDMaxFile : kLCDMaxFile2, &tempstr, true);
-    if (!tempstr.empty()) {
-        LCD_MaxBrightness = std::stoi(tempstr);
-    }
-    if (LCD_MaxBrightness < 255)
-        LCD_MaxBrightness = 255;
+    // Button
+    mButtonExists = !access(kButtonFile.c_str(), F_OK);
 
+    LOG(INFO) << "mBacklightMaxBrightness = " << std::to_string(mBacklightMaxBrightness) ;
     LOG(INFO) << "mBacklightNode = " << mBacklightNode ;
-    LOG(INFO) << "mButtonExists = " << (mButtonExists ? "True" : "False") ;
-    LOG(INFO) << "mWhiteLed = " << (mWhiteLed ? "True" : "False") ;
+
     LOG(INFO) << "mBreath = " << (mBreath ? "True" : "False") ;
-    LOG(INFO) << "LCD_MaxBrightness = " << std::to_string(LCD_MaxBrightness) ;
-    LOG(INFO) << "LED_UseRedAsWhite = " << (LED_UseRedAsWhite ? "True" : "False") ;
+    LOG(INFO) << "mLedUseRedAsWhite = " << (mLedUseRedAsWhite ? "True" : "False") ;
+    LOG(INFO) << "mWhiteLed = " << (mWhiteLed ? "True" : "False") ;
+
+    LOG(INFO) << "mButtonExists = " << (mButtonExists ? "True" : "False") ;
 }
 
 // AIDL methods
 ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
     switch (id) {
         case (int)LightType::BACKLIGHT:
-            WriteToFile(mBacklightNode, RgbaToBrightness(state.color) * LCD_MaxBrightness / 0xFF);
+            WriteToFile(mBacklightNode, RgbaToBrightness(state.color) * mBacklightMaxBrightness / 0xFF);
             break;
         case (int)LightType::BATTERY:
             mBattery = state;
@@ -142,7 +144,7 @@ void Lights::setSpeakerLightLocked(const HwLightState& state) {
         case FlashMode::HARDWARE:
         case FlashMode::TIMED:
             if (mWhiteLed) {
-                rc = setLedBreath(LED_UseRedAsWhite ? RED : WHITE, blink);
+                rc = setLedBreath(mLedUseRedAsWhite ? RED : WHITE, blink);
             } else {
                 if (!!red)
                     rc = setLedBreath(RED, blink);
@@ -157,7 +159,7 @@ void Lights::setSpeakerLightLocked(const HwLightState& state) {
         case FlashMode::NONE:
         default:
             if (mWhiteLed) {
-                rc = setLedBrightness(LED_UseRedAsWhite ? RED : WHITE, RgbaToBrightness(state.color));
+                rc = setLedBrightness(mLedUseRedAsWhite ? RED : WHITE, RgbaToBrightness(state.color));
             } else {
                 rc = setLedBrightness(RED, red);
                 rc &= setLedBrightness(GREEN, green);
