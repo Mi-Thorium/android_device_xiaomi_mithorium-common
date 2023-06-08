@@ -36,6 +36,13 @@ enum class LedBreathType {
     UNSUPPORTED = 0,
     BLINK,
     BREATH,
+    TRIGGER,
+};
+
+enum class LedState {
+    OFF = 0,
+    BREATH,
+    BRIGHTNESS,
 };
 
 class Lights : public BnLights {
@@ -49,8 +56,14 @@ private:
     void setSpeakerLightLocked(const HwLightState& state);
     void handleSpeakerBatteryLocked();
 
-    bool setLedBreath(led_type led, uint32_t value);
+    bool updateLedBreath(led_type led, const HwLightState& state);
+    bool updateLedBrightness(led_type led, uint32_t value);
     bool setLedBrightness(led_type led, uint32_t value);
+    bool setLedTrigger(led_type led, std::string value);
+
+    enum LedState getLedState(led_type led);
+    void setLedState(led_type led, LedState new_state);
+    bool updateLedState(led_type led, LedState new_state);
 
     bool IsLit(uint32_t color);
     uint32_t RgbaToBrightness(uint32_t color);
@@ -60,6 +73,10 @@ private:
     std::string mBacklightNode;
 
     enum LedBreathType mLedBreathType;
+    enum LedState mLedStateRed;
+    enum LedState mLedStateGreen;
+    enum LedState mLedStateBlue;
+    enum LedState mLedStateWhite;
     bool mLedUseRedAsWhite;
     bool mWhiteLed;
 
