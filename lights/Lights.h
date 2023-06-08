@@ -32,6 +32,12 @@ enum led_type {
     WHITE,
 };
 
+enum class LedBreathType {
+    UNSUPPORTED = 0,
+    BLINK,
+    BREATH,
+};
+
 class Lights : public BnLights {
 public:
     Lights();
@@ -53,7 +59,7 @@ private:
     int mBacklightMaxBrightness;
     std::string mBacklightNode;
 
-    bool mBreath;
+    enum LedBreathType mLedBreathType;
     bool mLedUseRedAsWhite;
     bool mWhiteLed;
 

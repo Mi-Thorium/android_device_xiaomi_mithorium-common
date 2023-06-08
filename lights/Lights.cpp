@@ -68,10 +68,12 @@ Lights::Lights() {
     // LED
     mWhiteLed = !!access((led_paths[GREEN] + "brightness").c_str(), W_OK);
     mLedUseRedAsWhite = mWhiteLed && !access((led_paths[RED] + "brightness").c_str(), F_OK);
-    if (mLedUseRedAsWhite)
-        mBreath = (!access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "blink").c_str(), W_OK) || !access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "breath").c_str(), W_OK));
+    if (!access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "blink").c_str(), W_OK))
+        mLedBreathType = LedBreathType::BLINK;
+    else if (!access(((mLedUseRedAsWhite ? led_paths[RED] : led_paths[WHITE]) + "breath").c_str(), W_OK))
+        mLedBreathType = LedBreathType::BREATH;
     else
-        mBreath = (!access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "blink").c_str(), W_OK) || !access(((mWhiteLed ? led_paths[WHITE] : led_paths[RED]) + "breath").c_str(), W_OK));
+        mLedBreathType = LedBreathType::UNSUPPORTED;
 
     // Button
     mButtonExists = !access(kButtonFile.c_str(), F_OK);
@@ -79,7 +81,7 @@ Lights::Lights() {
     LOG(INFO) << "mBacklightMaxBrightness = " << std::to_string(mBacklightMaxBrightness) ;
     LOG(INFO) << "mBacklightNode = " << mBacklightNode ;
 
-    LOG(INFO) << "mBreath = " << (mBreath ? "True" : "False") ;
+    LOG(INFO) << "mLedBreathType = " << std::to_string((int)mLedBreathType);
     LOG(INFO) << "mLedUseRedAsWhite = " << (mLedUseRedAsWhite ? "True" : "False") ;
     LOG(INFO) << "mWhiteLed = " << (mWhiteLed ? "True" : "False") ;
 
@@ -179,10 +181,15 @@ void Lights::handleSpeakerBatteryLocked() {
 }
 
 bool Lights::setLedBreath(led_type led, uint32_t value) {
-    if (!access((led_paths[led] + "breath").c_str(), W_OK))
-        return WriteToFile(led_paths[led] + "breath", value);
-    else
-        return WriteToFile(led_paths[led] + "blink", value);
+    switch (mLedBreathType) {
+        case LedBreathType::BLINK:
+            return WriteToFile(led_paths[led] + "blink", value);
+        case LedBreathType::BREATH:
+            return WriteToFile(led_paths[led] + "breath", value);
+        default:
+            break;
+    }
+    return false;
 }
 
 bool Lights::setLedBrightness(led_type led, uint32_t value) {
