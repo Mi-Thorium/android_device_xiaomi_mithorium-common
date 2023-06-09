@@ -1,9 +1,6 @@
 sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 sys.post_boot.parsed       u:object_r:vendor_mpctl_prop:s0
 persist.net.doxlat         u:object_r:vendor_xlat_prop:s0
-camera.dual.mode           u:object_r:camera_prop:s0
-persist.camera.            u:object_r:camera_prop:s0
-persist.vendor.camera.     u:object_r:camera_prop:s0
 ctl.vendor.imsrcsd         u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
 
 # Camera
@@ -11,14 +8,17 @@ camera.clientName			u:object_r:camera_prop:s0
 camera.client.				u:object_r:camera_prop:s0
 camera.cpp.				u:object_r:camera_prop:s0
 camera.debug.				u:object_r:camera_prop:s0
+camera.dual.mode			u:object_r:camera_prop:s0
 camera.llvd.preview.disable		u:object_r:camera_prop:s0
 camera.otp.filename			u:object_r:camera_prop:s0
 cameradaemon.SaveMemAtBoot		u:object_r:camera_prop:s0
 cpp.set.clock				u:object_r:camera_prop:s0
 disable.cpp.power.collapse		u:object_r:camera_prop:s0
 persist.cam.				u:object_r:camera_prop:s0
+persist.camera.				u:object_r:camera_prop:s0
 persist.partial.skip			u:object_r:camera_prop:s0
 persist.vendor.cam.			u:object_r:camera_prop:s0
+persist.vendor.camera.			u:object_r:camera_prop:s0
 persist.vendor.partial.skip		u:object_r:camera_prop:s0
 vendor.camera.cpp.set.clock		u:object_r:camera_prop:s0
 vendor.camera.lowpower.record.enable	u:object_r:camera_prop:s0
