@@ -429,8 +429,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
 
 # Charger
-/sys/class/power_supply/battery  charging_enabled    0660    system  system
-/sys/class/power_supply/battery  input_suspend       0660    system  system
+/sys/class/power_supply/battery  battery_charging_enabled   0660    system  system
+/sys/class/power_supply/battery  charging_enabled           0660    system  system
+/sys/class/power_supply/battery  input_suspend              0660    system  system
 
 # socinfo
 /sys/devices/soc0           serial_number            0000    root    root
