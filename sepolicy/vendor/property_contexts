@@ -23,6 +23,7 @@ persist.partial.skip			u:object_r:camera_prop:s0
 persist.vendor.cam.			u:object_r:camera_prop:s0
 persist.vendor.camera.			u:object_r:camera_prop:s0
 persist.vendor.partial.skip		u:object_r:camera_prop:s0
+ro.camera.				u:object_r:camera_prop:s0
 vendor.camera.cpp.set.clock		u:object_r:camera_prop:s0
 vendor.camera.lowpower.record.enable	u:object_r:camera_prop:s0
 vidc.enc.dcvs.extra-buff-count		u:object_r:camera_prop:s0
