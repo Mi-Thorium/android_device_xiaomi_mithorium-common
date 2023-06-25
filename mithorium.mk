@@ -94,9 +94,12 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
-    audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.r_submix.default \
     audio.usb.default
+
+ifneq ($(TARGET_DISABLE_AUDIO),true)
+MITHORIUM_PRODUCT_PACKAGES += \
+    audio.primary.$(TARGET_BOARD_PLATFORM)
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libaudiopreprocessing \
@@ -119,6 +122,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libhfp \
     libsndmonitor \
     libspkrprot
+endif
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
