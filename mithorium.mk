@@ -142,9 +142,11 @@ MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor
 
 # Camera
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_CAMERA_PROVIDER),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
+endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libstdc++.vendor
