@@ -11,5 +11,6 @@ allow init_xiaomi vendor_toolbox_exec:file rx_file_perms;
 # Allow to read FDT model
 allow init_xiaomi fdt_model:file r_file_perms;
 
-# Allow to set prop
+# Allow to get/set prop
+get_prop(init_xiaomi, vendor_xiaomi_prop)
 set_prop(init_xiaomi, vendor_xiaomi_prop)
