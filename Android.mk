@@ -122,7 +122,8 @@ $(Q3DTOOLS_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(EGL_32_SYMLINK) $(GLESv2_32_SYMLINK) $(Q3DTOOLS_32_SYMLINK) $(EGL_64_SYMLINK) $(GLESv2_64_SYMLINK) $(Q3DTOOLS_64_SYMLINK)
 
-ifneq ($(TARGET_DEVICE),oxygen)
+ifeq ($(filter Motorola motorola,$(TARGET_VENDOR)),)
+ifeq ($(filter oxygen,$(TARGET_DEVICE)),)
 WCNSS_BIN_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 $(WCNSS_BIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS bin link: $@"
@@ -138,6 +139,7 @@ $(WCNSS_DAT_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /mnt/vendor/persist/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_BIN_SYMLINK) $(WCNSS_DAT_SYMLINK)
+endif
 endif
 
 ifeq ($(filter Mi439 Mi439_4_19,$(TARGET_DEVICE)),)

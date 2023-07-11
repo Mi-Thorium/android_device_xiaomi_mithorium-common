@@ -96,9 +96,12 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 MITHORIUM_PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    audio.primary.$(TARGET_BOARD_PLATFORM) \
     audio.r_submix.default \
     audio.usb.default
+
+ifneq ($(TARGET_DISABLE_AUDIO),true)
+MITHORIUM_PRODUCT_PACKAGES += \
+    audio.primary.$(TARGET_BOARD_PLATFORM)
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libaudiopreprocessing \
@@ -121,6 +124,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libhfp \
     libsndmonitor \
     libspkrprot
+endif
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -142,10 +146,12 @@ MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor
 
 # Camera
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_CAMERA_PROVIDER),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
+endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor
