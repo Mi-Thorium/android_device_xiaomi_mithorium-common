@@ -6,6 +6,9 @@
 
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 
+# APEX
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Userspace Reboot
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
@@ -88,10 +91,6 @@ endif
 MITHORIUM_PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
-
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Audio
 MITHORIUM_PRODUCT_PACKAGES += \
