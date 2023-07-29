@@ -28,6 +28,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.uclamp.rc",
+    src: "etc/init.uclamp.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.xiaomi.rc",
     src: "etc/init.xiaomi.rc",
     sub_dir: "init/hw",
