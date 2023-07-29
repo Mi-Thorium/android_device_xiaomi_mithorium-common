@@ -487,10 +487,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
-# Tethering
-MITHORIUM_PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
-
 # Vibrator
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_VIBRATOR),true)
 MITHORIUM_PRODUCT_PACKAGES += \
