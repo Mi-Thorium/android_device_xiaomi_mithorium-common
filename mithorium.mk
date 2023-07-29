@@ -6,6 +6,9 @@
 
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 
+# APEX
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Userspace Reboot
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
