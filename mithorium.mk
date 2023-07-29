@@ -6,6 +6,9 @@
 
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 
+# APEX
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Userspace Reboot
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
@@ -28,10 +31,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
-
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
