@@ -25,7 +25,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Build
 BUILD_BROKEN_DUP_RULES := true
 
-# Kernel
+# Kernel - Common
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true androidboot.init_fatal_reboot_target=recovery printk.devkmsg=on
@@ -42,6 +42,35 @@ BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
+
+# Kernel - Mi-Thorium
+ifeq ($(TARGET_USES_MITHORIUM_KERNEL),true)
+TARGET_KERNEL_CONFIG := \
+    vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
+    vendor/common.config \
+    vendor/feature/android-12.config \
+    vendor/feature/exfat.config \
+    vendor/feature/kprobes.config \
+    vendor/feature/lmkd.config
+
+TARGET_KERNEL_RECOVERY_CONFIG := \
+    vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
+    vendor/common.config \
+    vendor/feature/exfat.config \
+    vendor/feature/ntfs.config \
+    vendor/feature/no-camera-stack.config \
+    vendor/feature/no-wlan-driver.config
+
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
+TARGET_KERNEL_CONFIG += \
+    vendor/feature/uclamp.config
+else ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_KERNEL_CONFIG += \
+    vendor/feature/wireguard.config
+endif
+
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)
+endif
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
