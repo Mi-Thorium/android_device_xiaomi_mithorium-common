@@ -28,4 +28,8 @@
         <item>restart_bootloader</item>
         <item>restart_fastboot</item>
      </string-array>
+
+    <!-- LiveDisplay -->
+    <bool name="config_defaultCABC">false</bool>
+    <bool name="config_defaultColorEnhancement">false</bool>
 </resources>
