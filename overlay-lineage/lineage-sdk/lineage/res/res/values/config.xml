@@ -44,4 +44,8 @@
         <item>org.lineageos.aperture</item>
         <item>org.lineageos.aperture.dev</item>
     </string-array>
+
+    <!-- LiveDisplay -->
+    <bool name="config_defaultCABC">false</bool>
+    <bool name="config_defaultColorEnhancement">false</bool>
 </resources>
