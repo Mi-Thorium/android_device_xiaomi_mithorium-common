@@ -186,13 +186,7 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-ifeq ($(USE_MITHORIUM_HALS),true)
-    ifeq ($(TARGET_USES_Q_DISPLAY_STACK),true)
-        QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)-q-display
-    else
-        QCOM_SOONG_NAMESPACE := hardware/mithorium-$(TARGET_KERNEL_VERSION)
-    endif
-else
+ifneq ($(USE_MITHORIUM_QCOM_HALS),true)
 TARGET_ENFORCE_QSSI := true
 endif
 
