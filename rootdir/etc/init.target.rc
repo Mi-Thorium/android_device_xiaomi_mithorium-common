@@ -125,7 +125,7 @@ on boot
     setprop vendor.usb.dpl.inst.name "dpl_bam_dmux"
     setprop vendor.usb.qdss.inst.name "qdss"
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service vendor.wcnss-service /system/vendor/bin/wcnss_service
     class late_start
     user system
     group system wifi radio
