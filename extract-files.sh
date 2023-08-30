@@ -98,11 +98,13 @@ if [ -z "${ONLY_TARGET}" ]; then
         extract "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor-multilib-module.txt" "${SRC}" "${KANG}" --section "${SECTION}"
     else
         # Kernel 4.19
         extract "${MY_DIR}/proprietary-files/4.19/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+        extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor-multilib-module.txt" "${SRC}" "${KANG}" --section "${SECTION}"
     fi
 fi
 
