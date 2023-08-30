@@ -1,0 +1,5 @@
+# All unpinned blobs below are extracted from LA.UM.9.6.3.r1-06200-89xx.0 (4.9)
+
+# ADSP
+-vendor/lib/libadsprpc.so
+-vendor/lib64/libadsprpc.so
