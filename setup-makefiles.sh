@@ -58,11 +58,13 @@ if [ -z "$ONLY_TARGET" ]; then
         write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" true
         write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-vendor.txt" true
         write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-vendor-32.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-vendor-multilib-module.txt" true
     else
         # Kernel 4.19
         write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-system.txt" true
         write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-vendor.txt" true
         write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-vendor-32.txt" true
+        write_makefiles "${MY_DIR}/proprietary-files/4.19/qcom-vendor-multilib-module.txt" true
     fi
 
     # Finish
