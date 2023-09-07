@@ -46,6 +46,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
     vendor/feature/android-12.config \
+    vendor/feature/erofs.config \
     vendor/feature/exfat.config \
     vendor/feature/kprobes.config \
     vendor/feature/lmkd.config
@@ -53,6 +54,7 @@ TARGET_KERNEL_CONFIG := \
 TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
+    vendor/feature/erofs.config \
     vendor/feature/exfat.config \
     vendor/feature/ntfs.config \
     vendor/feature/no-camera-stack.config \
@@ -131,6 +133,15 @@ LOC_HIDL_VERSION := 4.1
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+
+# Filesystem - EROFS
+ifeq ($(TARGET_USES_MITHORIUM_KERNEL),true)
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
+BOARD_EROFS_USE_LEGACY_COMPRESSION := true
+else
+BOARD_EROFS_PCLUSTER_SIZE := 262144
+endif # TARGET_KERNEL_VERSION
+endif # TARGET_USES_MITHORIUM_KERNEL
 
 # GRF/VF
 BOARD_SHIPPING_API_LEVEL := 30
