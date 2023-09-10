@@ -113,7 +113,9 @@ if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/prop
     source "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/extract-files.sh"
     setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    for proprietary_files_txt in ${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files*.txt; do
+        extract "$proprietary_files_txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    done
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
@@ -121,7 +123,9 @@ if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/prop
     source "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/extract-files.sh"
     setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    for proprietary_files_txt in ${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files*.txt; do
+        extract "$proprietary_files_txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    done
 fi
 
 "${MY_DIR}/setup-makefiles.sh" ${SETUP_MAKEFILES_ARGS}

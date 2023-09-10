@@ -80,7 +80,9 @@ if [ -z "$ONLY_COMMON" ]; then
         write_headers
 
         # The standard device blobs
-        write_makefiles "${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files.txt" true
+        for proprietary_files_txt in ${MY_DIR}/../${DEVICE_PARENT}/${DEVICE}/proprietary-files*.txt; do
+            write_makefiles "$proprietary_files_txt" true
+        done
 
         # Finish
         write_footers
@@ -98,7 +100,9 @@ if [ -z "$ONLY_COMMON" ]; then
         write_headers "$DEVICE_SPECIFIED_COMMON_DEVICE"
 
         # The standard device blobs
-        write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
+        for proprietary_files_txt in ${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files*.txt; do
+            write_makefiles "$proprietary_files_txt" true
+        done
 
         # Finish
         write_footers
