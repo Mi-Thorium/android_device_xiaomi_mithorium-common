@@ -604,6 +604,9 @@ PRODUCT_COPY_FILES += \
 # Build MITHORIUM_PRODUCT_PACKAGES
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
 
+# Inherit MiThorium AOSP stuff
+$(call inherit-product, hardware/mithorium/aosp/product.mk)
+
 # Inherit MiThorium HALs
 $(call inherit-product-if-exists, hardware/mithorium/mithorium_qcom_hals.mk)
 

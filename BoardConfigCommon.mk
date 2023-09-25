@@ -263,6 +263,9 @@ WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Inherit MiThorium AOSP stuff
+include hardware/mithorium/aosp/BoardConfig.mk
+
 # Inherit from the proprietary version
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
