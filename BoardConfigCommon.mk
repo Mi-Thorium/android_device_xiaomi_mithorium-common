@@ -263,6 +263,9 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 TARGET_FIRMWARE_WLAN_MAC_BIN_SYMLINK_TARGET ?= /mnt/vendor/persist/wlan_mac.bin
 $(call soong_config_set,MITHORIUM_FIRMWARE_WLAN_MAC_BIN,SYMLINK_TARGET,$(TARGET_FIRMWARE_WLAN_MAC_BIN_SYMLINK_TARGET))
 
+# Inherit MiThorium AOSP stuff
+include hardware/mithorium/aosp/BoardConfig.mk
+
 # Inherit from the proprietary version
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
