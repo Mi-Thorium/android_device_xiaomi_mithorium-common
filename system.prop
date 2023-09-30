@@ -161,9 +161,6 @@ ro.vendor.qti.va_aosp.support=1
 # Audio
 ro.bluetooth.a2dp_offload.supported=false
 
-# Charger
-ro.charger.disable_init_blank=true
-
 # Fastbootd
 ro.fastbootd.available=true
 
