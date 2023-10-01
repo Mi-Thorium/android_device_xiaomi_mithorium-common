@@ -475,7 +475,7 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Thermal
-ifneq ($(TARGET_KERNEL_VERSION),4.19)
+ifneq ($(TARGET_DISABLE_QTI_THERMAL_HAL),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti.xiaomi_mithorium
 endif
