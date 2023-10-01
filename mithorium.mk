@@ -312,7 +312,8 @@ MITHORIUM_PRODUCT_PACKAGES += \
 # Health
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
-    android.hardware.health-service.qti_recovery
+    android.hardware.health-service.qti_recovery \
+    charger_res_images_vendor
 
 # HIDL
 MITHORIUM_PRODUCT_PACKAGES += \
