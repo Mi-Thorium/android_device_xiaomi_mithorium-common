@@ -137,9 +137,6 @@ system_ext/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
 # Telephony (ATFWD)
 -system_ext/app/atfwd/atfwd.apk
 
-# Telephony (datastatusnotification) - from FP3
--system_ext/app/datastatusnotification/datastatusnotification.apk
-
 # Telephony (DeviceInfo)
 -system_ext/app/DeviceInfo/DeviceInfo.apk
 
