@@ -1,0 +1,8 @@
+# From LineageOS 20 20231004 Mi8937_4_19 build
+
+# Wifi 1.6 HIDL HAL - prebuilt
+vendor/bin/hw/android.hardware.wifi@1.0-service
+vendor/etc/init/android.hardware.wifi@1.0-service.rc
+-vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
+vendor/lib64/libwifi-hal-ctrl.so
+vendor/lib64/libwifi-hal.so
