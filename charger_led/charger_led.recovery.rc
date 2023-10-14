@@ -1,11 +1,11 @@
-service vendor.charger_led /vendor/bin/charger_led
+service charger_led /system/bin/charger_led
     user system
     group system
     file /dev/kmsg w
+    seclabel u:r:charger_led:s0
     oneshot
-    disabled
 
-on charger
+on early-init
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/breath
     chown system system /sys/class/leds/red/brightness
@@ -21,5 +21,3 @@ on charger
     chown system system /sys/class/leds/white/blink
     chown system system /sys/class/leds/white/breath
     chown system system /sys/class/leds/white/brightness
-
-    start vendor.charger_led
