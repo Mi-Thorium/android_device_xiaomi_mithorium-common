@@ -1,0 +1,13 @@
+type init_vendor_dmesg, domain;
+type init_vendor_dmesg_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init_vendor_dmesg)
+
+allow init_vendor_dmesg vendor_shell_exec:file rx_file_perms;
+allow init_vendor_dmesg vendor_toolbox_exec:file rx_file_perms;
+
+allow init_vendor_dmesg kernel:system syslog_read;
+allow init_vendor_dmesg kmsg_device:chr_file r_file_perms;
+
+allow init_vendor_dmesg vendor_dmesg_data_file:dir rw_dir_perms;
+allow init_vendor_dmesg vendor_dmesg_data_file:file create_file_perms;

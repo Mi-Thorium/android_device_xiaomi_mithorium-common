@@ -77,6 +77,12 @@ sh_binary {
 }
 
 sh_binary {
+    name: "init.dump_early_dmesg.sh",
+    src: "bin/init.dump_early_dmesg.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.qcom.early_boot.sh",
     src: "bin/init.qcom.early_boot.sh",
     vendor: true,

@@ -28,6 +28,20 @@ on property:init.svc.vendor.qcamerasvr=running
     exec /bin/sleep 1s
     restart vendor.camera-provider-2-4
 
+# Dmesg
+on post-fs-data
+    mkdir /data/vendor/dmesg 0755 system system
+
+service vendor.dump_early_dmesg /vendor/bin/init.dump_early_dmesg.sh
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+on property:sys.bootstat.first_boot_completed=1
+    start vendor.dump_early_dmesg
+
 # FM
 on property:hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${hw.fm.init}

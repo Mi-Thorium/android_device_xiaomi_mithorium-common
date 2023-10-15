@@ -1,0 +1,18 @@
+allow hal_dumpstate_default {
+  debugfs_wakeup_sources
+  proc_interrupts
+  sysfs_graphics
+}:file r_file_perms;
+
+r_dir_file(hal_dumpstate_default, sysfs_battery_supply);
+r_dir_file(hal_dumpstate_default, sysfs_livedisplay_tuneable);
+r_dir_file(hal_dumpstate_default, sysfs_mmc_host);
+r_dir_file(hal_dumpstate_default, sysfs_socinfo);
+r_dir_file(hal_dumpstate_default, sysfs_usb_supply);
+r_dir_file(hal_dumpstate_default, vendor_dmesg_data_file);
+
+allow hal_dumpstate_default kernel:system syslog_read;
+allow hal_dumpstate_default kmsg_device:chr_file r_file_perms;
+allow hal_dumpstate_default vendor_toolbox_exec:file rx_file_perms;
+
+set_prop(hal_dumpstate_default, ctl_default_prop);
