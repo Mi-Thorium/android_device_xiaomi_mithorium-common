@@ -15,10 +15,14 @@
  */
 
 #include <android-base/properties.h>
+#include <dlfcn.h>
 #include <log/log.h>
 #include "DumpstateUtil.h"
 
 #include "Dumpstate.h"
+
+#define DEVICE_HANDLER_LIB_NAME "libdumpstate_device.so"
+#define DEVICE_HANDLER_LIB_SYMBOL "dumpstate_device_handler"
 
 using android::os::dumpstate::CommandOptions;
 using android::os::dumpstate::DumpFileToFd;
@@ -141,6 +145,17 @@ ndk::ScopedAStatus Dumpstate::dumpstateBoardImpl(const int fd, const bool full) 
     SetProperty("ctl.stop", "vendor.fps_hal");
     SetProperty("ctl.start", "vendor.fps_hal");
     usleep(500000);
+
+    // Open device specific library
+    void* libdumpstate_device = dlopen(DEVICE_HANDLER_LIB_NAME, RTLD_LAZY);
+    if (libdumpstate_device) {
+        void (*dumpstate_device_handler)(const int fd, const bool full) =
+            (void (*)(const int, const bool))dlsym(libdumpstate_device, DEVICE_HANDLER_LIB_SYMBOL);
+        if (dumpstate_device_handler) {
+            dumpstate_device_handler(fd, full);
+        }
+        dlclose(libdumpstate_device);
+    }
 
     return ndk::ScopedAStatus::ok();
 }
