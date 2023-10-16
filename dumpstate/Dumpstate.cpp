@@ -111,6 +111,7 @@ ndk::ScopedAStatus Dumpstate::dumpstateBoardImpl(const int fd, const bool full) 
     DumpFileToFd(fd, "Display CABC", "/sys/devices/virtual/graphics/fb0/cabc");
     DumpFileToFd(fd, "Display CE", "/sys/devices/virtual/graphics/fb0/color_enhance");
     DumpFileToFd(fd, "Display HBM", "/sys/devices/virtual/graphics/fb0/hbm");
+    DumpFileToFd(fd, "Display Reading mode", "/sys/devices/virtual/graphics/fb0/reading_mode");
     DumpFileToFd(fd, "Display Panel info", "/sys/devices/virtual/graphics/fb0/msm_fb_panel_info");
     DumpFileToFd(fd, "Display Panel status", "/sys/devices/virtual/graphics/fb0/msm_fb_panel_status");
 
