@@ -19,18 +19,30 @@
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
+#include <fcntl.h>
 
 using aidl::android::hardware::dumpstate::Dumpstate;
 
-int main() {
-    ABinderProcess_setThreadPoolMaxThreadCount(0);
+int main(int argc, char *argv[]) {
     std::shared_ptr<Dumpstate> dumpstate = ndk::SharedRefBase::make<Dumpstate>();
 
-    const std::string instance = std::string() + Dumpstate::descriptor + "/default";
-    binder_status_t status =
-            AServiceManager_registerLazyService(dumpstate->asBinder().get(), instance.c_str());
-    CHECK_EQ(status, STATUS_OK);
+    if (argc == 2 && (std::string(argv[1]) == "--service")) {
+        ABinderProcess_setThreadPoolMaxThreadCount(0);
 
-    ABinderProcess_joinThreadPool();
-    return EXIT_FAILURE;  // Unreachable
+        const std::string instance = std::string() + Dumpstate::descriptor + "/default";
+        binder_status_t status =
+                AServiceManager_registerLazyService(dumpstate->asBinder().get(), instance.c_str());
+        CHECK_EQ(status, STATUS_OK);
+
+        ABinderProcess_joinThreadPool();
+        return EXIT_FAILURE;  // Unreachable
+    } else {
+        int fd = open("/dev/stdout", O_WRONLY);
+        if (fd < 0)
+            return 1;
+        dumpstate->dumpstateBoardImpl(fd, true);
+        close(fd);
+    }
+
+    return 0;
 }

@@ -28,12 +28,13 @@ namespace dumpstate {
 class Dumpstate : public BnDumpstateDevice {
   private:
     bool getVerboseLoggingEnabledImpl();
-    ::ndk::ScopedAStatus dumpstateBoardImpl(const int fd, const bool full);
 
   public:
     ::ndk::ScopedAStatus dumpstateBoard(const std::vector<::ndk::ScopedFileDescriptor>& in_fds,
                                         IDumpstateDevice::DumpstateMode in_mode,
                                         int64_t in_timeoutMillis) override;
+
+    ::ndk::ScopedAStatus dumpstateBoardImpl(const int fd, const bool full);
 
     ::ndk::ScopedAStatus getVerboseLoggingEnabled(bool* _aidl_return) override;
 
