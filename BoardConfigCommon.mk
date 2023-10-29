@@ -69,7 +69,7 @@ TARGET_KERNEL_CONFIG += \
     vendor/feature/wireguard.config
 endif
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)/kernel
 endif
 
 # ANT
