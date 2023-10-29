@@ -42,6 +42,8 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
 
 # Kernel - Mi-Thorium
 ifeq ($(TARGET_USES_MITHORIUM_KERNEL),true)
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)/kernel
+
 TARGET_KERNEL_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
@@ -68,7 +70,10 @@ TARGET_KERNEL_CONFIG += \
     vendor/feature/wireguard.config
 endif
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)
+ifneq ($(shell grep CONFIG_KSU_STATIC_HOOKS $(TARGET_KERNEL_SOURCE)/techpack/KernelSU/kernel/ksu.c),)
+TARGET_KERNEL_CONFIG += \
+    vendor/feature/ksu_static_hooks.config
+endif
 endif
 
 # ANT
