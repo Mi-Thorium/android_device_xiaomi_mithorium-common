@@ -172,9 +172,7 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    setprop sys.usb.configfs 1
     start qcom-post-boot
-    setprop persist.sys.usb.config mass_storage
     start vendor.hvdcp_opti
 
 service vendor.per_mgr /system/vendor/bin/pm-service
