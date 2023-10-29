@@ -1,0 +1,14 @@
+538,548c538
+<     # Should be before netd, but after apex, properties and logging is available.
+<     trigger load_bpf_programs
+< 
+<     # Now we can start zygote for devices with file based encryption
+<     trigger zygote-start
+< 
+<     # Remove a file to wake up anything waiting for firmware.
+<     trigger firmware_mounts_complete
+< 
+<     trigger early-boot
+<     trigger boot
+---
+>     trigger charger
