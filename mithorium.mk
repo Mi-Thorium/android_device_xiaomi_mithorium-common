@@ -7,6 +7,7 @@
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 
 # APEX
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 #
