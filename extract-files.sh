@@ -99,8 +99,6 @@ if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/proprietary-files/prebuilts.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-
     if [ "${KERNEL_4_19}" != "true" ]; then
         # Kernel 4.9
         extract "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"

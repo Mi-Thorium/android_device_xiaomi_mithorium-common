@@ -52,8 +52,6 @@ if [ -z "$ONLY_TARGET" ]; then
     # Warning headers and guards
     write_headers "MiThoriumSSI Mi8937 Mi439_4_19 Tiare oxygen uter vince onc"
 
-    write_makefiles "${MY_DIR}/proprietary-files/prebuilts.txt" true
-
     # The standard common blobs
     if [ "${KERNEL_4_19}" != "true" ]; then
         # Kernel 4.9
