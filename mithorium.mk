@@ -455,6 +455,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/xiaomi \
     $(LOCAL_PATH)
 
 # Subsystem state notifier
