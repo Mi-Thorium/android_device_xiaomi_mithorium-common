@@ -50,7 +50,6 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/mithorium-$(TARGET_KERNEL_VERSION)/kernel
 TARGET_KERNEL_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
-    vendor/debugfs.config \
     vendor/feature/android-12.config \
     vendor/feature/exfat.config \
     vendor/feature/kprobes.config \
@@ -63,6 +62,11 @@ TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/feature/ntfs.config \
     vendor/feature/no-camera-stack.config \
     vendor/feature/no-wlan-driver.config
+
+ifeq ($(PRODUCT_SET_DEBUGFS_RESTRICTIONS),true)
+TARGET_KERNEL_CONFIG += \
+    vendor/debugfs.config
+endif
 
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 TARGET_KERNEL_CONFIG += \
