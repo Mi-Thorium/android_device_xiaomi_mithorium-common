@@ -10,7 +10,9 @@ TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
 # DebugFS
-PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_SET_DEBUGFS_RESTRICTIONS ?= true
+endif
 
 # Kernel
 TARGET_KERNEL_VERSION ?= 4.9
