@@ -1,5 +1,10 @@
+no_debugfs_restriction(`
+  allow hal_dumpstate_default {
+    debugfs_wakeup_sources
+  }:file r_file_perms;
+')
+
 allow hal_dumpstate_default {
-  debugfs_wakeup_sources
   proc_interrupts
   sysfs_graphics
 }:file r_file_perms;
