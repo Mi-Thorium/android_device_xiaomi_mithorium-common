@@ -60,11 +60,6 @@ TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/feature/no-camera-stack.config \
     vendor/feature/no-wlan-driver.config
 
-ifeq ($(PRODUCT_SET_DEBUGFS_RESTRICTIONS),true)
-TARGET_KERNEL_CONFIG += \
-    vendor/debugfs.config
-endif
-
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 TARGET_KERNEL_CONFIG += \
     vendor/feature/uclamp.config
