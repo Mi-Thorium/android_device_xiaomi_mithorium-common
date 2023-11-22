@@ -50,6 +50,12 @@ on early-fs
     write /sys/kernel/sdhci_msm/add_host 1
     wait /dev/block/platform/soc/7824900.sdhci/by-name/modem
 
+on boot && property:ro.boot.bootdevice=7864900.sdhci
+    symlink /dev/block/platform/soc/7824900.sdhci/by-name/modemst1 /dev/block/bootdevice/by-name/modemst1
+    symlink /dev/block/platform/soc/7824900.sdhci/by-name/modemst2 /dev/block/bootdevice/by-name/modemst2
+    symlink /dev/block/platform/soc/7824900.sdhci/by-name/fsc /dev/block/bootdevice/by-name/fsc
+    symlink /dev/block/platform/soc/7824900.sdhci/by-name/fsg /dev/block/bootdevice/by-name/fsg
+
 # Subsystem Restart
 on init
     # Setup all the sub-system as related
