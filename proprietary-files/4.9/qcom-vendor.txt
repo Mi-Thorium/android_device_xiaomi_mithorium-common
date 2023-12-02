@@ -234,7 +234,7 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 # IRQ Balancer
 vendor/bin/msm_irqbalance
 
-# Media
+# Media - from PAN
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
