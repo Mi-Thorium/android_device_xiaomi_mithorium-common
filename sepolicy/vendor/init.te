@@ -8,3 +8,6 @@ allow init firmware_file:filesystem getattr;
 
 # LED
 allow init sysfs_leds:lnk_file r_file_perms;
+
+# SDHCI
+allow init sysfs_kernel_sdhci_msm:file w_file_perms;
