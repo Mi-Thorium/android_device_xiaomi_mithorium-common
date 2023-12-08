@@ -117,6 +117,3 @@ ro.fastbootd.available=true
 
 # Graphics
 debug.renderengine.backend=skiaglthreaded
-
-# System
-persist.sys.binary_xml=false
