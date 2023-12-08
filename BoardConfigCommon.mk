@@ -170,6 +170,9 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_k$(TARGET_KERNEL_VERSION).xml
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/consumerir.xml
 endif
+ifneq ($(TARGET_HAS_NO_RADIO),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/radio.xml
+endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 endif
@@ -211,6 +214,11 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_k4.19.prop
+endif
+
+ifneq ($(TARGET_HAS_NO_RADIO),true)
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system_radio.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_radio.prop
 endif
 
 # Recovery

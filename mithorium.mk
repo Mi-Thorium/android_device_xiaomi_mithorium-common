@@ -30,9 +30,14 @@ endif
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+ifeq ($(TARGET_HAS_NO_RADIO),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
+else
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
+endif
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
@@ -58,9 +63,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
@@ -83,6 +85,13 @@ endif
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+endif
+
+ifneq ($(TARGET_HAS_NO_RADIO),true)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
 endif
 
 # ANT
@@ -282,6 +291,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libhwbinder.vendor
 
 # IMS
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.3 \
     android.hardware.camera.device@3.4 \
@@ -291,15 +301,18 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6 \
     libshim_imscamera \
     vendor.qti.hardware.camera.device@1.0
+endif
 
 # Input
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
 
 # IPACM
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
+endif
 
 # Keymaster HAL
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_KEYMASTER),true)
@@ -379,8 +392,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Network
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
+endif
 
 # Perf
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -440,6 +455,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 endif
 
 # RIL
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
@@ -448,7 +464,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
     android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor \
-    librmnetctl \
+    librmnetctl
+endif
+
+MITHORIUM_PRODUCT_PACKAGES += \
     libxml2
 
 # Sensors
@@ -462,10 +481,13 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Subsystem state notifier
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     subsystem_state_notifier
+endif
 
 # Telephony
+ifneq ($(TARGET_HAS_NO_RADIO),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
@@ -477,6 +499,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+endif
 
 # Thermal
 ifneq ($(TARGET_DISABLE_QTI_THERMAL_HAL),true)
