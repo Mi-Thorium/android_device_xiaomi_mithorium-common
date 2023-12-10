@@ -151,6 +151,18 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor
 
+ifeq ($(TARGET_IS_TABLET),true)
+# Set the Bluetooth Class of Device
+# Service Field: 0x5A -> 90
+#    Bit 17: Networking
+#    Bit 19: Capturing
+#    Bit 20: Object Transfer
+#    Bit 22: Telephony
+# MAJOR_CLASS: 0x01 -> 1 (Computer)
+# MINOR_CLASS: 0x10 -> 16 (Handheld PC/PDA clamshell)
+PRODUCT_VENDOR_PROPERTIES += \
+    bluetooth.device.class_of_device=90,1,16
+else
 # Set the Bluetooth Class of Device
 # Service Field: 0x5A -> 90
 #    Bit 17: Networking
@@ -161,6 +173,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 # MINOR_CLASS: 0x0C -> 12 (Smart Phone)
 PRODUCT_VENDOR_PROPERTIES += \
     bluetooth.device.class_of_device=90,2,12
+endif
 
 # Camera
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_CAMERA_PROVIDER),true)
