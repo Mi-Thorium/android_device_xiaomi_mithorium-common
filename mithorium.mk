@@ -22,25 +22,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.opengles.version=196610
 endif
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
-ifeq ($(TARGET_HAS_NO_RADIO),true)
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
-else
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
-endif
-ifeq ($(TARGET_IS_TABLET),true)
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-tablet
-endif
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
-
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG ?= xhdpi
-
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
@@ -386,6 +367,21 @@ MITHORIUM_PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+ifeq ($(TARGET_HAS_NO_RADIO),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
+else
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
+endif
+ifeq ($(TARGET_IS_TABLET),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-tablet
+endif
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
+
 # Perf
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
@@ -449,6 +445,10 @@ endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libxml2
+
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG ?= xhdpi
 
 # Sensors
 MITHORIUM_PRODUCT_PACKAGES += \
