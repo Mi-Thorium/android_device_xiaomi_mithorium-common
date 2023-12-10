@@ -35,6 +35,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
 else
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
 endif
+ifeq ($(TARGET_IS_TABLET),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-tablet
+endif
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
