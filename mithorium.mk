@@ -27,29 +27,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.opengles.version=196610
 endif
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
-ifeq ($(TARGET_HAS_NO_RADIO),true)
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
-else
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
-endif
-ifeq ($(TARGET_IS_TABLET),true)
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-tablet
-endif
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
-
-# APEX
-OVERRIDE_TARGET_FLATTEN_APEX := true
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
-
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG ?= xhdpi
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -110,6 +87,10 @@ endif
 MITHORIUM_PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant@1.0.vendor
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Audio
 MITHORIUM_PRODUCT_PACKAGES += \
@@ -409,6 +390,21 @@ MITHORIUM_PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
 endif
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+ifeq ($(TARGET_HAS_NO_RADIO),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-noradio
+else
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-radio
+endif
+ifeq ($(TARGET_IS_TABLET),true)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-tablet
+endif
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
+
 # Perf
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
@@ -481,6 +477,10 @@ endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libxml2
+
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG ?= xhdpi
 
 # Sensors
 MITHORIUM_PRODUCT_PACKAGES += \
