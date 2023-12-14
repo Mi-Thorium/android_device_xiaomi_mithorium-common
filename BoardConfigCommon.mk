@@ -28,7 +28,13 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true androidboot.init_fatal_reboot_target=recovery printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0
-ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8937)
+    ifeq ($(TARGET_KERNEL_VERSION),4.9)
+        BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78b0000
+    else ifeq ($(TARGET_KERNEL_VERSION),4.19)
+        BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78b0000
+    endif
+else ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
     ifeq ($(TARGET_KERNEL_VERSION),4.9)
         BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
     else ifeq ($(TARGET_KERNEL_VERSION),4.19)
@@ -170,6 +176,9 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_k$(TARGET_KERNEL_VERSION).xml
 ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/consumerir.xml
 endif
+ifneq ($(TARGET_HAS_NO_RADIO),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/radio.xml
+endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 endif
@@ -211,6 +220,11 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_k4.19.prop
+endif
+
+ifneq ($(TARGET_HAS_NO_RADIO),true)
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system_radio.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_radio.prop
 endif
 
 # Recovery
