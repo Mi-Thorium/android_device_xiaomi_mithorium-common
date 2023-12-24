@@ -37,7 +37,7 @@ on early-init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    write /proc/sys/vm/swappiness 100
+    write /proc/sys/vm/swappiness 60
 
     mount_all /vendor/etc/fstab.qcom --early
     chown root system /mnt/vendor/persist
