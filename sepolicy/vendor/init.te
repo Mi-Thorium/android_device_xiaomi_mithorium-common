@@ -12,3 +12,6 @@ get_prop(init, vendor_xiaomi_prop)
 
 # SDHCI
 allow init sysfs_kernel_sdhci_msm:file w_file_perms;
+
+# SoC info
+r_dir_file(init, sysfs_socinfo)

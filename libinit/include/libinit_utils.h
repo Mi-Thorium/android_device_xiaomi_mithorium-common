@@ -13,3 +13,5 @@ void property_override(std::string prop, std::string value, bool add = true);
 void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = false);
 
 std::string fingerprint_to_description(std::string fingerprint);
+
+void set_bootloader_prop(void);
