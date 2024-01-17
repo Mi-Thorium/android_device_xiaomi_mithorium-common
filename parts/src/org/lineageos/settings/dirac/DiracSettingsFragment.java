@@ -24,14 +24,14 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
 import org.lineageos.settings.R;
 
-public class DiracSettingsFragment extends PreferenceFragment implements
+public class DiracSettingsFragment extends PreferenceFragmentCompat implements
         Preference.OnPreferenceChangeListener, OnCheckedChangeListener {
 
     private static final String PREF_ENABLE = "dirac_enable";
@@ -48,7 +48,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.dirac_settings);
+        setPreferencesFromResource(R.xml.dirac_settings, rootKey);
 
         mDiracUtils = new DiracUtils(getContext());
 
