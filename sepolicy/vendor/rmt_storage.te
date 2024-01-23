@@ -1,5 +1,7 @@
 # debugfs access
-no_debugfs_restriction(`
-  allow rmt_storage debugfs_rmt:dir search;
-  allow rmt_storage debugfs_rmt:file rw_file_perms;
+userdebug_or_eng(`
+  no_debugfs_restriction(`
+    allow rmt_storage debugfs_rmt:dir search;
+    allow rmt_storage debugfs_rmt:file rw_file_perms;
+  ')
 ')
