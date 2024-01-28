@@ -28,6 +28,21 @@ on property:init.svc.vendor.qcamerasvr=running
     exec /bin/sleep 1s
     restart vendor.camera-provider-2-4
 
+# Charger
+on property:ro.bootmode=charger && property:init.svc.vendor.qcom-post-boot=stopped
+    # Lock to lowest frequency on charger mode
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+
+    # Offline all cores except cpu0
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+
 # Dmesg
 on post-fs-data
     mkdir /data/vendor/dmesg 0755 system system
