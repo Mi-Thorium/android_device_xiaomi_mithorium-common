@@ -163,7 +163,7 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    start qcom-post-boot
+    start vendor.qcom-post-boot
     start vendor.hvdcp_opti
 
 service vendor.per_mgr /system/vendor/bin/pm-service
