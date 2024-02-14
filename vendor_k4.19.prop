@@ -1,5 +1,2 @@
-# Charger
-ro.enable_boot_charger_mode=1
-
 # Incremental FS
 ro.incremental.enable=1
