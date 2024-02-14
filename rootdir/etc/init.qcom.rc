@@ -544,9 +544,9 @@ on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
-    class core
-    group system
-    disabled
+    class charger
+    user root
+    group root system
     oneshot
 
 #Set GPU Opengles version
