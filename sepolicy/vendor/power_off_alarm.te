@@ -1,0 +1,1 @@
+allow power_off_alarm kmsg_device:chr_file getattr;
