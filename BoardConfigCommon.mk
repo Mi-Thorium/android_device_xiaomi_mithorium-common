@@ -163,9 +163,6 @@ endif # TARGET_USES_MITHORIUM_KERNEL
 # GRF/VF
 BOARD_SHIPPING_API_LEVEL := 30
 
-# Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/battery_charging_enabled
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/framework_compatibility_matrix.xml \
