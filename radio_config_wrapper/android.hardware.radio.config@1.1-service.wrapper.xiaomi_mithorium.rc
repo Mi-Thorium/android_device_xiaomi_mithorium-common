@@ -1,0 +1,8 @@
+service vendor.radio-config-hal-1-1.wrapper /vendor/bin/hw/android.hardware.radio.config@1.1-service.wrapper.xiaomi_mithorium
+    disabled
+    class hal
+    user system
+    group system
+
+on property:init.svc.vendor.qcrild=running
+    restart vendor.radio-config-hal-1-1.wrapper

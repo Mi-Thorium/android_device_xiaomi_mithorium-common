@@ -34,6 +34,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+
+    <hal format="hidl" optional="true">
+        <name>mithorm.hardware.radio.oldcfg</name>
+        <version>1.0</version>
+        <interface>
+            <name>IRadioOldcfg</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
    <hal format="hidl" optional="true">
        <name>vendor.qti.hardware.scve.panorama</name>
        <version>1.0</version>
