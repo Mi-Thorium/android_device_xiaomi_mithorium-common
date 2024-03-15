@@ -172,9 +172,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_k$(TARGET_KERNEL_VERSION).xml
-ifneq ($(TARGET_HAS_NO_CONSUMERIR),true)
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/consumerir.xml
-endif
 ifneq ($(TARGET_HAS_NO_RADIO),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/radio.xml
 endif
