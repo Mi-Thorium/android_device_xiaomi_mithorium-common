@@ -53,6 +53,8 @@ if [ -z "$ONLY_TARGET" ]; then
     write_headers "MiThoriumSSI Mi8937 Mi439_4_19 Tiare oxygen uter vince onc"
 
     # The standard common blobs
+    write_makefiles "${MY_DIR}/proprietary-files/misc.txt" true
+
     if [ "${KERNEL_4_19}" != "true" ]; then
         # Kernel 4.9
         write_makefiles "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" true
