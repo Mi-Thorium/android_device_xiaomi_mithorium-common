@@ -14,9 +14,44 @@
  * limitations under the License.
  */
 
+#include <android-base/file.h>
+#include <android-base/properties.h>
+#include <unordered_map>
+
 #include "Fastboot.h"
 
+using aidl::android::hardware::fastboot::FileSystemType;
+using android::base::GetProperty;
+using android::base::ReadFileToString;
 using ndk::ScopedAStatus;
+
+const std::unordered_map<std::string, FileSystemType> kPartitionTypeMap = {
+        // Data partitions
+        {"cache", FileSystemType::F2FS},
+        {"userdata", FileSystemType::F2FS},
+
+        // System partitions
+        {"product", FileSystemType::EXT4},
+        {"system", FileSystemType::EXT4},
+        {"system_ext", FileSystemType::EXT4},
+        {"odm", FileSystemType::EXT4},
+        {"vendor", FileSystemType::EXT4},
+
+        // Possible metadata partition
+        {"logdump", FileSystemType::EXT4},
+        {"oem", FileSystemType::EXT4},
+};
+
+const std::string kVariantPaths[] = {
+        "/sys/class/huaqin/interface/hw_info/pcba_config",  // Mi439
+        "/sys/xiaomi-msm8937-mach/wingtech_board_id",       // Mi8937 - Wingtech ODM
+};
+
+const std::string kVariantProps[] = {
+        // Mi8937 - Longcheer ODM
+        "ro.boot.hwcountry",
+        "ro.boot.product.region",
+};
 
 namespace aidl {
 namespace android {
@@ -29,7 +64,14 @@ ScopedAStatus Fastboot::getPartitionType(const std::string& in_partitionName,
         return ScopedAStatus::fromExceptionCodeWithMessage(EX_ILLEGAL_ARGUMENT,
                                                            "Invalid partition name");
     }
+    for (const auto& [part_name, part_fstype] : kPartitionTypeMap) {
+        if (part_name == in_partitionName) {
+            *_aidl_return = part_fstype;
+            goto out;
+        }
+    }
     *_aidl_return = FileSystemType::RAW;
+out:
     return ScopedAStatus::ok();
 }
 
@@ -43,12 +85,27 @@ ScopedAStatus Fastboot::doOemCommand(const std::string& in_oemCmd, std::string* 
 }
 
 ScopedAStatus Fastboot::getVariant(std::string* _aidl_return) {
-    *_aidl_return = "NA";
+    std::string variant;
+    for (const auto& variant_path : kVariantPaths) {
+        if (ReadFileToString(variant_path, &variant, true)) {
+            *_aidl_return = variant;
+            goto out;
+        }
+    }
+    for (const auto& variant_prop : kVariantProps) {
+        variant = GetProperty(variant_prop, "");
+        if (!variant.empty()) {
+            *_aidl_return = variant;
+            goto out;
+        }
+    }
+    *_aidl_return = "Unknown";
+out:
     return ScopedAStatus::ok();
 }
 
 ScopedAStatus Fastboot::getOffModeChargeState(bool* _aidl_return) {
-    *_aidl_return = false;
+    *_aidl_return = true;
     return ScopedAStatus::ok();
 }
 
