@@ -266,6 +266,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # Fastbootd
 MITHORIUM_PRODUCT_PACKAGES += \
+    android.hardware.fastboot-service.xiaomi_mithorium_recovery \
     fastbootd
 
 # FM

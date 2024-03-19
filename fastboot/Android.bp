@@ -13,19 +13,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package {
-    // See: http://go/android-license-faq
-    // A large-scale-change added 'default_applicable_licenses' to import
-    // all of the 'license_kinds' from "hardware_interfaces_license"
-    // to get the below license kinds:
-    //   SPDX-license-identifier-Apache-2.0
-    default_applicable_licenses: ["hardware_interfaces_license"],
-}
-
 cc_binary {
-    name: "android.hardware.fastboot-service.example_recovery",
-    init_rc: ["android.hardware.fastboot-service.example_recovery.rc"],
-    vintf_fragments: ["android.hardware.fastboot-service.example.xml"],
+    name: "android.hardware.fastboot-service.xiaomi_mithorium_recovery",
+    init_rc: ["android.hardware.fastboot-service.xiaomi_mithorium_recovery.rc"],
+    vintf_fragments: ["android.hardware.fastboot-service.xiaomi_mithorium.xml"],
     recovery: true,
     srcs: [
         "Fastboot.cpp",

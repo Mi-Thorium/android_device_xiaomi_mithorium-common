@@ -38,8 +38,8 @@ ScopedAStatus Fastboot::doOemCommand(const std::string& in_oemCmd, std::string* 
     if (in_oemCmd.empty()) {
         return ScopedAStatus::fromExceptionCodeWithMessage(EX_ILLEGAL_ARGUMENT, "Invalid command");
     }
-    return ScopedAStatus::fromExceptionCodeWithMessage(
-            EX_UNSUPPORTED_OPERATION, "Command not supported in default implementation");
+    return ScopedAStatus::fromExceptionCodeWithMessage(EX_UNSUPPORTED_OPERATION,
+                                                       "Command not supported");
 }
 
 ScopedAStatus Fastboot::getVariant(std::string* _aidl_return) {
@@ -58,8 +58,8 @@ ScopedAStatus Fastboot::getBatteryVoltageFlashingThreshold(int32_t* _aidl_return
 }
 
 ScopedAStatus Fastboot::doOemSpecificErase() {
-    return ScopedAStatus::fromExceptionCodeWithMessage(
-            EX_UNSUPPORTED_OPERATION, "Command not supported in default implementation");
+    return ScopedAStatus::fromExceptionCodeWithMessage(EX_UNSUPPORTED_OPERATION,
+                                                       "Command not supported");
 }
 
 }  // namespace fastboot
