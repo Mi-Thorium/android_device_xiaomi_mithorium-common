@@ -557,7 +557,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # USB HAL
 MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
+    android.hardware.usb@1.3-service.basic
 
 # Vibrator
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_VIBRATOR),true)
