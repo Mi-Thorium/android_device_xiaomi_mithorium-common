@@ -37,7 +37,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <hal format="hidl" optional="true">
         <name>mithorm.hardware.radio.oldcfg</name>
-        <version>1.0</version>
+        <version>1.0-1</version>
         <interface>
             <name>IRadioOldcfg</name>
             <instance>default</instance>

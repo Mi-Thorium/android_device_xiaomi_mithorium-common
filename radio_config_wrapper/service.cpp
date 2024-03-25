@@ -42,15 +42,23 @@ int main() {
         ALOGE("Could not get IRadio/slot2");
         return 1;
     }
+
     sp<IRadioOldcfg> radioOldcfg = IRadioOldcfg::getService();
     if (radioOldcfg == nullptr) {
-        ALOGE("Could not get IRadioOldcfg");
+        ALOGE("Could not get IRadioOldcfg V1.0");
         return 1;
+    }
+
+    sp<mithorm::hardware::radio::oldcfg::V1_1::IRadioOldcfg> radioOldcfgV1_1 =
+            mithorm::hardware::radio::oldcfg::V1_1::IRadioOldcfg::getService();
+    if (radioOldcfgV1_1 == nullptr) {
+        ALOGE("Could not get IRadioOldcfg V1.1 (not fatal)");
     }
 
     configureRpcThreadpool(1, true);
 
-    sp<IRadioConfig> radioConfig = new RadioConfig(radioSlot1, radioSlot2, radioOldcfg);
+    sp<IRadioConfig> radioConfig =
+            new RadioConfig(radioSlot1, radioSlot2, radioOldcfg, radioOldcfgV1_1);
     status_t status = radioConfig->registerAsService();
     ALOGW_IF(status != OK, "Could not register IRadioConfig");
     ALOGD("Default service is ready.");

@@ -33,8 +33,12 @@ using android::hardware::radio::V1_0::RadioError;
 using android::hardware::radio::V1_0::RadioResponseInfo;
 using android::hardware::radio::V1_0::RadioResponseType;
 
-RadioConfig::RadioConfig(sp<IRadio> radioSlot1, sp<IRadio> radioSlot2, sp<IRadioOldcfg> radioOldcfg)
-    : mRadioSlot1(radioSlot1), mRadioSlot2(radioSlot2), mRadioOldcfg(radioOldcfg) {
+RadioConfig::RadioConfig(sp<IRadio> radioSlot1, sp<IRadio> radioSlot2, sp<IRadioOldcfg> radioOldcfg,
+                         sp<mithorm::hardware::radio::oldcfg::V1_1::IRadioOldcfg> radioOldcfgV1_1)
+    : mRadioSlot1(radioSlot1),
+      mRadioSlot2(radioSlot2),
+      mRadioOldcfg(radioOldcfg),
+      mRadioOldcfgV1_1(radioOldcfgV1_1) {
     mRadioConfigIndication = nullptr;
     mRadioConfigResponse = nullptr;
     mRadioConfigResponseV1_1 = nullptr;
@@ -70,6 +74,9 @@ Return<void> RadioConfig::setSimSlotsMapping(int32_t serial, const hidl_vec<uint
 
 // Methods from ::android::hardware::radio::config::V1_1::IRadioConfig follow.
 Return<void> RadioConfig::getPhoneCapability(int32_t serial) {
+    if (mRadioOldcfgV1_1 != nullptr) {
+        return mRadioOldcfgV1_1->getPhoneCapability(serial);
+    }
     RLOGI("getPhoneCapability: serial=%d", serial);
     if (mRadioConfigResponseV1_1 == nullptr) {
         RLOGE("mRadioConfigResponseV1_1 is null");
@@ -91,6 +98,9 @@ Return<void> RadioConfig::getPhoneCapability(int32_t serial) {
 }
 
 Return<void> RadioConfig::setPreferredDataModem(int32_t serial, uint8_t modemId) {
+    if (mRadioOldcfgV1_1 != nullptr) {
+        return mRadioOldcfgV1_1->setPreferredDataModem(serial, modemId);
+    }
     std::lock_guard<std::mutex> lock(mMutex);
     RLOGI("setPreferredDataModem: serial=%d modemId=%u", serial, modemId);
     RadioError error = RadioError::NONE;
@@ -117,6 +127,12 @@ Return<void> RadioConfig::setPreferredDataModem(int32_t serial, uint8_t modemId)
 }
 
 Return<void> RadioConfig::setModemsConfig(int32_t serial, const ModemsConfig& modemsConfig) {
+    if (mRadioOldcfgV1_1 != nullptr) {
+        return mRadioOldcfgV1_1->setModemsConfig(
+                serial,
+                reinterpret_cast<const ::mithorm::hardware::radio::oldcfg::V1_1::ModemsConfig&>(
+                        modemsConfig));
+    }
     RLOGI("setModemsConfig: serial=%d modemsConfig.numOfLiveModems=%d", serial,
           modemsConfig.numOfLiveModems);
     if (mRadioConfigResponseV1_1 == nullptr) {
@@ -130,6 +146,9 @@ Return<void> RadioConfig::setModemsConfig(int32_t serial, const ModemsConfig& mo
 }
 
 Return<void> RadioConfig::getModemsConfig(int32_t serial) {
+    if (mRadioOldcfgV1_1 != nullptr) {
+        return mRadioOldcfgV1_1->getModemsConfig(serial);
+    }
     RLOGI("getModemsConfig: serial=%d", serial);
     if (mRadioConfigResponseV1_1 == nullptr) {
         RLOGE("mRadioConfigResponseV1_1 is null");

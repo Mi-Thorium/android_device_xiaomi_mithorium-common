@@ -22,9 +22,9 @@
 #include <android/hardware/radio/config/1.1/IRadioConfigResponse.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
-#include <mithorm/hardware/radio/oldcfg/1.0/IRadioOldcfg.h>
-#include <mithorm/hardware/radio/oldcfg/1.0/IRadioOldcfgIndication.h>
-#include <mithorm/hardware/radio/oldcfg/1.0/IRadioOldcfgResponse.h>
+#include <mithorm/hardware/radio/oldcfg/1.1/IRadioOldcfg.h>
+#include <mithorm/hardware/radio/oldcfg/1.1/IRadioOldcfgIndication.h>
+#include <mithorm/hardware/radio/oldcfg/1.1/IRadioOldcfgResponse.h>
 
 namespace android {
 namespace hardware {
@@ -48,7 +48,8 @@ using mithorm::hardware::radio::oldcfg::V1_0::IRadioOldcfg;
 
 class RadioConfig : public IRadioConfig {
   public:
-    RadioConfig(sp<IRadio> radioSlot1, sp<IRadio> radioSlot2, sp<IRadioOldcfg> radioOldcfg);
+    RadioConfig(sp<IRadio> radioSlot1, sp<IRadio> radioSlot2, sp<IRadioOldcfg> radioOldcfg,
+                sp<mithorm::hardware::radio::oldcfg::V1_1::IRadioOldcfg> radioOldcfgV1_1);
     // Methods from ::android::hardware::radio::config::V1_0::IRadioConfig follow.
     Return<void> setResponseFunctions(
             const sp<::android::hardware::radio::config::V1_0::IRadioConfigResponse>&
@@ -70,6 +71,7 @@ class RadioConfig : public IRadioConfig {
     sp<IRadio> mRadioSlot1;
     sp<IRadio> mRadioSlot2;
     sp<IRadioOldcfg> mRadioOldcfg;
+    sp<mithorm::hardware::radio::oldcfg::V1_1::IRadioOldcfg> mRadioOldcfgV1_1;
     sp<IRadioConfigIndication> mRadioConfigIndication;
     sp<IRadioConfigResponse> mRadioConfigResponse;
     sp<::android::hardware::radio::config::V1_1::IRadioConfigResponse> mRadioConfigResponseV1_1;
