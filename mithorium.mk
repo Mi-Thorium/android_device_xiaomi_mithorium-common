@@ -295,9 +295,6 @@ MITHORIUM_PRODUCT_PACKAGES += \
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-MITHORIUM_PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # HIDL
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
