@@ -257,9 +257,7 @@ MITHORIUM_PRODUCT_PACKAGES += \
     hwcomposer.$(TARGET_BOARD_PLATFORM)
 
 MITHORIUM_PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    memtrack.$(TARGET_BOARD_PLATFORM)
+    vendor.qti.hardware.memtrack-service
 
 MITHORIUM_PRODUCT_PACKAGES += \
     libdisplayconfig \
