@@ -555,8 +555,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcrypto-v33 \
     libprotobuf-cpp-full-3.9.1-vendorcompat
+
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v33.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
