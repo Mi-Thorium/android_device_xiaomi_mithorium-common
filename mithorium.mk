@@ -45,6 +45,7 @@ OVERRIDE_ENABLE_UFFD_GC := false
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -281,6 +282,10 @@ MITHORIUM_PRODUCT_PACKAGES += \
 # Dumpstate
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.dumpstate-service.mithorium
+
+# eUICC
+PRODUCT_PACKAGES += \
+    OpenEUICC
 
 # Fastbootd
 MITHORIUM_PRODUCT_PACKAGES += \
