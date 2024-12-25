@@ -450,6 +450,11 @@ endif
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-radio/packages/apps/CarrierConfig
 
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+MITHORIUM_PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
+endif
+
 # Perf
 MITHORIUM_PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2 \
