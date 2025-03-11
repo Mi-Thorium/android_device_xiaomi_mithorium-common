@@ -1,5 +1,6 @@
 # All unpinned blobs below are extracted from LA.UM.9.6.3.r1-06200-89xx.0 (4.9)
 # PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# riva Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -7,9 +8,54 @@ vendor/bin/dspservice
 vendor/etc/init/vendor.qti.adsprpc-guestos-sensorspd-service.rc
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib/libfastcvadsp_stub.so
+-vendor/lib/libfastcvopt.so
+vendor/lib/libsysmon_cdsp_skel.so
+vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libsysmon_cdsp_skel.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
+
+# ADSP Modules
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+
+# Audio
+#vendor/lib/libssrec.so
+vendor/lib/hw/sound_trigger.primary.msm8937.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudio_log_utils.so
+-vendor/lib/libaudioparsers.so
+vendor/lib/libdrc.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
+vendor/lib/libgcs.so
+vendor/lib/libhdmipassthru.so
+vendor/lib/libmulawdec.so
+vendor/lib/libqtigef.so
+vendor/lib/libsmwrapper.so
+vendor/lib/libsurround_3mic_proc.so
+-vendor/lib64/libaudioparsers.so
+
+# Audiosphere
+vendor/lib/soundfx/libasphere.so
+
+# Camera libts - from riva
+-vendor/lib/libts_detected_face_hal.so
+-vendor/lib/libts_face_beautify_hal.so
 
 # ANT
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -124,6 +170,29 @@ vendor/bin/msm_irqbalance
 
 # Media - from PAN
 vendor/etc/seccomp_policy/mediacodec.policy
+vendor/lib/libAlacSwDec.so
+vendor/lib/libApeSwDec.so
+vendor/lib/libMpeg4SwEncoder.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAlacDecSw.so
+vendor/lib/libOmxAmrDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxApeDecSw.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxG711Dec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxSwVdec.so
+vendor/lib/libOmxSwVencMpeg4.so
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxVpp.so
+vendor/lib/libOmxWmaDec.so
+vendor/lib/libmmosal.so
+vendor/lib/libswvdec.so
+vendor/lib/libvpplibrary.so
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfdmmservice.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libMpeg4SwEncoder.so
@@ -147,6 +216,7 @@ vendor/lib64/libvpplibrary.so
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
+vendor/lib/libqti-perfd-client.so
 vendor/lib64/libadaptlaunch.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters-ns.so
@@ -178,6 +248,10 @@ vendor/lib64/libqcc_file_agent.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # QMI
+vendor/lib/libdiag.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_encdec.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
@@ -215,6 +289,7 @@ vendor/bin/subsystem_ramdump
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
+vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 
 # Time

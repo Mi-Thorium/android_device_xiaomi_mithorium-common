@@ -114,7 +114,6 @@ if [ -z "${ONLY_TARGET}" ]; then
         # Kernel 4.9
         extract "${MY_DIR}/proprietary-files/4.9/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-        extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.9/qcom-vendor-multilib-module.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
         extract "${MY_DIR}/proprietary-files/4.9/qcom-system-radio.txt" "${SRC}" "${KANG}" --section "${SECTION}"
@@ -123,7 +122,6 @@ if [ -z "${ONLY_TARGET}" ]; then
         # Kernel 4.19
         extract "${MY_DIR}/proprietary-files/4.19/qcom-system.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-        extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor-32.txt" "${SRC}" "${KANG}" --section "${SECTION}"
         extract "${MY_DIR}/proprietary-files/4.19/qcom-vendor-multilib-module.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
         extract "${MY_DIR}/proprietary-files/4.19/qcom-system-radio.txt" "${SRC}" "${KANG}" --section "${SECTION}"
