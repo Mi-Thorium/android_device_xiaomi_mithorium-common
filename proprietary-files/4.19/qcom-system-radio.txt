@@ -74,7 +74,6 @@ system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
 system_ext/lib64/libdpmframework.so
 system_ext/lib64/libdpmtcm.so
-system_ext/lib64/libmwqemiptablemgr.so
 -system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # IMS
