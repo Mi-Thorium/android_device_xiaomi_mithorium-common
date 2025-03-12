@@ -3,96 +3,96 @@
 # riva Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
 
 # ADSP
-vendor/bin/adsprpcd
-vendor/bin/dspservice
+-vendor/bin/adsprpcd;DISABLE_DEPS
+-vendor/bin/dspservice;DISABLE_DEPS
 vendor/etc/init/vendor.qti.adsprpc-guestos-sensorspd-service.rc
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
-vendor/lib/libfastcvadsp_stub.so
--vendor/lib/libfastcvopt.so
-vendor/lib/libsysmon_cdsp_skel.so
-vendor/lib/vendor.qti.hardware.dsp@1.0.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libsysmon_cdsp_skel.so
-vendor/lib64/vendor.qti.hardware.dsp@1.0.so
+-vendor/lib/libfastcvadsp_stub.so;DISABLE_DEPS
+-vendor/lib/libfastcvopt.so;DISABLE_DEPS
+-vendor/lib/libsysmon_cdsp_skel.so;DISABLE_DEPS
+-vendor/lib/vendor.qti.hardware.dsp@1.0.so;DISABLE_DEPS
+-vendor/lib64/libadsp_default_listener.so;DISABLE_DEPS
+-vendor/lib64/libsysmon_cdsp_skel.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.dsp@1.0.so;DISABLE_DEPS
 
 # ADSP Modules
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
+-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libapps_mem_heap.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libdspCV_skel.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libfastcvadsp.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so;DISABLE_DEPS
+-vendor/lib/rfsa/adsp/libscveT2T_skel.so;DISABLE_DEPS
 
 # Audio
 #vendor/lib/libssrec.so
-vendor/lib/hw/sound_trigger.primary.msm8937.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libaudcal.so
-vendor/lib/libaudio_log_utils.so
--vendor/lib/libaudioparsers.so
-vendor/lib/libdrc.so
-vendor/lib/libgcs-calwrapper.so
-vendor/lib/libgcs-ipc.so
-vendor/lib/libgcs-osal.so
-vendor/lib/libgcs.so
-vendor/lib/libhdmipassthru.so
-vendor/lib/libmulawdec.so
-vendor/lib/libqtigef.so
-vendor/lib/libsmwrapper.so
-vendor/lib/libsurround_3mic_proc.so
--vendor/lib64/libaudioparsers.so
+-vendor/lib/hw/sound_trigger.primary.msm8937.so;DISABLE_DEPS
+-vendor/lib/libacdb-fts.so;DISABLE_DEPS
+-vendor/lib/libacdbloader.so;DISABLE_DEPS
+-vendor/lib/libacdbrtac.so;DISABLE_DEPS
+-vendor/lib/libadiertac.so;DISABLE_DEPS
+-vendor/lib/libadm.so;DISABLE_DEPS
+-vendor/lib/libadpcmdec.so;DISABLE_DEPS
+-vendor/lib/libaudcal.so;DISABLE_DEPS
+-vendor/lib/libaudio_log_utils.so;DISABLE_DEPS
+-vendor/lib/libaudioparsers.so;DISABLE_DEPS
+-vendor/lib/libdrc.so;DISABLE_DEPS
+-vendor/lib/libgcs-calwrapper.so;DISABLE_DEPS
+-vendor/lib/libgcs-ipc.so;DISABLE_DEPS
+-vendor/lib/libgcs-osal.so;DISABLE_DEPS
+-vendor/lib/libgcs.so;DISABLE_DEPS
+-vendor/lib/libhdmipassthru.so;DISABLE_DEPS
+-vendor/lib/libmulawdec.so;DISABLE_DEPS
+-vendor/lib/libqtigef.so;DISABLE_DEPS
+-vendor/lib/libsmwrapper.so;DISABLE_DEPS
+-vendor/lib/libsurround_3mic_proc.so;DISABLE_DEPS
+-vendor/lib64/libaudioparsers.so;DISABLE_DEPS
 
 # Audiosphere
-vendor/lib/soundfx/libasphere.so
+-vendor/lib/soundfx/libasphere.so;DISABLE_DEPS
 
 # Camera libts - from riva
--vendor/lib/libts_detected_face_hal.so
--vendor/lib/libts_face_beautify_hal.so
+-vendor/lib/libts_detected_face_hal.so;DISABLE_DEPS
+-vendor/lib/libts_face_beautify_hal.so;DISABLE_DEPS
 
 # ANT
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so
+-vendor/lib64/hw/com.dsi.ant@1.0-impl.so;DISABLE_DEPS
 
 # Bluetooth & FM
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti;DISABLE_DEPS
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/libbtnv.so
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
+-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so;DISABLE_DEPS
+-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so;DISABLE_DEPS
+-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so;DISABLE_DEPS
+-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so;DISABLE_DEPS
+-vendor/lib64/libbtnv.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.fm@1.0.so;DISABLE_DEPS
 
 # CACert
 -vendor/app/CACertService/CACertService.apk
-vendor/lib64/libcacertclient.so
-vendor/lib64/libjnihelper.so
-vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+-vendor/lib64/libcacertclient.so;DISABLE_DEPS
+-vendor/lib64/libjnihelper.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.cacert@1.0.so;DISABLE_DEPS
 
 # DRM
-vendor/bin/qseecomd
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libqisl.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
+-vendor/bin/qseecomd;DISABLE_DEPS
+-vendor/lib64/libGPreqcancel.so;DISABLE_DEPS
+-vendor/lib64/libGPreqcancel_svc.so;DISABLE_DEPS
+-vendor/lib64/libQSEEComAPI.so;DISABLE_DEPS
+-vendor/lib64/libStDrvInt.so;DISABLE_DEPS
+-vendor/lib64/libdrmfs.so;DISABLE_DEPS
+-vendor/lib64/libdrmtime.so;DISABLE_DEPS
+-vendor/lib64/libqisl.so;DISABLE_DEPS
+-vendor/lib64/libsecureui.so;DISABLE_DEPS
+-vendor/lib64/libsecureui_svcsock.so;DISABLE_DEPS
+-vendor/lib64/libssd.so;DISABLE_DEPS
 
 # DRM - from PAN
-vendor/lib64/librpmb.so
+-vendor/lib64/librpmb.so;DISABLE_DEPS
 
 # Firmware (Camera)
 vendor/firmware/cpp_firmware_v1_10_0.fw
@@ -109,27 +109,27 @@ vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # GNSS
-vendor/bin/edgnss-daemon
-vendor/bin/loc_launcher
-vendor/bin/lowi-server
-vendor/bin/mlid
-vendor/bin/slim_daemon
-vendor/bin/xtra-daemon
-vendor/bin/xtwifi-client
-vendor/bin/xtwifi-inet-agent
+-vendor/bin/edgnss-daemon;DISABLE_DEPS
+-vendor/bin/loc_launcher;DISABLE_DEPS
+-vendor/bin/lowi-server;DISABLE_DEPS
+-vendor/bin/mlid;DISABLE_DEPS
+-vendor/bin/slim_daemon;DISABLE_DEPS
+-vendor/bin/xtra-daemon;DISABLE_DEPS
+-vendor/bin/xtwifi-client;DISABLE_DEPS
+-vendor/bin/xtwifi-inet-agent;DISABLE_DEPS
 vendor/etc/cacert_location.pem
 vendor/etc/xtra_root_cert.pem
-vendor/lib64/libasn1cper.so
-vendor/lib64/libasn1crt.so
-vendor/lib64/libasn1crtx.so
-vendor/lib64/libcdfw_remote_api.so
-vendor/lib64/libgdtap.so
-vendor/lib64/liblowi_client.so
-vendor/lib64/libminksocket.so
-vendor/lib64/libpal_net_if.so
-vendor/lib64/libsys_info_cache.so
-vendor/lib64/libxtwifi_server_protocol.so
-vendor/lib64/libxtwifi_server_protocol_uri_v3.so
+-vendor/lib64/libasn1cper.so;DISABLE_DEPS
+-vendor/lib64/libasn1crt.so;DISABLE_DEPS
+-vendor/lib64/libasn1crtx.so;DISABLE_DEPS
+-vendor/lib64/libcdfw_remote_api.so;DISABLE_DEPS
+-vendor/lib64/libgdtap.so;DISABLE_DEPS
+-vendor/lib64/liblowi_client.so;DISABLE_DEPS
+-vendor/lib64/libminksocket.so;DISABLE_DEPS
+-vendor/lib64/libpal_net_if.so;DISABLE_DEPS
+-vendor/lib64/libsys_info_cache.so;DISABLE_DEPS
+-vendor/lib64/libxtwifi_server_protocol.so;DISABLE_DEPS
+-vendor/lib64/libxtwifi_server_protocol_uri_v3.so;DISABLE_DEPS
 
 # GNSS (configs)
 vendor/etc/apdr.conf
@@ -140,187 +140,187 @@ vendor/etc/xtwifi.conf
 
 # GNSS (HIDL)
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.1-service.xml
-vendor/lib64/libloc_socket.so
-vendor/lib64/vendor.qti.gnss@1.0.so
-vendor/lib64/vendor.qti.gnss@1.1.so
-vendor/lib64/vendor.qti.gnss@1.2.so
-vendor/lib64/vendor.qti.gnss@2.0.so
-vendor/lib64/vendor.qti.gnss@2.1.so
-vendor/lib64/vendor.qti.gnss@3.0.so
-vendor/lib64/vendor.qti.gnss@4.0.so
-vendor/lib64/vendor.qti.gnss@4.1-service.so
-vendor/lib64/vendor.qti.gnss@4.1.so
+-vendor/lib64/libloc_socket.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@1.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@1.1.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@1.2.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@2.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@2.1.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@3.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@4.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@4.1-service.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.gnss@4.1.so;DISABLE_DEPS
 
 # GNSS (IMPL)
-vendor/lib64/hw/vendor.qti.gnss@4.1-impl.so
-vendor/lib64/libcdfw.so
-vendor/lib64/libdataitems.so
-vendor/lib64/libizat_client_api.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_api_v02.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
-vendor/lib64/libpdmapper.so
-vendor/lib64/libsynergy_loc_api.so
-vendor/lib64/libxtadapter.so
+-vendor/lib64/hw/vendor.qti.gnss@4.1-impl.so;DISABLE_DEPS
+-vendor/lib64/libcdfw.so;DISABLE_DEPS
+-vendor/lib64/libdataitems.so;DISABLE_DEPS
+-vendor/lib64/libizat_client_api.so;DISABLE_DEPS
+-vendor/lib64/libizat_core.so;DISABLE_DEPS
+-vendor/lib64/liblbs_core.so;DISABLE_DEPS
+-vendor/lib64/libloc_api_v02.so;DISABLE_DEPS
+-vendor/lib64/liblocationservice.so;DISABLE_DEPS
+-vendor/lib64/liblocationservice_glue.so;DISABLE_DEPS
+-vendor/lib64/libpdmapper.so;DISABLE_DEPS
+-vendor/lib64/libsynergy_loc_api.so;DISABLE_DEPS
+-vendor/lib64/libxtadapter.so;DISABLE_DEPS
 
 # IRQ Balancer
-vendor/bin/msm_irqbalance
+-vendor/bin/msm_irqbalance;DISABLE_DEPS
 
 # Media - from PAN
 vendor/etc/seccomp_policy/mediacodec.policy
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libMpeg4SwEncoder.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxG711Dec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxSwVdec.so
-vendor/lib/libOmxSwVencMpeg4.so
-vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libOmxVpp.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libmmosal.so
-vendor/lib/libswvdec.so
-vendor/lib/libvpplibrary.so
-vendor/lib/libwfdcommonutils_proprietary.so
-vendor/lib/libwfdmmservice.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libMpeg4SwEncoder.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrDec.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxG711Dec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxSwVdec.so
-vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libOmxVpp.so
-vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libswvdec.so
-vendor/lib64/libvpplibrary.so
+-vendor/lib/libAlacSwDec.so;DISABLE_DEPS
+-vendor/lib/libApeSwDec.so;DISABLE_DEPS
+-vendor/lib/libMpeg4SwEncoder.so;DISABLE_DEPS
+-vendor/lib/libOmxAacDec.so;DISABLE_DEPS
+-vendor/lib/libOmxAlacDec.so;DISABLE_DEPS
+-vendor/lib/libOmxAlacDecSw.so;DISABLE_DEPS
+-vendor/lib/libOmxAmrDec.so;DISABLE_DEPS
+-vendor/lib/libOmxAmrwbplusDec.so;DISABLE_DEPS
+-vendor/lib/libOmxApeDec.so;DISABLE_DEPS
+-vendor/lib/libOmxApeDecSw.so;DISABLE_DEPS
+-vendor/lib/libOmxEvrcDec.so;DISABLE_DEPS
+-vendor/lib/libOmxG711Dec.so;DISABLE_DEPS
+-vendor/lib/libOmxQcelp13Dec.so;DISABLE_DEPS
+-vendor/lib/libOmxSwVdec.so;DISABLE_DEPS
+-vendor/lib/libOmxSwVencMpeg4.so;DISABLE_DEPS
+-vendor/lib/libOmxVideoDSMode.so;DISABLE_DEPS
+-vendor/lib/libOmxVpp.so;DISABLE_DEPS
+-vendor/lib/libOmxWmaDec.so;DISABLE_DEPS
+-vendor/lib/libmmosal.so;DISABLE_DEPS
+-vendor/lib/libswvdec.so;DISABLE_DEPS
+-vendor/lib/libvpplibrary.so;DISABLE_DEPS
+-vendor/lib/libwfdcommonutils_proprietary.so;DISABLE_DEPS
+-vendor/lib/libwfdmmservice.so;DISABLE_DEPS
+-vendor/lib64/libAlacSwDec.so;DISABLE_DEPS
+-vendor/lib64/libApeSwDec.so;DISABLE_DEPS
+-vendor/lib64/libMpeg4SwEncoder.so;DISABLE_DEPS
+-vendor/lib64/libOmxAacDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxAlacDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxAlacDecSw.so;DISABLE_DEPS
+-vendor/lib64/libOmxAmrDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxAmrwbplusDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxApeDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxApeDecSw.so;DISABLE_DEPS
+-vendor/lib64/libOmxEvrcDec.so;DISABLE_DEPS
+-vendor/lib64/libOmxG711Dec.so;DISABLE_DEPS
+-vendor/lib64/libOmxQcelp13Dec.so;DISABLE_DEPS
+-vendor/lib64/libOmxSwVdec.so;DISABLE_DEPS
+-vendor/lib64/libOmxSwVencMpeg4.so;DISABLE_DEPS
+-vendor/lib64/libOmxVpp.so;DISABLE_DEPS
+-vendor/lib64/libOmxWmaDec.so;DISABLE_DEPS
+-vendor/lib64/libswvdec.so;DISABLE_DEPS
+-vendor/lib64/libvpplibrary.so;DISABLE_DEPS
 
 # Perf
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
+-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service;DISABLE_DEPS
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
-vendor/lib/libqti-perfd-client.so
-vendor/lib64/libadaptlaunch.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
+-vendor/lib/libqti-perfd-client.so;DISABLE_DEPS
+-vendor/lib64/libadaptlaunch.so;DISABLE_DEPS
+-vendor/lib64/liblearningmodule.so;DISABLE_DEPS
+-vendor/lib64/libmeters-ns.so;DISABLE_DEPS
+-vendor/lib64/libmeters.so;DISABLE_DEPS
+-vendor/lib64/libperfconfig.so;DISABLE_DEPS
+-vendor/lib64/libperfgluelayer.so;DISABLE_DEPS
+-vendor/lib64/libperfioctl.so;DISABLE_DEPS
+-vendor/lib64/libqti-perfd-client.so;DISABLE_DEPS
+-vendor/lib64/libqti-perfd.so;DISABLE_DEPS
+-vendor/lib64/libqti-util.so;DISABLE_DEPS
 
 # Perf configs
 vendor/etc/lm/AdaptLaunchFeature.xml
 
 # Peripheral manager
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib64/libperipheral_client.so
+-vendor/bin/pm-proxy;DISABLE_DEPS
+-vendor/bin/pm-service;DISABLE_DEPS
+-vendor/lib64/libperipheral_client.so;DISABLE_DEPS
 
 # Power-off Alarm
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
+-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service;DISABLE_DEPS
+-vendor/bin/power_off_alarm;DISABLE_DEPS
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.alarm@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
 
 # QDMA
-vendor/lib64/libqcc_file_agent.so
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
+-vendor/lib64/libqcc_file_agent.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
 
 # QMI
-vendor/lib/libdiag.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_encdec.so
-vendor/lib64/libdiag.so
-vendor/lib64/libdsutils.so
-vendor/lib64/libidl.so
-vendor/lib64/libmdmdetect.so
-vendor/lib64/libqdi.so
-vendor/lib64/libqmi.so
-vendor/lib64/libqmi_cci.so
-vendor/lib64/libqmi_client_helper.so
-vendor/lib64/libqmi_client_qmux.so
-vendor/lib64/libqmi_common_so.so
-vendor/lib64/libqmi_csi.so
-vendor/lib64/libqmi_encdec.so
-vendor/lib64/libqmiservices.so
-vendor/lib64/libxml.so
+-vendor/lib/libdiag.so;DISABLE_DEPS
+-vendor/lib/libqmi_cci.so;DISABLE_DEPS
+-vendor/lib/libqmi_common_so.so;DISABLE_DEPS
+-vendor/lib/libqmi_encdec.so;DISABLE_DEPS
+-vendor/lib64/libdiag.so;DISABLE_DEPS
+-vendor/lib64/libdsutils.so;DISABLE_DEPS
+-vendor/lib64/libidl.so;DISABLE_DEPS
+-vendor/lib64/libmdmdetect.so;DISABLE_DEPS
+-vendor/lib64/libqdi.so;DISABLE_DEPS
+-vendor/lib64/libqmi.so;DISABLE_DEPS
+-vendor/lib64/libqmi_cci.so;DISABLE_DEPS
+-vendor/lib64/libqmi_client_helper.so;DISABLE_DEPS
+-vendor/lib64/libqmi_client_qmux.so;DISABLE_DEPS
+-vendor/lib64/libqmi_common_so.so;DISABLE_DEPS
+-vendor/lib64/libqmi_csi.so;DISABLE_DEPS
+-vendor/lib64/libqmi_encdec.so;DISABLE_DEPS
+-vendor/lib64/libqmiservices.so;DISABLE_DEPS
+-vendor/lib64/libxml.so;DISABLE_DEPS
 
 # QMI (IRSC)
-vendor/bin/irsc_util
+-vendor/bin/irsc_util;DISABLE_DEPS
 
 # QMI (QRTR)
-vendor/bin/qrtr-ns
-vendor/lib64/libqrtr.so
+-vendor/bin/qrtr-ns;DISABLE_DEPS
+-vendor/lib64/libqrtr.so;DISABLE_DEPS
 
 # RIL (RemoteFS)
-vendor/bin/rmt_storage
+-vendor/bin/rmt_storage;DISABLE_DEPS
 vendor/etc/init/vendor.qti.rmt_storage.rc
 
 # Sensors
 vendor/etc/sensors/hals.conf
 
 # Subsystem Restart
-vendor/bin/ssr_diag
-vendor/bin/ssr_setup
-vendor/bin/subsystem_ramdump
+-vendor/bin/ssr_diag;DISABLE_DEPS
+-vendor/bin/ssr_setup;DISABLE_DEPS
+-vendor/bin/subsystem_ramdump;DISABLE_DEPS
 
 # Thermal
-vendor/bin/thermal-engine
+-vendor/bin/thermal-engine;DISABLE_DEPS
 vendor/etc/init/init_thermal-engine.rc
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so;DISABLE_DEPS
+-vendor/lib64/libthermalclient.so;DISABLE_DEPS
 
 # Time
 -vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
+-vendor/bin/time_daemon;DISABLE_DEPS
 vendor/etc/init/init.time_daemon.rc
-vendor/lib64/libtime_genoff.so
+-vendor/lib64/libtime_genoff.so;DISABLE_DEPS
 
 # TUI comm
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti;DISABLE_DEPS
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so;DISABLE_DEPS
 
 # Widevine - from PAN
-vendor/bin/hw/android.hardware.drm@1.3-service.widevine
+-vendor/bin/hw/android.hardware.drm@1.3-service.widevine;DISABLE_DEPS
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
-vendor/lib64/libcpion.so
-vendor/lib64/libhdcpsrm.so
-vendor/lib64/liboemcrypto.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libwvdrmengine.so
+-vendor/lib64/libcpion.so;DISABLE_DEPS
+-vendor/lib64/libhdcpsrm.so;DISABLE_DEPS
+-vendor/lib64/liboemcrypto.so;DISABLE_DEPS
+-vendor/lib64/libwvhidl.so;DISABLE_DEPS
+-vendor/lib64/mediadrm/libwvdrmengine.so;DISABLE_DEPS
 
 # WiGig
-vendor/lib64/libaoa.so
+-vendor/lib64/libaoa.so;DISABLE_DEPS
 
 # WLAN
-vendor/bin/ptt_socket_app
-vendor/bin/wcnss_service;MODULE_SUFFIX=-mithorium
+-vendor/bin/ptt_socket_app;DISABLE_DEPS
+-vendor/bin/wcnss_service;DISABLE_DEPS;MODULE_SUFFIX=-mithorium
 
 # Misc
 vendor/etc/public.libraries.txt
-vendor/lib64/libqsocket.so
-vendor/lib64/libsoc_helper.so
+-vendor/lib64/libqsocket.so;DISABLE_DEPS
+-vendor/lib64/libsoc_helper.so;DISABLE_DEPS

@@ -3,30 +3,30 @@
 # CNE
 -vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_symlink
 -vendor/app/IWlanService/IWlanService.apk
-vendor/bin/cnd
+-vendor/bin/cnd;DISABLE_DEPS
 vendor/etc/init/cnd.rc
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneoplookup.so
-vendor/lib64/libwms.so
-vendor/lib64/libwqe.so
-vendor/lib64/vendor.qti.data.factory@2.0.so
-vendor/lib64/vendor.qti.data.factory@2.1.so
-vendor/lib64/vendor.qti.data.factory@2.2.so
-vendor/lib64/vendor.qti.data.factory@2.3.so
-vendor/lib64/vendor.qti.data.mwqem@1.0.so
-vendor/lib64/vendor.qti.data.slm@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
-vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
-vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
-vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
-vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
-vendor/lib64/vendor.qti.latency@2.0.so
-vendor/lib64/vendor.qti.latency@2.1.so
+-vendor/lib64/libcne.so;DISABLE_DEPS
+-vendor/lib64/libcneapiclient.so;DISABLE_DEPS
+-vendor/lib64/libcneoplookup.so;DISABLE_DEPS
+-vendor/lib64/libwms.so;DISABLE_DEPS
+-vendor/lib64/libwqe.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.data.factory@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.data.factory@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.data.factory@2.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.data.factory@2.3.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.data.mwqem@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.data.slm@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.lce@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.latency@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.latency@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
 
 # CNE configs
 vendor/etc/cne/mwqem.conf
@@ -60,86 +60,86 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 
 # Data Path Manager
-vendor/bin/dpmQmiMgr
+-vendor/bin/dpmQmiMgr;DISABLE_DEPS
 vendor/etc/init/dpmQmiMgr.rc
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
-vendor/lib64/libdpmqmihal.so
+-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/libdpmqmihal.so;DISABLE_DEPS
 
 # IMS
-vendor/bin/imsdatadaemon
-vendor/bin/imsqmidaemon
+-vendor/bin/imsdatadaemon;DISABLE_DEPS
+-vendor/bin/imsqmidaemon;DISABLE_DEPS
 vendor/etc/init/imsdatadaemon.rc
 vendor/etc/init/imsqmidaemon.rc
 
 # IMS - imsrcsd
-vendor/bin/imsrcsd
+-vendor/bin/imsrcsd;DISABLE_DEPS
 vendor/etc/init/imsrcsd.rc
-vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
-vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
-vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
-vendor/lib64/lib-imsSDP.so
-vendor/lib64/lib-imscmservice.so
-vendor/lib64/lib-imsdpl.so
-vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs-v2.so
-vendor/lib64/lib-imsrcsbaseimpl.so
-vendor/lib64/lib-imsxml.so
-vendor/lib64/lib-rcsconfig.so
-vendor/lib64/lib-rtpcommon.so
-vendor/lib64/lib-siputility.so
-vendor/lib64/lib-uceservice.so
-vendor/lib64/vendor.qti.ims.callcapability@1.0.so
-vendor/lib64/vendor.qti.ims.callinfo@1.0.so
-vendor/lib64/vendor.qti.ims.factory@1.0.so
-vendor/lib64/vendor.qti.ims.factory@1.1.so
-vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
-vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
-vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
-vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
+-vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.uceservice@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.uceservice@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.uceservice@2.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/com.qualcomm.qti.uceservice@2.3.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/lib-imsSDP.so;DISABLE_DEPS
+-vendor/lib64/lib-imscmservice.so;DISABLE_DEPS
+-vendor/lib64/lib-imsdpl.so;DISABLE_DEPS
+-vendor/lib64/lib-imsqimf.so;DISABLE_DEPS
+-vendor/lib64/lib-imsrcs-v2.so;DISABLE_DEPS
+-vendor/lib64/lib-imsrcsbaseimpl.so;DISABLE_DEPS
+-vendor/lib64/lib-imsxml.so;DISABLE_DEPS
+-vendor/lib64/lib-rcsconfig.so;DISABLE_DEPS
+-vendor/lib64/lib-rtpcommon.so;DISABLE_DEPS
+-vendor/lib64/lib-siputility.so;DISABLE_DEPS
+-vendor/lib64/lib-uceservice.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.ims.callcapability@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.callinfo@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.factory@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.factory@1.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
 
 # IMS - ims_rtp_daemon
-vendor/bin/ims_rtp_daemon
+-vendor/bin/ims_rtp_daemon;DISABLE_DEPS
 vendor/etc/init/ims_rtp_daemon_legacy.rc
 vendor/etc/seccomp_policy/imsrtp.policy
-vendor/lib64/lib-imsvtcore.so
-vendor/lib64/lib-rtpcore.so
-vendor/lib64/lib-rtpsl.so
-vendor/lib64/librcc.so
-vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+-vendor/lib64/lib-imsvtcore.so;DISABLE_DEPS
+-vendor/lib64/lib-rtpcore.so;DISABLE_DEPS
+-vendor/lib64/lib-rtpsl.so;DISABLE_DEPS
+-vendor/lib64/librcc.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.imsrtpservice@3.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
 
 # RIL (ATFWD)
-vendor/bin/ATFWD-daemon
+-vendor/bin/ATFWD-daemon;DISABLE_DEPS
 vendor/etc/seccomp_policy/atfwd@2.0.policy
-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
+-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so;DISABLE_DEPS
 
 # RIL (Data)
-vendor/bin/port-bridge
-vendor/bin/qti
+-vendor/bin/port-bridge;DISABLE_DEPS
+-vendor/bin/qti;DISABLE_DEPS
 vendor/etc/data/dsi_config.xml
 vendor/etc/init/dataqti.rc
 vendor/etc/init/port-bridge.rc
-vendor/lib64/libdsi_netctrl.so
+-vendor/lib64/libdsi_netctrl.so;DISABLE_DEPS
 
 # RIL (Data) - ADPL
-vendor/bin/adpl
+-vendor/bin/adpl;DISABLE_DEPS
 vendor/etc/init/dataadpl.rc
-vendor/lib64/libqcmaputils.so
+-vendor/lib64/libqcmaputils.so;DISABLE_DEPS
 
 # RIL (Data) - Netmgrd
-vendor/bin/netmgrd
+-vendor/bin/netmgrd;DISABLE_DEPS
 vendor/etc/data/netmgr_config.xml
 vendor/etc/init/netmgrd.rc
-vendor/lib64/libconfigdb.so
-vendor/lib64/libnetmgr.so
-vendor/lib64/libnetmgr_common.so
-vendor/lib64/libnetmgr_nr_fusion.so
-vendor/lib64/libnetmgr_rmnet_ext.so
-vendor/lib64/libnlnetmgr.so
+-vendor/lib64/libconfigdb.so;DISABLE_DEPS
+-vendor/lib64/libnetmgr.so;DISABLE_DEPS
+-vendor/lib64/libnetmgr_common.so;DISABLE_DEPS
+-vendor/lib64/libnetmgr_nr_fusion.so;DISABLE_DEPS
+-vendor/lib64/libnetmgr_rmnet_ext.so;DISABLE_DEPS
+-vendor/lib64/libnlnetmgr.so;DISABLE_DEPS
 
 # RIL (Database)
 vendor/radio/qcril_database/qcril.db
@@ -156,50 +156,50 @@ vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 # RIL (TFTP)
-vendor/bin/tftp_server
+-vendor/bin/tftp_server;DISABLE_DEPS
 vendor/etc/init/vendor.qti.tftp.rc
 
 # RIL (QCRILD)
-vendor/bin/hw/qcrild
+-vendor/bin/hw/qcrild;DISABLE_DEPS
 vendor/etc/init/qcrild.rc
-vendor/lib64/liblqe.so
-vendor/lib64/libqcrilFramework.so
-vendor/lib64/libqcrildatactl.so
-vendor/lib64/libqdp.so
-vendor/lib64/libril-qc-hal-qmi.so
-vendor/lib64/libril-qc-logger.so
-vendor/lib64/librilqmiservices.so
-vendor/lib64/libsystem_health_mon.so
-vendor/lib64/qcrild_librilutils.so
-vendor/lib64/qtibus.so
-vendor/lib64/qtimutex.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
-vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so
-vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so
-vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.lpa@1.2.so
-vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+-vendor/lib64/liblqe.so;DISABLE_DEPS
+-vendor/lib64/libqcrilFramework.so;DISABLE_DEPS
+-vendor/lib64/libqcrildatactl.so;DISABLE_DEPS
+-vendor/lib64/libqdp.so;DISABLE_DEPS
+-vendor/lib64/libril-qc-hal-qmi.so;DISABLE_DEPS
+-vendor/lib64/libril-qc-logger.so;DISABLE_DEPS
+-vendor/lib64/librilqmiservices.so;DISABLE_DEPS
+-vendor/lib64/libsystem_health_mon.so;DISABLE_DEPS
+-vendor/lib64/qcrild_librilutils.so;DISABLE_DEPS
+-vendor/lib64/qtibus.so;DISABLE_DEPS
+-vendor/lib64/qtimutex.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.data.connection@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.connection@1.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.am@1.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.lpa@1.2.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so;DISABLE_DEPS
+-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
+-vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so;DISABLE_DEPS;MODULE_SUFFIX=_vendor
