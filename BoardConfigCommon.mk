@@ -187,7 +187,6 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_mithorium
-TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mithorium
 
 # Partitions
 TARGET_COPY_OUT_VENDOR := vendor
