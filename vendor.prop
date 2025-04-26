@@ -29,6 +29,7 @@ vendor.mediacodec.binder.size=4
 vendor.vidc.disable.split.mode=1
 
 # USB
+ro.usb.uvc.disable_video_encode_flag=true
 ro.usb.uvc.enabled=true
 vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=1
