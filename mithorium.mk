@@ -104,11 +104,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.picture_in_picture.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.picture_in_picture.xml
 endif
 
-# ANT
-MITHORIUM_PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant@1.0.vendor
-
 # Audio
 MITHORIUM_PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
