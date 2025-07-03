@@ -29,7 +29,8 @@
     <application
         android:label="@string/device_settings_app_name"
         android:persistent="true"
-        android:theme="@style/Theme.SubSettingsBase">
+        android:theme="@style/Theme.SubSettingsBase"
+        android:enableOnBackInvokedCallback="true">
 
         <receiver android:name=".BootCompletedReceiver"
                   android:exported="false">
