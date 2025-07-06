@@ -649,3 +649,9 @@ $(call inherit-product, vendor/xiaomi/mithorium-common-graphics/mithorium-common
 
 # Extra
 EXTRA_DEVICE_BRACKET := low-end
+
+# Lindroid
+ifeq ($(MITHORIUM_INTEGRATE_LINDROID),true)
+EXTRA_LITE := true
+$(call inherit-product, vendor/lindroid/lindroid.mk)
+endif

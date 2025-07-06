@@ -44,6 +44,9 @@ else ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
         BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78af000
     endif
 endif
+ifeq ($(MITHORIUM_INTEGRATE_LINDROID),true)
+    BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -88,6 +91,11 @@ ifneq ($(shell grep CONFIG_KSU_STATIC_HOOKS $(TARGET_KERNEL_SOURCE)/techpack/Ker
 TARGET_KERNEL_CONFIG += \
     vendor/feature/ksu_static_hooks.config
 endif
+endif
+
+ifeq ($(MITHORIUM_INTEGRATE_LINDROID),true)
+TARGET_KERNEL_CONFIG += \
+    vendor/feature/lindroid.config
 endif
 
 # ANT
