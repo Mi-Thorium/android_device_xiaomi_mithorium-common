@@ -198,9 +198,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
 
-# Power
-TARGET_USES_INTERACTION_BOOST := true
-
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 ifneq ($(USE_MITHORIUM_QCOM_HALS),true)
