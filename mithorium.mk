@@ -370,7 +370,9 @@ MITHORIUM_PRODUCT_PACKAGES += \
 
 # LiveDisplay
 MITHORIUM_PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+    vendor.lineage.livedisplay-service.sdm
+
+$(call soong_config_set,livedisplay_sdm,enable_dm,false)
 
 # Media
 ifeq ($(TARGET_BOARD_PLATFORM),msm8953)
