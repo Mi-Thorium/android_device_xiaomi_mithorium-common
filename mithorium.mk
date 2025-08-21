@@ -196,8 +196,7 @@ endif
 ifneq ($(TARGET_USES_DEVICE_SPECIFIC_CAMERA_PROVIDER),true)
 MITHORIUM_PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider-service_32.lineage
 endif
 
 MITHORIUM_PRODUCT_PACKAGES += \
