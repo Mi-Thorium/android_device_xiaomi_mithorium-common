@@ -41,7 +41,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 endif
 
 # UFFD GC
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_ENABLE_UFFD_GC := true
+else
 OVERRIDE_ENABLE_UFFD_GC := false
+endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
