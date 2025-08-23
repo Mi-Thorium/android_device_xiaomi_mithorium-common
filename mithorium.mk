@@ -629,6 +629,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg_$(TARGET_BOARD_PLATFORM).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
+$(call soong_config_set_bool,wcnss_service,uses_qcom_wcnss_qmi,true)
+$(call soong_config_set,wcnss_service,wcnss_qmi_include_dir,$(LOCAL_PATH)/wifi/include)
+
 # Build MITHORIUM_PRODUCT_PACKAGES
 PRODUCT_PACKAGES += $(MITHORIUM_PRODUCT_PACKAGES)
 
