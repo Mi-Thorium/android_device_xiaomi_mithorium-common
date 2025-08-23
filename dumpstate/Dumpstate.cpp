@@ -136,11 +136,11 @@ ndk::ScopedAStatus Dumpstate::dumpstateBoardImpl(const int fd, const bool full) 
     DumpFileToFd(fd, "Mount info", "/proc/self/mountinfo");
 
     // Restart services (To make their early logs appear again on logcat)
-    SetProperty("ctl.stop", "vendor.camera-provider-2-4");
+    SetProperty("ctl.stop", "vendor.camera.provider");
     SetProperty("ctl.stop", "vendor.qcamerasvr");
     SetProperty("ctl.start", "vendor.qcamerasvr");
     sleep(1);
-    SetProperty("ctl.start", "vendor.camera-provider-2-4");
+    SetProperty("ctl.start", "vendor.camera.provider");
     sleep(1);
     SetProperty("ctl.stop", "vendor.fps_hal");
     SetProperty("ctl.start", "vendor.fps_hal");
