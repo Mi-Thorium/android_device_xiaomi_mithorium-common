@@ -16,7 +16,8 @@
 #define HEAPMAXFREE_PROP "dalvik.vm.heapmaxfree"
 #define HEAPTARGETUTILIZATION_PROP "dalvik.vm.heaptargetutilization"
 
-#define GB(b) (b * 1024ull * 1024 * 1024)
+#define MB(b) (b * 1024ull * 1024)
+#define GB(b) (MB(b) * 1024)
 
 static const dalvik_heap_info_t dalvik_heap_info_6144 = {
     .heapstartsize = "16m",
@@ -54,6 +55,15 @@ static const dalvik_heap_info_t dalvik_heap_info_1024 = {
     .heaptargetutilization = "0.75",
 };
 
+static const dalvik_heap_info_t dalvik_heap_info_512 = {
+    .heapstartsize = "5m",
+    .heapgrowthlimit = "48m",
+    .heapsize = "128m",
+    .heapminfree = "512k",
+    .heapmaxfree = "2m",
+    .heaptargetutilization = "0.75",
+};
+
 void set_dalvik_heap() {
     struct sysinfo sys;
     const dalvik_heap_info_t *dhi;
@@ -64,10 +74,12 @@ void set_dalvik_heap() {
         dhi = &dalvik_heap_info_6144;
     else if (sys.totalram > GB(3))
         dhi = &dalvik_heap_info_4096;
-    else if (sys.totalram > GB(1))
+    else if (sys.totalram > MB(1536))
         dhi = &dalvik_heap_info_2048;
-    else
+    else if (sys.totalram > MB(1280))
         dhi = &dalvik_heap_info_1024;
+    else
+        dhi = &dalvik_heap_info_512;
 
     property_override(HEAPSTARTSIZE_PROP, dhi->heapstartsize);
     property_override(HEAPGROWTHLIMIT_PROP, dhi->heapgrowthlimit);
