@@ -224,6 +224,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_k4.19.prop
 endif
 
 ifneq ($(TARGET_HAS_NO_RADIO),true)
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product_radio.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system_radio.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_radio.prop
 endif
