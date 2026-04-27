@@ -1,7 +1,8 @@
 # umi Package version: umi-user 13 RKQ1.211001.001 V14.0.5.0.TJBMIXM release-keys
+# FP5 Package version: D.2.1.656331786-gms
 
-# eUICC
-system/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
+# eUICC - from FP5
+system/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED|9fab80174db95e79a6cc3dad8cb37252678ac9d1
 
 # HotwordEnrollment - from umi
 -product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
