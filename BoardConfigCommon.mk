@@ -54,6 +54,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
     vendor/feature/android-12.config \
+    vendor/feature/compat-vdso.config \
     vendor/feature/erofs.config \
     vendor/feature/exfat.config \
     vendor/feature/kprobes.config \
