@@ -62,6 +62,7 @@ TARGET_KERNEL_CONFIG := \
 TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig \
     vendor/common.config \
+    vendor/feature/compat-vdso.config \
     vendor/feature/erofs.config \
     vendor/feature/exfat.config \
     vendor/feature/ntfs.config \
